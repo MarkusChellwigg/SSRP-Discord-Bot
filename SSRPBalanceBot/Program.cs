@@ -4,6 +4,7 @@ using Discord;
 using Discord.WebSocket;
 using Discord.Commands;
 using System.Reflection;
+using System.Collections.Generic;
 
 namespace SSRPBalanceBot
 {
@@ -15,6 +16,8 @@ namespace SSRPBalanceBot
         private DiscordSocketClient _client;
         private CommandService _commands;
 
+        public static string witchhunt;
+
         public async Task MainAsync()
         {
             _client = new DiscordSocketClient();
@@ -23,11 +26,12 @@ namespace SSRPBalanceBot
             _client.Log += Log;
 
             await InstallCommandsAsync();
-            var token = "tokenHere";
+            var token = "NzAxODMxOTQ5OTQ1Mjc0Mzg4.Xp3OBA.bpd2Wozd_CM3olxpUQYqbkABQ2s";
 
             await _client.LoginAsync(TokenType.Bot, token);
             await _client.StartAsync();
-            await SSRPItems.AddItems();
+            //await SSRPItems.AddItems();
+
 
             await SetGame();
             await Task.Delay(-1);
@@ -53,12 +57,21 @@ namespace SSRPBalanceBot
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine($"Time: {DateTime.Now} | User: {message.Author} | Channel: {message.Channel}| Message: {message.Content.Replace("\n", "\\n")} | Server: {message.Source}");
             Console.ForegroundColor = ConsoleColor.Gray;
-+
-    
+
+            if (message.Author.ToString().ToLower() == witchhunt)
+            {
+                await message.Channel.SendMessageAsync(Utilities.RandomMessage());
+            }
+
             if (message.Content.ToLower() == "nice meth")
             {
                 await message.Channel.SendMessageAsync("nice meth");
                 await Utilities.StatusMessage($"Time: {DateTime.Now} | Ran command: [nice meth] | Server: {message.Source}");
+            }
+            else if (message.Content.ToLower().Contains("kill yourself"))
+            {
+                await message.Channel.SendMessageAsync("do it vro");
+                await Utilities.StatusMessage($"Time: {DateTime.Now} | Ran command: [kill yourself] | Server: {message.Source}");
             }
 
             if (!(message.HasCharPrefix('!', ref argPos) ||

@@ -7,10 +7,8 @@ namespace SSRPBalanceBot
 {
     public class SteamIDUtils
     {
-        
-        //SteamID's can also be calculated without the use of an API - Here for convenience
-        static string apiURL = "https://api.steamid.uk/convert.php?api=APIKEYHERE";
-        static string nameAPI = "https://steamidapi.uk/request.php?api=APIKEYHERE";
+        static string apiURL = "https://api.steamid.uk/convert.php?api=V83M2JRT6VK54JS44RH7";
+        static string nameAPI = "https://steamidapi.uk/request.php?api=V83M2JRT6VK54JS44RH7";
 
         private static string[] GetSteamIDs(string input)
         {

@@ -10,8 +10,6 @@ namespace SSRPBalanceBot
 {
     class Utilities
     {
-        
-        //Retrieves current database statistics
         public static dynamic GetStatistics()
         {
             using (WebClient wc = new WebClient())
@@ -20,14 +18,12 @@ namespace SSRPBalanceBot
                 return json;
             }
         }
-        
-        //Returns total balance of everyone in the database
+
         public static string GetTotal(dynamic json)
         {
             return json.sum;
         }
-        
-        //Returns average balance split between all users currently in the database
+
         public static double GetAverage(dynamic json)
         {
             int users = Convert.ToInt32(json.total);
@@ -35,14 +31,12 @@ namespace SSRPBalanceBot
             double average = Math.Round(total / users + 0.0, 0);
             return average;
         }
-        
-        //Returns number of users currently in the database
+
         public static int GetUsers(dynamic json)
         {
             return json.total;
         }
-        
-        //Returns the link to the specified users signature
+
         public static string GetSignature(string input)
         {
             string id = SteamIDUtils.RetrieveID(input);
@@ -52,14 +46,12 @@ namespace SSRPBalanceBot
             AddNew(id);
             return $"http://fastdl.friendlyplayers.com/siggen/darkrpbase/{id}.png";
         }
-        
-        //Logs all steam64id's to a file for scanning later
+
         public static async void AddNew(string id)
         {
-            await File.AppendAllTextAsync("idList.txt", id + Environment.NewLine);
+             await File.AppendAllTextAsync("idList.txt", id + Environment.NewLine);
         }
 
-        //Prints the specified message to the console
         public static Task StatusMessage(string message)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -72,8 +64,13 @@ namespace SSRPBalanceBot
         {
             string[] messageList =
             {
-                "Messages here",
-                "Yes"
+                "Die of cancer nigger",
+                "Kill yourself",
+                "Your mum has aids",
+                "Your dad has aids",
+                "100% should've been aborted",
+                "Cancer looks like a better choice than you",
+                "Size doesn't matter, don't worry"
             };
 
             Random rnd = new Random();
