@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using SSRPBalanceBot;
 using System.IO;
 using System.Collections.Generic;
+using SSRPBalanceBot.Permissions;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
@@ -37,7 +38,7 @@ public class RemoveItem : ModuleBase<SocketCommandContext>
         int count = 0;
         if (printerName == "") { return; }
 
-        if (Context.Message.Author.ToString() != "Bunny#9220") { await Context.Channel.SendMessageAsync("No permission"); }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.RemoveItems) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         else
         {
             string[] currPrinters = File.ReadAllLines("Items/printers.json");

@@ -26,11 +26,10 @@ namespace SSRPBalanceBot
             _client.Log += Log;
 
             await InstallCommandsAsync();
-            var token = "NzAxODMxOTQ5OTQ1Mjc0Mzg4.Xp3OBA.bpd2Wozd_CM3olxpUQYqbkABQ2s";
+            var token = "tokenHere";
 
             await _client.LoginAsync(TokenType.Bot, token);
             await _client.StartAsync();
-            //await SSRPItems.AddItems();
 
 
             await SetGame();
@@ -82,10 +81,12 @@ namespace SSRPBalanceBot
 
             var context = new SocketCommandContext(_client, message);
 
-            await _commands.ExecuteAsync(
+            var result = await _commands.ExecuteAsync(
                 context: context,
                 argPos: argPos,
                 services: null);
+
+            if (!result.IsSuccess) { await context.Channel.SendMessageAsync("Check the syntax of your command and try again. Try the !help docs"); }
         }
 
         private Task Log(LogMessage msg)

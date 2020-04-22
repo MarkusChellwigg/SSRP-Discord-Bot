@@ -2,6 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using SSRPBalanceBot;
+using SSRPBalanceBot.Permissions;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
@@ -13,7 +14,7 @@ public class AddItem : ModuleBase<SocketCommandContext>
     {
         if (itemname == "" | aliases == "") { return; }
 
-        if (Context.Message.Author.ToString() != "Bunny#9220") { await Context.Channel.SendMessageAsync("No permission"); }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.AddItem) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         else
         {
             string[] aliasList = aliases.Split(',');

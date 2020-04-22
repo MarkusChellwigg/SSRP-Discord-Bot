@@ -2,6 +2,7 @@ using Discord.Commands;
 using System;
 using System.Threading.Tasks;
 using SSRPBalanceBot;
+using SSRPBalanceBot.Permissions;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
@@ -11,6 +12,8 @@ public class Printer : ModuleBase<SocketCommandContext>
     [Summary("Returns the bind for the specified item.")]
     public async Task SendPrinter(string item, int boost = 1)
     {
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendPrinter) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+
         SSRPItems.Printer p = await SSRPItems.GetPrinter(item);
 
         if (p == null) { await Context.Channel.SendMessageAsync("Printer not found. Please enclose the printer name in quotes: `\"name\"`"); }

@@ -2,6 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using SSRPBalanceBot;
+using SSRPBalanceBot.Permissions;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
@@ -10,6 +11,7 @@ public class AdminHelp : ModuleBase<SocketCommandContext>
     [Command("adminhelp", RunMode = RunMode.Async)]
     public async Task SendAdminHelpMessage()
     {
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.AddAdmin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         await Context.Channel.SendMessageAsync(
             $"Hello {Context.Message.Author.Username}.\n" +
             $"The current available commands are as follows:\n" +
