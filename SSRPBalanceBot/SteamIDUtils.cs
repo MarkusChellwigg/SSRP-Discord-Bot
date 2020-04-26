@@ -7,31 +7,19 @@ namespace SSRPBalanceBot
 {
     public class SteamIDUtils
     {
-        static string apiURL = "https://api.steamid.uk/convert.php?api=V83M2JRT6VK54JS44RH7";
-        static string nameAPI = "https://steamidapi.uk/request.php?api=V83M2JRT6VK54JS44RH7";
-
-        private static string[] GetSteamIDs(string input)
-        {
-            //Console.WriteLine("Contacting API");
-            WebClient wc = new WebClient();
-            dynamic j = JsonConvert.DeserializeObject(wc.DownloadString(apiURL + $"&input={input}&format=json"));
-            string[] ids = { j.converted.steamid, j.converted.steamid64 };
-            return ids;
-        }
 
         public static string RetrieveID(string input)
         {
-            //Console.WriteLine("Retrieving SteamID64");
-            if (input.StartsWith("http://steamcommunity.com/profiles/") || input.StartsWith("https://steamcommunity.com/profiles/"))
+            if (input.StartsWith("STEAM"))
             {
-                if (input.StartsWith("http:")) { return GetSteamIDs(input.Replace("http://steamcommunity.com/profiles/", ""))[1]; }
-                else { return GetSteamIDs(input.Replace("https://steamcommunity.com/profiles/", ""))[1]; }
+                return SteamIDConvert.Steam2ToSteam64(input).ToString();
             }
-            else if (input.StartsWith("STEAM_") || input.StartsWith("7656119"))
+            else if (input.StartsWith("7656119"))
             {
-                return GetSteamIDs(input)[1];
+                return input;
             }
             return null;
+
         }
 
         public static string GetName(string steamID64)

@@ -15,7 +15,10 @@ public class Bind : ModuleBase<SocketCommandContext>
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         string bind = await SSRPItems.GetBind(item.ToLower());
-        await Context.Channel.SendMessageAsync($"The bind you are looking for is: `bind {key} {bind}`");
-        await Utilities.StatusMessage($"Time: {DateTime.Now} | Ran command: [bind] | Called by: {Context.Message.Author} | Server: {Context.Guild.Name}");
+
+        if (bind == null) { await Context.Channel.SendMessageAsync("Specified item not found. You can request for it to be added by contacting an Admin."); return; }
+
+        await Context.Channel.SendMessageAsync($"The bind you are looking for is: `bind {key} \"zarp_equipitem {bind}\"`");
+        await Utilities.StatusMessage("bind", Context);
     }
 }

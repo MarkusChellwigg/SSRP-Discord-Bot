@@ -24,5 +24,7 @@ public class AddAdmin : ModuleBase<SocketCommandContext>
 
         if (success) { await Context.Channel.SendMessageAsync($"Admin added with id `{id}`"); }
         else { await Context.Channel.SendMessageAsync($"Admin either already exists or is invalid"); }
+
+        await Utilities.StatusMessage("addadmin", Context);
     }
 }

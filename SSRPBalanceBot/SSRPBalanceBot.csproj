@@ -11,15 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Items\" />
-    <Folder Include="Users\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Items\items.json">
+    <None Update="Items\binds.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Items\printers.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="LinkedSignatures\linkedSignatures.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Users\admins.json">

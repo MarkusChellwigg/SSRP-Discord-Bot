@@ -13,7 +13,6 @@ namespace SSRPBalanceBot.Permissions
         static List<Admin> admins = SSRPItems.FillList<Admin>("Users/admins.json");
         public static async Task<bool> AddAdmin(ulong id, string name, int permLevel)
         {
-            Console.WriteLine("called");
             if (CheckAdmin(id)) { return false; }
 
             Admin a = new Admin { id = id.ToString(), name = name, permLevel = permLevel};
@@ -39,7 +38,6 @@ namespace SSRPBalanceBot.Permissions
                     if (a.id == id)
                     {
                         var file = new List<string>(System.IO.File.ReadAllLines("Users/admins.json"));
-                        Console.WriteLine(file[count - 1]);
                         file.RemoveAt(count - 1);
                         File.WriteAllLines("Users/admins.json", file.ToArray());
                         return true;
@@ -48,6 +46,13 @@ namespace SSRPBalanceBot.Permissions
 
                 return false;
             }
+        }
+
+        public static Task ReloadPermissions()
+        {
+            admins.Clear();
+            admins = SSRPItems.FillList<Admin>("Users/admins.json");
+            return Task.CompletedTask;
         }
 
 
@@ -103,8 +108,12 @@ namespace SSRPBalanceBot.Permissions
         public static int RemoveItems = 100;
         public static int RemoveAdmin = 100;
         public static int ReloadItems = 100;
+        public static int ReloadPermissions = 100;
+        public static int ReloadLinks = 100;
         public static int AddItem = 100;
         public static int AddAdmin = 100;
+        public static int Link = -1;
+        public static int Unlink = -1;
 
     }
 }

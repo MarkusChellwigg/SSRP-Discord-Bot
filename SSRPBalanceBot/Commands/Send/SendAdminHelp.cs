@@ -15,10 +15,12 @@ public class AdminHelp : ModuleBase<SocketCommandContext>
         await Context.Channel.SendMessageAsync(
             $"Hello {Context.Message.Author.Username}.\n" +
             $"The current available commands are as follows:\n" +
-            $"`!additem [Item Name] [Aliases (in quotes, separated by commas, no spaces between commas)]- Adds item with specified data`\n" +
-            $"`!addprinter [Printer Name] [Per Second (double)] [Aliases (in quotes, separated by commas, no spaces between commas)] - Adds printer with specified data`\n" +
+            $"`!additem [Item Name] [Aliases (in quotes, separated by commas, no spaces between commas)]`\n" +
+            $"`!addprinter [Printer Name] [Per Second (double)] [Aliases (in quotes, separated by commas, no spaces between commas)]`\n" +
             $"`!removeitem [Item Name]- Removes specified item`\n" +
             $"`!removeprinter [Printer Name] - Removes specified printer`\n" +
-            $"`!reloaditems - Reloads items and printers.`\n");
+            $"`!reloaditems - Reloads items and printers.`\n" +
+            $"`!reloadpermissions - Reloads all users permissions`");
+        await Utilities.StatusMessage("adminhelp", Context);
     }
 }

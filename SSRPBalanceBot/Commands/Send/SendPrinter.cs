@@ -16,11 +16,11 @@ public class Printer : ModuleBase<SocketCommandContext>
 
         SSRPItems.Printer p = await SSRPItems.GetPrinter(item);
 
-        if (p == null) { await Context.Channel.SendMessageAsync("Printer not found. Please enclose the printer name in quotes: `\"name\"`"); }
+        if (p == null) { await Context.Channel.SendMessageAsync("Printer not found. Please enclose the printer name in quotes: `\"name\"`"); await Utilities.StatusMessage("printer", Context); }
         else
         {
             await Context.Channel.SendMessageAsync($"The `{p.printerName} Printer` prints `${(p.perSecond * boost).ToString("#,##0")}` every second, `${((p.perSecond * 60) * boost).ToString("#,##0")}` per minute, or `${(((p.perSecond * 60) * 60) * boost).ToString("#,##0")}` per hour with a boost of `x{boost.ToString("#,##0")}`.");
-            await Utilities.StatusMessage($"Time: {DateTime.Now} | Ran command: [printer] | Called by: {Context.Message.Author} | Server: {Context.Guild.Name}");
+            await Utilities.StatusMessage("printer", Context);
         }
 
     }

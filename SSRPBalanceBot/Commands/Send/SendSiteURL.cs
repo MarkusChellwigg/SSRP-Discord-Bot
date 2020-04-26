@@ -15,6 +15,6 @@ public class SiteURL : ModuleBase<SocketCommandContext>
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendSiteURL) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         await Context.Channel.SendMessageAsync($"https://nickgor.com/");
-        await Utilities.StatusMessage($"Time: {DateTime.Now} | Ran command: [site] | Called by: {Context.Message.Author} | Server: {Context.Guild.Name}");
+        await Utilities.StatusMessage("site", Context);
     }
 }

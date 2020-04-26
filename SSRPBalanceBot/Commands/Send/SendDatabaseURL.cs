@@ -15,6 +15,6 @@ public class DatabaseURL : ModuleBase<SocketCommandContext>
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendDatabaseURL) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         await Context.Channel.SendMessageAsync($"https://nickgor.com/SSRPBalances.php");
-        await Utilities.StatusMessage($"Time: {DateTime.Now} | Ran command: [database] | Called by: {Context.Message.Author} | Server: {Context.Guild.Name}");
+        await Utilities.StatusMessage("database", Context);
     }
 }

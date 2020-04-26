@@ -5,6 +5,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Discord.Commands;
 
 namespace SSRPBalanceBot
 {
@@ -18,6 +19,7 @@ namespace SSRPBalanceBot
                 return json;
             }
         }
+
 
         public static string GetTotal(dynamic json)
         {
@@ -49,13 +51,13 @@ namespace SSRPBalanceBot
 
         public static async void AddNew(string id)
         {
-             await File.AppendAllTextAsync("idList.txt", id + Environment.NewLine);
+            await File.AppendAllTextAsync("idList.txt", id + Environment.NewLine);
         }
 
-        public static Task StatusMessage(string message)
+        public static Task StatusMessage(string cmd, SocketCommandContext Context)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(message);
+            Console.WriteLine($"Time: {DateTime.Now} | Ran command: [{cmd}] | Called by: {Context.Message.Author} | Server: {Context.Guild.Name}");
             Console.ForegroundColor = ConsoleColor.Gray;
             return Task.CompletedTask;
         }
@@ -70,7 +72,13 @@ namespace SSRPBalanceBot
                 "Your dad has aids",
                 "100% should've been aborted",
                 "Cancer looks like a better choice than you",
-                "Size doesn't matter, don't worry"
+                "Size doesn't matter, don't worry",
+                "Aids > You",
+                "Definition of 'Unhappy Accident'",
+                "You are so ugly that your portraits hang themselves",
+                "​If I had a face like yours, I'd sue my parents",
+                "I'm jealous of people that don't know you",
+                "Is your ass jealous of the amount of shit that just came out of your mouth?"
             };
 
             Random rnd = new Random();

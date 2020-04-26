@@ -19,7 +19,7 @@ public class WitchHunt : ModuleBase<SocketCommandContext>
         {
             Program.witchhunt = user.ToString().ToLower();
             await Context.Channel.SendMessageAsync($"Witch Hunting `{user}`");
-            await Utilities.StatusMessage($"Time: {DateTime.Now} | Ran command: [witchhunt] | Called by: {Context.Message.Author} | Server: {Context.Guild.Name}");
+            await Utilities.StatusMessage("witchhunt", Context);
         }
     }
 }
