@@ -26,7 +26,7 @@ namespace SSRPBalanceBot
             _client.Log += Log;
 
             await InstallCommandsAsync();
-            var token = "token";
+            var token = "NzAxODMxOTQ5OTQ1Mjc0Mzg4.XqXh3A.hcIcpgytAnLq-xGldY2ycYYBlO8";
 
             await _client.LoginAsync(TokenType.Bot, token);
             await _client.StartAsync();
@@ -48,12 +48,12 @@ namespace SSRPBalanceBot
         {
 
             var message = messageParam as SocketUserMessage;
+
             var context = new SocketCommandContext(_client, message);
             if (message == null) return;
-            if (message.Content == "!" || message.Content == "!!") return;
+            if (message.Author.IsBot) { return; }
             int argPos = 0;
 
-            if (message.Author.IsBot) { return; }
 
 
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -88,7 +88,7 @@ namespace SSRPBalanceBot
                 argPos: argPos,
                 services: null);
 
-            if (!result.IsSuccess) { await context.Channel.SendMessageAsync("Check the syntax of your command and try again. Try the !help docs"); await Utilities.StatusMessage("error", context); }
+            if (!result.IsSuccess && result.ErrorReason != "Unknown command.") { await context.Channel.SendMessageAsync("Check the syntax of your command and try again. Try the !help docs"); await Utilities.StatusMessage("error", context); }
         }
 
         private Task Log(LogMessage msg)
