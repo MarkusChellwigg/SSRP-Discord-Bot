@@ -26,7 +26,7 @@ namespace SSRPBalanceBot
             _client.Log += Log;
 
             await InstallCommandsAsync();
-            var token = "NzAxODMxOTQ5OTQ1Mjc0Mzg4.XqXh3A.hcIcpgytAnLq-xGldY2ycYYBlO8";
+            var token = "token";
 
             await _client.LoginAsync(TokenType.Bot, token);
             await _client.StartAsync();
