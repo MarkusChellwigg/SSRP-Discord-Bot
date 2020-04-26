@@ -5,6 +5,7 @@ using Discord.WebSocket;
 using Discord.Commands;
 using System.Reflection;
 using System.Collections.Generic;
+using System.IO;
 
 namespace SSRPBalanceBot
 {
@@ -26,7 +27,7 @@ namespace SSRPBalanceBot
             _client.Log += Log;
 
             await InstallCommandsAsync();
-            var token = "token";
+            var token = File.ReadAllText("Config/token.cfg");
 
             await _client.LoginAsync(TokenType.Bot, token);
             await _client.StartAsync();
