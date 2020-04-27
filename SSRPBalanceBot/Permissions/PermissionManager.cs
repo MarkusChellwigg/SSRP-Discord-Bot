@@ -114,6 +114,7 @@ namespace SSRPBalanceBot.Permissions
         public static int AddAdmin = 100;
         public static int Link = -1;
         public static int Unlink = -1;
+        public static int SendSuit = -1;
 
     }
 }

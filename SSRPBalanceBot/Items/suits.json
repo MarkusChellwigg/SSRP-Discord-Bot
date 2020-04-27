@@ -1,0 +1,16 @@
+{"suitName":"Red Dress","hp": 100,"armor": 0, "speed": 240.00,"ability":"No ability","aliases": [ "rape" ]}
+{"suitName":"Nano Suit","hp": 200,"armor": 1500, "speed": 336.00,"ability":"Become invisible","aliases":["nano","nano suit"]}
+{"suitName":"Advanced Combat Suit","hp": 300,"armor": 1500, "speed": 336.00,"ability":"Creates a shield that blocks bullets and vaporises players","aliases":["acs","advanced combat suit"]}
+{"suitName":"Gencorp Juggernaut Suit","hp": 1000,"armor": 2000, "speed": 100.00,"ability":"No ability","aliases":["jugg","jugg suit","jug suit","juggernaut suit","gencorp juggernaut suit"]}
+{"suitName":"Hyper Suit","hp": 500,"armor": 1250, "speed": 336.00,"ability":"Teleport to a set location","aliases":["hyper","hyper suit"]}
+{"suitName":"Evo Suit","hp": 400,"armor": 1000, "speed": 336.00,"ability":"ESP","aliases":["evo","evo suit"]}
+{"suitName":"Mummy Suit","hp": 500,"armor": 0, "speed": 240.00,"ability":"3 lives, life steal and damage boost","aliases":["mummy","mummy suit"]}
+{"suitName":"Visor Suit","hp": 400,"armor": 1000, "speed": 336.00,"ability":"Laser beam","aliases":["visor","visor suit"]}
+{"suitName":"Portal Suit","hp": 500,"armor": 500, "speed": 336.00,"ability":"Place down portals that can be shot/walked through","aliases":["portal","portal suit"]}
+{"suitName":"Knight Demon Suit","hp": 400,"armor": 1000, "speed": 336.00,"ability":"Switch places with a selected player","aliases":["demon","demon suit","knight demon","knight demon suit"]}
+{"suitName":"Holo Pilot Suit","hp": 400,"armor": 1000, "speed": 336.00,"ability":"Create clones to be used as decoys","aliases":["holo","holo suit","holo pilot","holo pilot suit"]}
+{"suitName":"Jet Suit","hp": 750,"armor": 1000, "speed": 360.00,"ability":"Jetpack that allows flight","aliases":["jet","jet suit"]}
+{"suitName":"Golden Juggernaut Suit","hp": 2000,"armor": 4000, "speed": 100.00,"ability":"No ability","aliases":["gjugg","gold jugg","golden jugg","golden juggernaut suit"]}
+{"suitName":"Golden EDF","hp": 400,"armor": 400, "speed": 240.00,"ability":"No ability","aliases":["gedf","gold edf","golden edf"]}
+{"suitName":"Golden Nano Suit","hp": 400,"armor": 3000, "speed": 336.00,"ability":"Become invisible","aliases":["gnano","gold nano","gold nano suit","golden nano suit"]}
+{"suitName":"Golden Advanced Combat Suit","hp": 600,"armor": 3000, "speed": 336.00,"ability":"Creates a shield that blocks bullets and vaporises players","aliases":["gacs","gold acs","gold advanced combat suit","golden acs","golden advanced combat suit"]}

@@ -10,6 +10,7 @@ namespace SSRPBalanceBot
     {
         public static List<Bind> bindList = FillList<Bind>("Items/binds.json");
         public static List<Printer> printerList = FillList<Printer>("Items/printers.json");
+        public static List<Suit> suitList = FillList<Suit>("Items/suits.json");
 
         public static void WriteToJsonFile<T>(string filePath, T objectToWrite, bool append = false) where T : new()
         {
@@ -86,6 +87,23 @@ namespace SSRPBalanceBot
             return null;
         }
 
+        public static async Task<Suit> GetSuit(string input)
+        {
+            foreach (Suit suit in suitList)
+            {
+                foreach (string alias in suit.aliases)
+                {
+                    if (input.ToLower() == alias.ToLower())
+                    {
+                        Console.WriteLine("found");
+                        return suit;
+                    }
+                }
+            }
+            Console.WriteLine("not found");
+            return null;
+        }
+
         public class Bind
         {
             public string bind { get; set; }
@@ -96,6 +114,16 @@ namespace SSRPBalanceBot
         {
             public string printerName { get; set; }
             public double perSecond { get; set; }
+            public string[] aliases { get; set; }
+        }
+
+        public class Suit
+        {
+            public string suitName { get; set; }
+            public int hp { get; set; }
+            public int armor { get; set; }
+            public double speed { get; set; }
+            public string ability { get; set; }
             public string[] aliases { get; set; }
         }
     }

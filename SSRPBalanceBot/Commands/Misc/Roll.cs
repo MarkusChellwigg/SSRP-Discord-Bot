@@ -22,7 +22,7 @@ public class Roll : ModuleBase<SocketCommandContext>
             }
         }
 
-        await Context.Channel.SendMessageAsync($"<@!{Context.Message.Author.Id}> rolled `{roll}`");
+        await Context.Channel.SendMessageAsync($"{Context.Message.Author.Mention} rolled `{roll}`");
         await Utilities.StatusMessage("roll", Context);
     }
 }
