@@ -15,6 +15,7 @@ public class ReloadItems : ModuleBase<SocketCommandContext>
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.ReloadItems) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         SSRPItems.bindList = SSRPItems.FillList<SSRPItems.Bind>("Items/binds.json");
         SSRPItems.printerList = SSRPItems.FillList<SSRPItems.Printer>("Items/printers.json");
+        SSRPItems.itemList = SSRPItems.FillList<SSRPItems.Item>("Items/items.json");
         await Context.Channel.SendMessageAsync("Items have been reloaded.");
         await Utilities.StatusMessage("reloaditems", Context);
     }

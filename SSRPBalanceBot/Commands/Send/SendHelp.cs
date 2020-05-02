@@ -15,7 +15,6 @@ public class Help : ModuleBase<SocketCommandContext>
 
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendHelp) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
-        
         await Context.Channel.SendMessageAsync(
             $"Hello {Context.Message.Author.Username}.\n" +
             $"The current available commands are as follows:\n" +
@@ -24,7 +23,10 @@ public class Help : ModuleBase<SocketCommandContext>
             $"`!statistics - Returns all statistics`\n" +
             $"`!signature [SteamID] - Returns the signature of the specified SteamID. Also adds the user to the database`\n" +
             $"`!bind [Key] [Item] - Returns the bind for the specified item`\n" +
-            $"`!printer \"[Printer Name]\" [Boost - Default 1] - Returns info about the specified printer`\n" +
+            $"`!printer \"[Printer Name]\" [Boost - Default 1] [Time - Default 1] - Returns info about the specified printer`\n" +
+            $"`!item [Item Name] - Returns information about a specific item`" +
+            $"`!suit [Suit Name] - Returns information about a specific suit`" +
+            $"`!roll [Max] - Rolls a random number between 0 and the specified value`"+
             $"`!database - Link to SSRP Database`\n" +
             $"`!site - Link to site`");
 
