@@ -13,7 +13,7 @@ public class AdminHelp : ModuleBase<SocketCommandContext>
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.AddAdmin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         await Context.Channel.SendMessageAsync(
-            $"Hello {Context.Message.Author.Username}.\n" +
+            $"Hello {Context.Message.Author.Mention}.\n" +
             $"The current available commands are as follows:\n" +
             $"`!addbind [Item Name] [Aliases (in quotes, separated by commas, no spaces between commas)]`\n" +
             $"`!addprinter [Printer Name] [Per Second (double)] [Aliases (in quotes, separated by commas, no spaces between commas)]`\n" +

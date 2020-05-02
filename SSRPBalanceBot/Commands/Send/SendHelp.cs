@@ -16,7 +16,7 @@ public class Help : ModuleBase<SocketCommandContext>
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendHelp) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         await Context.Channel.SendMessageAsync(
-            $"Hello {Context.Message.Author.Username}.\n" +
+            $"Hello {Context.Message.Author.Mention}.\n" +
             $"The current available commands are as follows:\n" +
             $"`!total - Returns the total balance of all users in the database`\n" +
             $"`!average - Retuns an average balance of all users in the database`\n" +
