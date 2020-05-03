@@ -18,7 +18,7 @@ public class ItemInfo : ModuleBase<SocketCommandContext>
         if (i == null) { await Context.Channel.SendMessageAsync("Item not found. Please enclose the item name in quotes: `\"name\"`"); await Utilities.StatusMessage("item", Context); }
         else
         {
-            await Context.Channel.SendMessageAsync($"{Context.Message.Author.Mention}\n`Item Name: {i.itemName}\nCategory: {i.category}\nInfo: {i.info}`");
+            await Context.Channel.SendMessageAsync($"{Context.Message.Author.Mention}\n```Item Name: {i.itemName}\nCategory: {i.category}\nInfo: {i.info}```");
             await Utilities.StatusMessage("item", Context);
         }
     }

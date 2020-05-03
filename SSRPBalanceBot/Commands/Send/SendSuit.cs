@@ -18,7 +18,7 @@ public class Suit : ModuleBase<SocketCommandContext>
 
         if (s == null) { await Context.Channel.SendMessageAsync("Specified suit not found. You can request for it to be added by contacting an Admin."); return; }
 
-        await Context.Channel.SendMessageAsync($"{Context.Message.Author.Mention}\n`--- The {s.suitName} ---\nHP: {s.hp}\nArmor: {s.armor}\nSpeed: {s.speed}\nAbility: {s.ability}`");
+        await Context.Channel.SendMessageAsync($"{Context.Message.Author.Mention}\n```--- The {s.suitName} ---\nHP: {s.hp}\nArmor: {s.armor}\nSpeed: {s.speed}\nAbility: {s.ability}```");
         await Utilities.StatusMessage("suit", Context);
     }
 }

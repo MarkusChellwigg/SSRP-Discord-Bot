@@ -17,15 +17,15 @@ public class SendCommands : ModuleBase<SocketCommandContext>
 
         await Context.Channel.SendMessageAsync(
             $"Hello {Context.Message.Author.Mention}.\n" +
-            $"Useful ZARP Console Commands:\n" +
-            $"`zarp_equipitem - Equips the specified item`\n" +
-            $"`zarp_dropitem - Drops the specified item`\n" +
-            $"`M9KGasEffect 0 - Removes the M9K Gas Effect`\n" +
-            $"`hud_draw_fixed_reticle 1 - Draws a crosshair on the hud`\n" +
-            $"`bind key \"say /holster\" - Binds the specified key to holster your weapon`\n" +
-            $"`_inven gems ruby 1 - Converts rubies to gems`\n" +
-            $"`_omatic item1 item2 item3 - Runs the Item O' Matic with the specified items`\n" +
-            $"'net.Start(\"ZARPDefib\")'\n");
+            $"```Useful ZARP Console Commands:\n" +
+            $"zarp_equipitem - Equips the specified item\n" +
+            $"zarp_dropitem - Drops the specified item\n" +
+            $"M9KGasEffect 0 - Removes the M9K Gas Effect\n" +
+            $"hud_draw_fixed_reticle 1 - Draws a crosshair on the hud\n" +
+            $"bind key \"say /holster\" - Binds the specified key to holster your weapon\n" +
+            $"_inven gems ruby 1 - Converts rubies to gems\n" +
+            $"_omatic item1 item2 item3 - Runs the Item O' Matic with the specified items\n" +
+            $"net.Start(\"ZARPDefib\")```\n");
 
         await Utilities.StatusMessage("commands", Context);
     }

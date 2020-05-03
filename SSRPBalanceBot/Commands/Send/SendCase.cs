@@ -27,7 +27,7 @@ public class Case : ModuleBase<SocketCommandContext>
             count++;
         }
 
-        await Context.Channel.SendMessageAsync($"{Context.Message.Author.Mention}\n`--- The {c.caseName} Case ---\n{sb.ToString()}`");
+        await Context.Channel.SendMessageAsync($"{Context.Message.Author.Mention}\n```--- The {c.caseName} Case ---\n{sb.ToString()}```");
         await Utilities.StatusMessage("case", Context);
     }
 }
