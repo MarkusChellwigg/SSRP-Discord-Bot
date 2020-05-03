@@ -11,41 +11,47 @@ namespace SSRPBalanceBot.Permissions
     class PermissionManager
     {
         static List<Admin> admins = SSRPItems.FillList<Admin>("Users/admins.json");
-        public static async Task<bool> AddAdmin(ulong id, string name, int permLevel)
+        public static Task<bool> AddAdmin(ulong id, string name, int permLevel)
         {
-            if (CheckAdmin(id)) { return false; }
+            return Task.Run( () =>
+            {
+                if (CheckAdmin(id).Result) { return false; }
 
-            Admin a = new Admin { id = id.ToString(), name = name, permLevel = permLevel};
-            SSRPItems.WriteToJsonFile<Admin>("Users/admins.json", a, true);
-            admins.Add(a);
+                Admin a = new Admin { id = id.ToString(), name = name, permLevel = permLevel };
+                SSRPItems.WriteToJsonFile<Admin>("Users/admins.json", a, true);
+                admins.Add(a);
 
-            return true;
+                return true;
+            });
         }
 
-        public static async Task<bool> RemoveAdmin(string id)
+        public static Task<bool> RemoveAdmin(string id)
         {
-            int count = 0;
-            if (id == "") { return false; }
-            else
+            return Task.Run(() =>
             {
-                string[] admins = File.ReadAllLines("Users/admins.json");
-
-                foreach (var admin in admins)
+                int count = 0;
+                if (id == "") { return false; }
+                else
                 {
-                    count++;
-                    Admin a = SSRPItems.ReadFromJsonFile<Admin>(admin);
+                    string[] admins = File.ReadAllLines("Users/admins.json");
 
-                    if (a.id == id)
+                    foreach (var admin in admins)
                     {
-                        var file = new List<string>(System.IO.File.ReadAllLines("Users/admins.json"));
-                        file.RemoveAt(count - 1);
-                        File.WriteAllLines("Users/admins.json", file.ToArray());
-                        return true;
-                    }
-                }
+                        count++;
+                        Admin a = SSRPItems.ReadFromJsonFile<Admin>(admin);
 
-                return false;
-            }
+                        if (a.id == id)
+                        {
+                            var file = new List<string>(System.IO.File.ReadAllLines("Users/admins.json"));
+                            file.RemoveAt(count - 1);
+                            File.WriteAllLines("Users/admins.json", file.ToArray());
+                            return true;
+                        }
+                    }
+
+                    return false;
+                }
+            });
         }
 
         public static Task ReloadPermissions()
@@ -56,25 +62,23 @@ namespace SSRPBalanceBot.Permissions
         }
 
 
-        public static bool CheckAdmin(ulong id)
+        public static Task<bool> CheckAdmin(ulong id)
         {
-            //string[] admins = File.ReadAllLines("Users/admins.json");
-
-            foreach(Admin admin in admins)
+            return Task.Run(() =>
             {
-                //Admin a = SSRPItems.ReadFromJsonFile<Admin>(admin);
-                if (admin.id == id.ToString()) { return true; }
-            }
-            return false;
+                foreach (Admin admin in admins)
+                {
+
+                    if (admin.id == id.ToString()) { return true; }
+                }
+                return false;
+            });
         }
 
         public static int GetPerms(ulong id)
         {
-            //string[] admins = File.ReadAllLines("Users/admins.json");
-
             foreach (Admin admin in admins)
             {
-                //Admin a = SSRPItems.ReadFromJsonFile<Admin>(admin);
                 if (admin.id == id.ToString()) 
                 {
                     return admin.permLevel;

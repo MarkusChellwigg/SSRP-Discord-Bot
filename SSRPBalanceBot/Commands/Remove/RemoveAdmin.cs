@@ -18,11 +18,11 @@ public class RemoveAdmin : ModuleBase<SocketCommandContext>
         ulong parsedId;
         ulong.TryParse(id, out parsedId);
 
-        if (!PermissionManager.CheckAdmin(Context.Message.Author.Id)) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (!PermissionManager.CheckAdmin(Context.Message.Author.Id).Result) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionManager.GetPerms(parsedId)) { await Context.Channel.SendMessageAsync("Permission level lower than or equal to user being removed"); return; }
 
 
-        if (!PermissionManager.CheckAdmin(parsedId)) { success = false; }
+        if (!PermissionManager.CheckAdmin(parsedId).Result) { success = false; }
         else { success = await PermissionManager.RemoveAdmin(id); }
 
         if (success) { await Context.Channel.SendMessageAsync($"Admin removed with id `{id}`"); }

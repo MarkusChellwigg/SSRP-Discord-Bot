@@ -89,6 +89,7 @@ namespace SSRPBalanceBot
                 argPos: argPos,
                 services: null);
 
+            //If the command run doesn't exist, the error message won't be thrown.
             if (!result.IsSuccess && result.ErrorReason != "Unknown command.") { await context.Channel.SendMessageAsync("Check the syntax of your command and try again. Try the !help docs"); await Utilities.StatusMessage("error", context); }
         }
 

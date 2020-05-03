@@ -15,7 +15,7 @@ public class AddLink : ModuleBase<SocketCommandContext>
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Link) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         string steamID64 = SteamIDUtils.RetrieveID(steamID);
 
-        if (await LinkedSignatures.CheckExists(steamID64, Context)) { await Context.Channel.SendMessageAsync("The ID specified is already linked to an account. If this is a mistake, please contact an admin."); return; }
+        if (await LinkedSignatures.CheckExists(steamID64)) { await Context.Channel.SendMessageAsync("The ID specified is already linked to an account. If this is a mistake, please contact an admin."); return; }
 
         LinkedSignatures.LinkSignature ls = new LinkedSignatures.LinkSignature { SteamID64 = steamID64, DiscordID = Context.Message.Author.Id.ToString() };
         SSRPItems.WriteToJsonFile<LinkedSignatures.LinkSignature>("LinkedSignatures/linkedSignatures.json", ls, true);

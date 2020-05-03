@@ -59,79 +59,95 @@ namespace SSRPBalanceBot
 
 
 
-        public static async Task<string> GetBind(string input)
+        public static Task<string> GetBind(string input)
         {
-            foreach (Bind bind in bindList)
+            return Task.Run(() =>
             {
-                foreach (string alias in bind.aliases)
+                foreach (Bind bind in bindList)
                 {
-                    if (input == alias)
+                    foreach (string alias in bind.aliases)
                     {
-                        return bind.bind;
+                        if (input == alias)
+                        {
+                            return bind.bind;
+                        }
                     }
                 }
-            }
-            return null;
+                return null;
+            });
         }
 
-        public static async Task<Printer> GetPrinter(string input)
+        public static Task<Printer> GetPrinter(string input)
         {
-            foreach (Printer printer in printerList)
+            return Task.Run(() =>
             {
-                foreach (string alias in printer.aliases)
+                foreach (Printer printer in printerList)
                 {
-                    if (input.ToLower() == alias.ToLower())
+                    foreach (string alias in printer.aliases)
                     {
-                        return printer;
+                        if (input.ToLower() == alias.ToLower())
+                        {
+                            return printer;
+                        }
                     }
                 }
-            }
-            return null;
+                return null;
+            });
         }
 
-        public static async Task<Suit> GetSuit(string input)
+        public static Task<Suit> GetSuit(string input)
         {
-            foreach (Suit suit in suitList)
+            return Task.Run(() =>
             {
-                foreach (string alias in suit.aliases)
+                foreach (Suit suit in suitList)
                 {
-                    if (input.ToLower() == alias.ToLower())
+                    foreach (string alias in suit.aliases)
                     {
-                        return suit;
+                        if (input.ToLower() == alias.ToLower())
+                        {
+                            return suit;
+                        }
                     }
                 }
-            }
-            return null;
+                return null;
+            });
         }
 
-        public static async Task<Item> GetItem(string input)
+        public static Task<Item> GetItem(string input)
         {
-            foreach (Item item in itemList)
+            return Task.Run(() =>
             {
-                foreach (string alias in item.aliases)
+                foreach (Item item in itemList)
                 {
-                    if (input.ToLower() == alias.ToLower())
+                    foreach (string alias in item.aliases)
                     {
-                        return item;
+                        if (input.ToLower() == alias.ToLower())
+                        {
+                            return item;
+                        }
                     }
                 }
-            }
-            return null;
+                return null;
+            });
+
         }
 
-        public static async Task<Case> GetCase(string input)
+        public static Task<Case> GetCase(string input)
         {
-            foreach (Case item in caseList)
+            return Task.Run(() =>
             {
-                foreach (string alias in item.aliases)
+                foreach (Case item in caseList)
                 {
-                    if (input.ToLower() == alias.ToLower())
+                    foreach (string alias in item.aliases)
                     {
-                        return item;
+                        if (input.ToLower() == alias.ToLower())
+                        {
+                            return item;
+                        }
                     }
                 }
-            }
-            return null;
+                return null;
+            });
         }
 
         public class Item
