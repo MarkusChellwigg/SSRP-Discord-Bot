@@ -11,6 +11,8 @@ namespace SSRPBalanceBot
 {
     class Utilities
     {
+        public static List<Insult> insultsList = SSRPItems.FillList<Insult>("Items/insults.json");
+
         public static dynamic GetStatistics()
         {
             using (WebClient wc = new WebClient())
@@ -84,5 +86,11 @@ namespace SSRPBalanceBot
             Random rnd = new Random();
             return messageList[rnd.Next(0, messageList.Length)];
         }
+
+        public class Insult
+        {
+            public string insult { get; set; }
+        }
+
     }
 }

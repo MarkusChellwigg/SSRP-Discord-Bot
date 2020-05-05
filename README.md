@@ -1,5 +1,7 @@
 ##### SSRP-Discord-Bot
 
+You can add the bot to your own server here: http://discord.nickgor.com/
+
 ### User Commands
 ****
   `!total - Returns the total balance of all users in the database`  
@@ -11,6 +13,7 @@
   `!item [Item Name] - Returns information about a specific item`  
   `!suit [Suit Name] - Returns information about a specific suit`  
   `!roll [Max] - Rolls a random number between 0 and the specified value`  
+  `!coinflip [Mention Opponent] - Chooses a random winner`  
   `!database - Link to SSRP Database`  
   `!site - Link to site`  
 
@@ -21,5 +24,5 @@
 `!additem [Item Name] [Category] "[Info]" "[Aliases]"`  
 `!removebind [Item Name]- Removes specified bind`  
 `!removeprinter [Printer Name] - Removes specified printer`  
-`!reloaditems - Reloads items and printers.`  
+`!reloaditems - Reloads all item lists.`  
 `!reloadpermissions - Reloads all users permissions`  

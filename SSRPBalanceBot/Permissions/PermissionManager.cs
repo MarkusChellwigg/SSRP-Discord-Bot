@@ -115,6 +115,7 @@ namespace SSRPBalanceBot.Permissions
         public static int ReloadPermissions = 100;
         public static int ReloadLinks = 100;
         public static int AddItem = 100;
+        public static int AddInsult = 100;
         public static int AddAdmin = 100;
         public static int Link = -1;
         public static int Unlink = -1;
