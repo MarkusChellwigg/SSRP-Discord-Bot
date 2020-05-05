@@ -16,7 +16,7 @@ public class AddInsult : ModuleBase<SocketCommandContext>
         else
         {
             Utilities.Insult newInsult = new Utilities.Insult { insult = insult};
-            SSRPItems.WriteToJsonFile<Utilities.Insult>("Items/insults.json", newInsult, true);
+            SSRPItems.WriteToJsonFile("Items/insults.json", newInsult, true);
             Utilities.insultsList.Add(newInsult);
 
             await Context.Channel.SendMessageAsync($"New Insult Has Been Added. Insult: {insult}");
