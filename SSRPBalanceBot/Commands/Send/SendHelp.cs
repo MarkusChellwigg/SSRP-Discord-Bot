@@ -28,6 +28,8 @@ public class Help : ModuleBase<SocketCommandContext>
             $"!item [Item Name] - Returns information about a specific item\n" +
             $"!suit [Suit Name] - Returns information about a specific suit\n" +
             $"!roll [Max] - Rolls a random number between 0 and the specified value\n" +
+            $"!commands - Displays some useful console commands to be used on the server" +
+            $"!online - Displays the current number of players on the SSRP servers" +
             $"!coinflip [Mention Opponent] - Randomly picks a winner\n"+
             $"!database - Link to SSRP Database\n" +
             $"!site - Link to site```");

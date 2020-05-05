@@ -17,6 +17,7 @@ public class ReloadItems : ModuleBase<SocketCommandContext>
         SSRPItems.bindList = SSRPItems.FillList<SSRPItems.Bind>("Items/binds.json");
         SSRPItems.printerList = SSRPItems.FillList<SSRPItems.Printer>("Items/printers.json");
         SSRPItems.itemList = SSRPItems.FillList<SSRPItems.Item>("Items/items.json");
+        SSRPItems.itemList = SSRPItems.FillList<SSRPItems.Item>("Items/suits.json");
         SSRPItems.caseList = SSRPItems.FillList<SSRPItems.Case>("Items/cases.json");
 
         await Context.Channel.SendMessageAsync("All item lists have been reloaded. Any changes to any item files are now in effect.");
