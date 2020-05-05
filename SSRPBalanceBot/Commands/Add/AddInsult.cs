@@ -15,8 +15,8 @@ public class AddInsult : ModuleBase<SocketCommandContext>
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.AddInsult) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         else
         {
-            Utilities.Insult newInsult = new Utilities.Insult { };
-            SSRPItems.WriteToJsonFile<Utilities.Insult>("Items/insult.json", newInsult, true);
+            Utilities.Insult newInsult = new Utilities.Insult { insult = insult};
+            SSRPItems.WriteToJsonFile<Utilities.Insult>("Items/insults.json", newInsult, true);
             Utilities.insultsList.Add(newInsult);
 
             await Context.Channel.SendMessageAsync($"New Insult Has Been Added. Insult: {insult}");

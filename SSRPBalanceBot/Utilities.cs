@@ -66,25 +66,9 @@ namespace SSRPBalanceBot
 
         public static string RandomMessage()
         {
-            string[] messageList =
-            {
-                "Die of cancer nigger",
-                "Kill yourself",
-                "Your mum has aids",
-                "Your dad has aids",
-                "100% should've been aborted",
-                "Cancer looks like a better choice than you",
-                "Size doesn't matter, don't worry",
-                "Aids > You",
-                "Definition of 'Unhappy Accident'",
-                "You are so ugly that your portraits hang themselves",
-                "​If I had a face like yours, I'd sue my parents",
-                "I'm jealous of people that don't know you",
-                "Is your ass jealous of the amount of shit that just came out of your mouth?"
-            };
 
             Random rnd = new Random();
-            return messageList[rnd.Next(0, messageList.Length)];
+            return insultsList[rnd.Next(0, insultsList.Count)].insult;
         }
 
         public class Insult
