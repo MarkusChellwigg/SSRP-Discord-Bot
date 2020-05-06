@@ -10,7 +10,7 @@ public class Printer : ModuleBase<SocketCommandContext>
 {
     [Command("printer", RunMode = RunMode.Async)]
     [Alias("guap", "p")]
-    [Summary("Returns the bind for the specified item.")]
+    [Summary("Returns printer info.")]
     public async Task SendPrinter(string item, int boost = 1, int time = 1)
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendPrinter) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
