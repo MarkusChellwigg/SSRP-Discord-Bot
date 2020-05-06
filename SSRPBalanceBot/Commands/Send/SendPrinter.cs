@@ -9,6 +9,7 @@ using SSRPBalanceBot.Permissions;
 public class Printer : ModuleBase<SocketCommandContext>
 {
     [Command("printer", RunMode = RunMode.Async)]
+    [Alias("guap", "p")]
     [Summary("Returns the bind for the specified item.")]
     public async Task SendPrinter(string item, int boost = 1, int time = 1)
     {
