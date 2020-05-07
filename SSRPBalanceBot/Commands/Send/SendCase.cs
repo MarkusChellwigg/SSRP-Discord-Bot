@@ -10,6 +10,7 @@ using System.Text;
 public class Case : ModuleBase<SocketCommandContext>
 {
     [Command("case", RunMode = RunMode.Async)]
+    [Alias("odds","chances")]
     [Summary("Returns info about the specified case.")]
     public async Task SendCase([Remainder]string item)
     {
