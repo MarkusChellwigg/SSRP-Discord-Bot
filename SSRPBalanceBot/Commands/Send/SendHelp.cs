@@ -3,36 +3,46 @@ using System;
 using System.Threading.Tasks;
 using SSRPBalanceBot;
 using SSRPBalanceBot.Permissions;
+using System.Collections.Generic;
+using Discord;
+using System.Linq;
+using System.Text;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
 public class Help : ModuleBase<SocketCommandContext>
 {
     [Command("help", RunMode = RunMode.Async)]
+    [Summary("Sends help info")]
     public async Task SendHelpMessage()
     {
         Program p = new Program();
 
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendHelp) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
-        await Context.Channel.SendMessageAsync(
-            $"Hello {Context.Message.Author.Mention}.\n" +
-            $"```The current available commands are as follows:\n" +
-            $"!total - Returns the total balance of all users in the database\n" +
-            $"!average - Retuns an average balance of all users in the database\n" +
-            $"!statistics - Returns all statistics\n" +
-            $"!signature [SteamID] - Returns the signature of the specified SteamID. Also adds the user to the database\n" +
-            $"!bind [Key] [Item] - Returns the bind for the specified item\n" +
-            $"!printer \"[Printer Name]\" [Boost - Default 1] [Time - Default 1] - Returns info about the specified printer\n" +
-            $"!case [Case Name] - Returns info about the specified case\n" +
-            $"!item [Item Name] - Returns information about a specific item\n" +
-            $"!suit [Suit Name] - Returns information about a specific suit\n" +
-            $"!roll [Max] - Rolls a random number between 0 and the specified value\n" +
-            $"!commands - Displays some useful console commands to be used on the server" +
-            $"!online - Displays the current number of players on the SSRP servers" +
-            $"!coinflip [Mention Opponent] - Randomly picks a winner\n"+
-            $"!database - Link to SSRP Database\n" +
-            $"!site - Link to site```");
+        List<CommandInfo> commands = Program._commands.Commands.ToList();
+        StringBuilder helpMessage = new StringBuilder();
+        StringBuilder individualCMDs = new StringBuilder();
+
+
+        foreach (CommandInfo command in commands)
+        {
+            //Name of command - Example, !help
+            individualCMDs.Append("!" + command.Name);
+
+            //Appends all parameters - Example, [item]
+            foreach(ParameterInfo param in command.Parameters)
+            {
+                individualCMDs.Append($" [{param.Name}]");
+            }
+            //Appends the command summary, Example - Sends help information
+            individualCMDs.Append($" - {command.Summary}\n");
+
+            helpMessage.Append(individualCMDs.ToString());
+            individualCMDs.Clear();
+        }
+
+        await Context.Message.Channel.SendMessageAsync($"{Context.Message.Author.Mention}\n```{helpMessage.ToString()}```");
 
         await Utilities.StatusMessage("help", Context);
     }

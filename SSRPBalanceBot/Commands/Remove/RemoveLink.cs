@@ -10,6 +10,7 @@ using SSRPBalanceBot.LinkedSignatures;
 public class RemoveLink : ModuleBase<SocketCommandContext>
 {
     [Command("unlink", RunMode = RunMode.Async)]
+    [Summary("Unlinks a users Discord and Steam account")]
     public async Task LinkAccount()
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Link) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }

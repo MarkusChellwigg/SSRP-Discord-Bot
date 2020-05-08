@@ -15,7 +15,7 @@ namespace SSRPBalanceBot
             => new Program().MainAsync().GetAwaiter().GetResult();
 
         private DiscordSocketClient _client;
-        public CommandService _commands;
+        public static CommandService _commands;
 
         public static string witchhunt;
 

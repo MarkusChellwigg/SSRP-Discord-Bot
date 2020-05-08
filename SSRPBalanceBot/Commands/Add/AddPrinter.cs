@@ -9,7 +9,7 @@ using SSRPBalanceBot.Permissions;
 public class AddPrinter : ModuleBase<SocketCommandContext>
 {
     [Command("addprinter", RunMode = RunMode.Async)]
-    [Summary("Retuns an average balance of all users in the database")]
+    [Summary("Adds a new printer with the specified data")]
     public async Task AddPrinterAsync(string printerName, double perSecond, string aliases)
     {
         if (printerName == "" | aliases == "") { return; }

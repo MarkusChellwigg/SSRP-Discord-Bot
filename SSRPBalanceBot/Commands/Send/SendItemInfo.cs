@@ -9,7 +9,7 @@ using SSRPBalanceBot.Permissions;
 public class ItemInfo : ModuleBase<SocketCommandContext>
 {
     [Command("item", RunMode = RunMode.Async)]
-    [Summary("Returns the bind for the specified item.")]
+    [Summary("Returns item info")]
     public async Task SendItemInfo([Remainder]string item)
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendItemInfo) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }

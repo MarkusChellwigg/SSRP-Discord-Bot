@@ -10,7 +10,7 @@ using System.Text;
 public class SendCases : ModuleBase<SocketCommandContext>
 {
     [Command("cases", RunMode = RunMode.Async)]
-    [Summary("Returns the bind for the specified item.")]
+    [Summary("Returns all cases")]
     public async Task SendCasesAsync()
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }

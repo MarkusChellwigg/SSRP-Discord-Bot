@@ -11,7 +11,7 @@ using SSRPBalanceBot.Permissions;
 public class RemovePrinter : ModuleBase<SocketCommandContext>
 {
     [Command("removeprinter", RunMode = RunMode.Async)]
-    [Summary("Retuns an average balance of all users in the database")]
+    [Summary("Removes the specified printer")]
     public async Task RemovePrinterAsync(string printerName)
     {
         int count = 0;

@@ -11,7 +11,7 @@ using System.Collections.Generic;
 public class ServerInfo : ModuleBase<SocketCommandContext>
 {
     [Command("online", RunMode = RunMode.Async)]
-    [Summary("Returns the total balance of all users in the database")]
+    [Summary("Displays players online for each server")]
     public async Task SendInfo()
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendTotal) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }

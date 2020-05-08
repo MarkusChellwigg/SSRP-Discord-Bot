@@ -9,6 +9,7 @@ using SSRPBalanceBot.Permissions;
 public class Roll : ModuleBase<SocketCommandContext>
 {
     [Command("roll", RunMode = RunMode.Async)]
+    [Summary("Randomly picks a winner")]
     public async Task SendRoll(int max)
     {
         Random rnd = new Random();

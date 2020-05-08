@@ -9,6 +9,7 @@ using SSRPBalanceBot.Permissions;
 public class Coinflip : ModuleBase<SocketCommandContext>
 {
     [Command("coinflip", RunMode = RunMode.Async)]
+    [Summary("Chooses a random number between 0 and the specified value")]
     public async Task SendRoll(string opponent)
     {
         Random rnd = new Random();

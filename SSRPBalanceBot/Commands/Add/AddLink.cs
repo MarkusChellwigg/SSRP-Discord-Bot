@@ -10,6 +10,7 @@ using SSRPBalanceBot.LinkedSignatures;
 public class AddLink : ModuleBase<SocketCommandContext>
 {
     [Command("link", RunMode = RunMode.Async)]
+    [Summary("Links a users Discord and Steam")]
     public async Task LinkAccount(string steamID)
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Link) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }

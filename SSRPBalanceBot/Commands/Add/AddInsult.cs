@@ -9,7 +9,7 @@ using SSRPBalanceBot.Permissions;
 public class AddInsult : ModuleBase<SocketCommandContext>
 {
     [Command("addinsult", RunMode = RunMode.Async)]
-    [Summary("Adds a new item with the specified data")]
+    [Summary("Adds a new insult")]
     public async Task AddInsultAsync([Remainder]string insult)
     { 
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.AddInsult) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }

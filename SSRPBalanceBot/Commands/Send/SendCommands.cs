@@ -9,6 +9,7 @@ using SSRPBalanceBot.Permissions;
 public class SendCommands : ModuleBase<SocketCommandContext>
 {
     [Command("commands", RunMode = RunMode.Async)]
+    [Summary("Returns some useful SSRP commands")]
     public async Task SendHelpMessage()
     {
         Program p = new Program();

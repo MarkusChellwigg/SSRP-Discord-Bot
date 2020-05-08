@@ -11,7 +11,7 @@ using SSRPBalanceBot.Permissions;
 public class RemoveBind : ModuleBase<SocketCommandContext>
 {
     [Command("removebind", RunMode = RunMode.Async)]
-    [Summary("Retuns an average balance of all users in the database")]
+    [Summary("Removes the specified bind")]
     public async Task RemoveItemAsync(string itemname)
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.RemoveItems) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
