@@ -22,7 +22,7 @@ public class SendCases : ModuleBase<SocketCommandContext>
             sb.Append($"Case: {c.caseName}\n");
         }
 
-        await Context.Channel.SendMessageAsync($"```--- All Current Cases ---\n{sb.ToString()}```");
+        await Context.Channel.SendMessageAsync($"{Context.Message.Author.Mention}\n```--- All Current Cases ---\n{sb.ToString()}```");
         await Utilities.StatusMessage("bind", Context);
     }
 }

@@ -10,12 +10,14 @@ using SSRPBalanceBot.LinkedSignatures;
 public class Signature : ModuleBase<SocketCommandContext>
 {
     [Command("signature", RunMode = RunMode.Async)]
+    [Alias("sig")]
     [Summary("Returns the signature of the specified SteamID. Also adds the user to the database")]
     public async Task SendSignature([Remainder]string id = null)
     {
         string sig;
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendSignature) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
+        //Gets the current users signature
         if(id == null)
         {
             string steamID64 = await LinkedSignatures.GetSteam(Context.Message.Author.Id.ToString());
@@ -34,6 +36,28 @@ public class Signature : ModuleBase<SocketCommandContext>
                 return;
             }
         }
+        //Gets the signature of a mentioned user
+        else if (id.StartsWith("<"))
+        {
+            Console.WriteLine(id);
+            string steamID64 = await LinkedSignatures.GetSteam(id.Replace("<@!", "").Replace(">", ""));
+            if (steamID64 == null)
+            {
+                await Context.Channel.SendMessageAsync($"Their Discord isn't linked to a Steam profile.");
+                await Utilities.StatusMessage("signature", Context);
+                return;
+            }
+            else
+            {
+                sig = Utilities.GetSignature(steamID64);
+
+                await Context.Channel.SendMessageAsync($"Here's the signature you were looking for: \n{sig}");
+                await Utilities.StatusMessage("signature", Context);
+                return;
+            }
+        }
+
+        //Gets the signature of the specified syeamID
         else
         {
             sig = Utilities.GetSignature(id);
