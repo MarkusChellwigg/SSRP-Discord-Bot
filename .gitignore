@@ -3,4 +3,4 @@ obj
 Properties
 .vs
 *.csproj.user
-token.cfg
+Config/token.cfg
