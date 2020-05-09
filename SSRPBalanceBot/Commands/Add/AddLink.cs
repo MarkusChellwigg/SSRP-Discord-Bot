@@ -14,7 +14,7 @@ public class AddLink : ModuleBase<SocketCommandContext>
     public async Task LinkAccount()
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Link) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
-        if (LinkedSignatures.GetSteam(Context.Message.Author.Id.ToString()) != null) { await Context.Channel.SendMessageAsync("Account already linked"); return; }
+        //if (LinkedSignatures.GetSteam(Context.Message.Author.Id.ToString()) != "null") { await Context.Channel.SendMessageAsync("Account already linked"); return; }
 
         var u = Context.Message.Author;
         await Discord.UserExtensions.SendMessageAsync(u, $"Click here to link your account: https://nickgor.com/SteamAuth.php?DiscordID={u.Id}");

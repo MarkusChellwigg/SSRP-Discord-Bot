@@ -14,7 +14,7 @@ namespace SSRPBalanceBot.LinkedSignatures
         public static List<LinkSignature> linkedSigs = SSRPItems.FillList<LinkSignature>("LinkedSignatures/linkedSignatures.json");
 
 
-        public static string GetSteam(string id)
+        public static dynamic GetSteam(string id)
         {
             using (WebClient wc = new WebClient())
             {
