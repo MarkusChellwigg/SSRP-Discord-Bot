@@ -16,10 +16,17 @@ namespace SSRPBalanceBot.LinkedSignatures
 
         public static dynamic GetSteam(string id)
         {
-            using (WebClient wc = new WebClient())
+            try
             {
-                dynamic json = JsonConvert.DeserializeObject(wc.DownloadString($"https://nickgor.com/scripts/get_link.php?discordID={id}"));
-                return json.steamID;
+                using (WebClient wc = new WebClient())
+                {
+                    dynamic json = JsonConvert.DeserializeObject(wc.DownloadString($"https://nickgor.com/scripts/get_link.php?discordID={id}"));
+                    return json.steamID;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
 
