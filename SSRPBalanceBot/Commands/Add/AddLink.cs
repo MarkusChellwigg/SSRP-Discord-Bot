@@ -18,5 +18,6 @@ public class AddLink : ModuleBase<SocketCommandContext>
 
         var u = Context.Message.Author;
         await Discord.UserExtensions.SendMessageAsync(u, $"Click here to link your account: https://nickgor.com/SteamAuth.php?DiscordID={u.Id}");
+        await ReplyAsync("Check your DMs");
     }
 }
