@@ -20,7 +20,7 @@ public class Signature : ModuleBase<SocketCommandContext>
         //Gets the current users signature
         if(id == null)
         {
-            string steamID64 = await LinkedSignatures.GetSteam(Context.Message.Author.Id.ToString());
+            string steamID64 = LinkedSignatures.GetSteam(Context.Message.Author.Id.ToString());
             if (steamID64 == null) 
             { 
                 await Context.Channel.SendMessageAsync($"Your Discord isn't linked to a Steam profile. To link your account, run !link [SteamID]");
@@ -40,7 +40,7 @@ public class Signature : ModuleBase<SocketCommandContext>
         else if (id.StartsWith("<"))
         {
             Console.WriteLine(id);
-            string steamID64 = await LinkedSignatures.GetSteam(id.Replace("<@!", "").Replace(">", ""));
+            string steamID64 = LinkedSignatures.GetSteam(id.Replace("<@!", "").Replace(">", ""));
             if (steamID64 == null)
             {
                 await Context.Channel.SendMessageAsync($"Their Discord isn't linked to a Steam profile.");

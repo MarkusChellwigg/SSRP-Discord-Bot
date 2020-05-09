@@ -4,3 +4,4 @@ Properties
 .vs
 *.csproj.user
 Config/token.cfg
+SSRPBalanceBot/Config/token.cfg

@@ -11,18 +11,12 @@ public class AddLink : ModuleBase<SocketCommandContext>
 {
     [Command("link", RunMode = RunMode.Async)]
     [Summary("Links a users Discord and Steam")]
-    public async Task LinkAccount(string steamID)
+    public async Task LinkAccount()
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Link) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
-        string steamID64 = SteamIDUtils.RetrieveID(steamID);
+        if (LinkedSignatures.GetSteam(Context.Message.Author.Id.ToString()) != null) { await Context.Channel.SendMessageAsync("Account already linked"); return; }
 
-        if (await LinkedSignatures.CheckExists(steamID64)) { await Context.Channel.SendMessageAsync("The ID specified is already linked to an account. If this is a mistake, please contact an admin."); return; }
-
-        LinkedSignatures.LinkSignature ls = new LinkedSignatures.LinkSignature { SteamID64 = steamID64, DiscordID = Context.Message.Author.Id.ToString() };
-        SSRPItems.WriteToJsonFile<LinkedSignatures.LinkSignature>("LinkedSignatures/linkedSignatures.json", ls, true);
-        LinkedSignatures.linkedSigs.Add(ls);
-
-        await Context.Channel.SendMessageAsync($"You have succesfully linked your Discord account to your Steam account.");
-        await Utilities.StatusMessage("link", Context);
+        var u = Context.Message.Author;
+        await Discord.UserExtensions.SendMessageAsync(u, $"Click here to link your account: https://nickgor.com/SteamAuth.php?DiscordID={u.Id}");
     }
 }

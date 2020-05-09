@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Discord.Commands;
+using Newtonsoft.Json;
 
 namespace SSRPBalanceBot.LinkedSignatures
 {
@@ -12,16 +14,13 @@ namespace SSRPBalanceBot.LinkedSignatures
         public static List<LinkSignature> linkedSigs = SSRPItems.FillList<LinkSignature>("LinkedSignatures/linkedSignatures.json");
 
 
-        public static Task<string> GetSteam(string discordID)
+        public static string GetSteam(string id)
         {
-            return Task.Run(() =>
+            using (WebClient wc = new WebClient())
             {
-                foreach (LinkSignature ls in linkedSigs)
-                {
-                    if (ls.DiscordID == discordID) { return ls.SteamID64; }
-                }
-                return null;
-            });
+                dynamic json = JsonConvert.DeserializeObject(wc.DownloadString($"https://nickgor.com/scripts/get_link.php?discordID={id}"));
+                return json.steamID;
+            }
         }
 
         public static Task<bool> CheckExists(string input)
