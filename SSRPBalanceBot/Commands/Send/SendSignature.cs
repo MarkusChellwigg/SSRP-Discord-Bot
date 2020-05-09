@@ -23,7 +23,7 @@ public class Signature : ModuleBase<SocketCommandContext>
             string steamID64 = LinkedSignatures.GetSteam(Context.Message.Author.Id.ToString());
             if (steamID64 == null) 
             { 
-                await Context.Channel.SendMessageAsync($"Your Discord isn't linked to a Steam profile. To link your account, run !link [SteamID]");
+                await Context.Channel.SendMessageAsync($"Your Discord isn't linked to a Steam profile. To link your account, run !link");
                 await Utilities.StatusMessage("signature", Context);
                 return;
             }
