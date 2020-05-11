@@ -10,15 +10,16 @@ using System.Text;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
-public class Help : ModuleBase<SocketCommandContext>
+[Group("admin")]
+public class AdminHelp : ModuleBase<SocketCommandContext>
 {
     [Command("help", RunMode = RunMode.Async)]
     [Summary("Sends help info")]
-    public async Task SendHelpMessage()
+    public async Task SendAdminHelp()
     {
         Program p = new Program();
 
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendHelp) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendAdminHelp) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         List<CommandInfo> commands = Program._commands.Commands.ToList();
         StringBuilder helpMessage = new StringBuilder();
@@ -27,7 +28,7 @@ public class Help : ModuleBase<SocketCommandContext>
 
         foreach (CommandInfo command in commands)
         {
-            if (command.Module.Group != "admin")
+            if (command.Module.Group == "admin")
             {
                 //Name of command - Example, !help
                 individualCMDs.Append("!" + command.Name);

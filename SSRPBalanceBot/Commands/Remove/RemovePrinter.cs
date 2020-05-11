@@ -8,6 +8,7 @@ using SSRPBalanceBot.Permissions;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
+[Group("admin")]
 public class RemovePrinter : ModuleBase<SocketCommandContext>
 {
     [Command("removeprinter", RunMode = RunMode.Async)]

@@ -11,7 +11,7 @@ using System.Linq;
 public class Top : ModuleBase<SocketCommandContext>
 {
     [Command("top", RunMode = RunMode.Async)]
-    [Summary("Returns the top item for the specific type")]
+    [Summary("Returns the highest stat for the specified stat and type")]
     public async Task SendBind(string type, string stat = null)
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
