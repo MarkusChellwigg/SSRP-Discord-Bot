@@ -62,12 +62,6 @@ namespace SSRPBalanceBot
             Console.WriteLine($"Time: {DateTime.Now} | User: {message.Author} | Channel: {message.Channel}| Message: {message.Content.Replace("\n", "\\n")} | Server: {context.Guild.Name}");
             Console.ForegroundColor = ConsoleColor.Gray;
 
-            if(channel.Guild.Name == "Desire")
-            {
-                await message.Channel.SendMessageAsync("Unban Bunny Retards");
-                return;
-            }
-
 
             if (message.Author.ToString().ToLower() == witchhunt)
             {
