@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Discord.Commands;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace SSRPBalanceBot
 {
@@ -80,6 +81,15 @@ namespace SSRPBalanceBot
 
             Random rnd = new Random();
             return insultsList[rnd.Next(0, insultsList.Count)].insult;
+        }
+
+        private static Random randomStr = new Random(DateTime.Now.Millisecond);
+        //Generates a random string from the characters in the variable chars
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[randomStr.Next(s.Length)]).ToArray());
         }
 
         public class Insult

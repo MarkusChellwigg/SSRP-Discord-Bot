@@ -18,7 +18,7 @@ public class Gang : ModuleBase<SocketCommandContext>
         if(mention == null)
         {
             string steamID64 = LinkedSignatures.GetSteam(Context.Message.Author.Id.ToString());
-            await ReplyAsync($"{Context.Message.Author.Mention} is in gang: {await Utilities.GetGang(steamID64)}");
+            await ReplyAsync($"{Context.Message.Author.Mention} is in {await Utilities.GetGang(steamID64)}");
         }
         else
         {
