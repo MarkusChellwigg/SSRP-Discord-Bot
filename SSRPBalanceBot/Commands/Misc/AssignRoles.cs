@@ -30,6 +30,13 @@ public class AutoAssign : ModuleBase<SocketCommandContext>
                     await member.AddRoleAsync(role);
                     await ReplyAsync($"{member.Username} has been assigned to {gang}");
                 }
+                else
+                {
+                    if (gang != "No Gang yet.")
+                    {
+                        await Context.Guild.CreateRoleAsync(gang, null, null, false, null);
+                    }
+                }
             }
         }
 
