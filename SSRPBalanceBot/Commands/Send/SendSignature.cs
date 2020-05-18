@@ -85,7 +85,6 @@ public class Signature : ModuleBase<SocketCommandContext>
             await Context.Channel.SendFileAsync(path, "Here's the signature you were looking for:");
             File.Delete(path);
 
-            await Context.Channel.SendMessageAsync($"Here's the signature you were looking for: \n{sig}");
             await Utilities.StatusMessage("signature", Context);
         }
         
