@@ -12,7 +12,7 @@ using System.IO;
 public class Signature : ModuleBase<SocketCommandContext>
 {
     [Command("signature", RunMode = RunMode.Async)]
-    [Alias("sig")]
+    [Alias("sig", "myguap")]
     [Summary("Returns the signature of the specified SteamID. Also adds the user to the database")]
     public async Task SendSignature([Remainder]string id = null)
     {
