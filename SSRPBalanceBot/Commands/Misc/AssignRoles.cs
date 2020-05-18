@@ -22,8 +22,6 @@ public class AutoAssign : ModuleBase<SocketCommandContext>
                 string steamID64 = LinkedSignatures.GetSteam(member.Id.ToString());
                 string gang = await Utilities.GetGang(steamID64);
 
-                Console.WriteLine(gang);
-
                 var role = Context.Guild.Roles.FirstOrDefault(x => x.Name == gang);
                 if (role != null)
                 {
@@ -35,6 +33,8 @@ public class AutoAssign : ModuleBase<SocketCommandContext>
                     if (gang != "No Gang yet.")
                     {
                         await Context.Guild.CreateRoleAsync(gang, null, null, false, null);
+                        await member.AddRoleAsync(role);
+                        await ReplyAsync($"{member.Username} has been assigned to {gang}");
                     }
                 }
             }
