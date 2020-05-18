@@ -18,16 +18,14 @@ public class Gang : ModuleBase<SocketCommandContext>
         if(mention == null)
         {
             string steamID64 = LinkedSignatures.GetSteam(Context.Message.Author.Id.ToString());
-            await ReplyAsync($"{Context.Message.Author.Mention} is in gang: {Utilities.GetGang(steamID64)}");
+            await ReplyAsync($"{Context.Message.Author.Mention} is in gang: {await Utilities.GetGang(steamID64)}");
         }
         else
         {
             string dID = mention.Replace("<@!", "").Replace(">", "");
             string steamID64 = LinkedSignatures.GetSteam(dID);
-            await ReplyAsync($"<@!{dID}> is in gang: {Utilities.GetGang(steamID64)}");
+            await ReplyAsync($"<@!{dID}> is in gang: {await Utilities.GetGang(steamID64)}");
         }
-
-        //await Context.Channel.SendMessageAsync($"The bind you are looking for is: `bind {key} \"zarp_equipitem {bind}\"`");
         await Utilities.StatusMessage("bind", Context);
     }
 }

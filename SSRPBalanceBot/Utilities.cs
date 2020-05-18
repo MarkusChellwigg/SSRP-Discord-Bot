@@ -23,11 +23,11 @@ namespace SSRPBalanceBot
             }
         }
 
-        public static string GetGang(string id)
+        public static async Task<string> GetGang(string steamID)
         {
             using (WebClient wc = new WebClient()) 
             { 
-                string page = wc.DownloadString($"http://fastdl.friendlyplayers.com/loadingscreen/zrp/?steam={id}"); 
+                string page = await wc.DownloadStringTaskAsync(new Uri($"http://fastdl.friendlyplayers.com/loadingscreen/zrp/?steam={steamID}")); 
                 Regex regex = new Regex("(?<=<li><span class=\"glyphicon glyphicon-user\"><\\/span> )(.*)(?=<\\/li>)");
                 return regex.Match(page).ToString();
             }
