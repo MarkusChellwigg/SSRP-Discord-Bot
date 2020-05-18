@@ -23,7 +23,7 @@ public class Help : ModuleBase<SocketCommandContext>
         List<CommandInfo> commands = Program._commands.Commands.ToList();
         StringBuilder helpMessage = new StringBuilder();
         StringBuilder individualCMDs = new StringBuilder();
-
+        helpMessage.Append("```");
 
         foreach (CommandInfo command in commands)
         {
@@ -44,8 +44,16 @@ public class Help : ModuleBase<SocketCommandContext>
                 individualCMDs.Clear();
             }
         }
+        helpMessage.Append("```");
 
-        await Context.Message.Channel.SendMessageAsync($"{Context.Message.Author.Mention}\n```{helpMessage.ToString()}```");
+        EmbedBuilder eb = new EmbedBuilder();
+        eb.WithTitle("Help");
+        eb.WithDescription(helpMessage.ToString());
+        eb.WithUrl("https://nickgor.com");
+        eb.WithCurrentTimestamp();
+        eb.WithColor(Color.Green);
+
+        await Context.Message.Channel.SendMessageAsync($"{Context.Message.Author.Mention}\n", false, eb.Build());
 
         await Utilities.StatusMessage("help", Context);
     }

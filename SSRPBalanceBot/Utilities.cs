@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Discord.Commands;
+using System.Text.RegularExpressions;
 
 namespace SSRPBalanceBot
 {
@@ -19,6 +20,16 @@ namespace SSRPBalanceBot
             {
                 dynamic json = JsonConvert.DeserializeObject(wc.DownloadString("https://nickgor.com/scripts/get_total.php"));
                 return json;
+            }
+        }
+
+        public static string GetGang(string id)
+        {
+            using (WebClient wc = new WebClient()) 
+            { 
+                string page = wc.DownloadString($"http://fastdl.friendlyplayers.com/loadingscreen/zrp/?steam={id}"); 
+                Regex regex = new Regex("(?<=<li><span class=\"glyphicon glyphicon-user\"><\\/span> )(.*)(?=<\\/li>)");
+                return regex.Match(page).ToString();
             }
         }
 

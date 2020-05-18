@@ -39,7 +39,6 @@ public class Signature : ModuleBase<SocketCommandContext>
         //Gets the signature of a mentioned user
         else if (id.StartsWith("<"))
         {
-            Console.WriteLine(id);
             string steamID64 = LinkedSignatures.GetSteam(id.Replace("<@!", "").Replace(">", ""));
             if (steamID64 == null)
             {
