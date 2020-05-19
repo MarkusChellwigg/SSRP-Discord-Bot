@@ -31,7 +31,7 @@ public class Signature : ModuleBase<SocketCommandContext>
             }
             else
             {
-                await ReplyAsync("Obtaining the signature");
+                var msg = await ReplyAsync("Obtaining signature");
 
                 using (WebClient wc = new WebClient())
                 {
@@ -42,6 +42,8 @@ public class Signature : ModuleBase<SocketCommandContext>
 
                 await Context.Channel.SendFileAsync(path, "Here's the signature you were looking for:");
                 File.Delete(path);
+                await msg.DeleteAsync();
+
                 await Utilities.StatusMessage("signature", Context);
                 return;
             }
@@ -59,7 +61,7 @@ public class Signature : ModuleBase<SocketCommandContext>
             }
             else
             {
-                await ReplyAsync("Obtaining the signature");
+                var msg = await ReplyAsync("Obtaining signature");
 
                 using (WebClient wc = new WebClient())
                 {
@@ -70,6 +72,7 @@ public class Signature : ModuleBase<SocketCommandContext>
 
                 await Context.Channel.SendFileAsync(path, "Here's the signature you were looking for:");
                 File.Delete(path);
+                await msg.DeleteAsync();
 
                 await Utilities.StatusMessage("signature", Context);
                 return;
@@ -79,7 +82,7 @@ public class Signature : ModuleBase<SocketCommandContext>
         //Gets the signature of the specified syeamID
         else
         {
-            await ReplyAsync("Obtaining the signature");
+            var msg = await ReplyAsync("Obtaining signature");
 
             using (WebClient wc = new WebClient())
             {
@@ -90,6 +93,7 @@ public class Signature : ModuleBase<SocketCommandContext>
 
             await Context.Channel.SendFileAsync(path, "Here's the signature you were looking for:");
             File.Delete(path);
+            await msg.DeleteAsync();
 
             await Utilities.StatusMessage("signature", Context);
         }
