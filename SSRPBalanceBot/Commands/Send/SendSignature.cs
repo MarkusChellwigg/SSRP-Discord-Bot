@@ -31,6 +31,8 @@ public class Signature : ModuleBase<SocketCommandContext>
             }
             else
             {
+                await ReplyAsync("Obtaining the signature");
+
                 using (WebClient wc = new WebClient())
                 {
                     sig = await wc.DownloadDataTaskAsync(new Uri(Utilities.GetSignature(steamID64)));
@@ -57,6 +59,8 @@ public class Signature : ModuleBase<SocketCommandContext>
             }
             else
             {
+                await ReplyAsync("Obtaining the signature");
+
                 using (WebClient wc = new WebClient())
                 {
                     sig = await wc.DownloadDataTaskAsync(new Uri(Utilities.GetSignature(steamID64)));
@@ -75,6 +79,8 @@ public class Signature : ModuleBase<SocketCommandContext>
         //Gets the signature of the specified syeamID
         else
         {
+            await ReplyAsync("Obtaining the signature");
+
             using (WebClient wc = new WebClient())
             {
                 sig = await wc.DownloadDataTaskAsync(new Uri(Utilities.GetSignature(id)));

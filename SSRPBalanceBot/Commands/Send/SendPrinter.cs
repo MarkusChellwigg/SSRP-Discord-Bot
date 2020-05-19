@@ -3,6 +3,7 @@ using System;
 using System.Threading.Tasks;
 using SSRPBalanceBot;
 using SSRPBalanceBot.Permissions;
+using Discord;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
@@ -22,33 +23,48 @@ public class Printer : ModuleBase<SocketCommandContext>
         {
 
 
-            //If the printer is a Uranium unit
-            if(p.printerName == "Uranium")
+            //If loot/gem/uranium
+            if(p.printerName == "Uranium" || p.printerName == "Loot" || p.printerName == "Gem")
             {
                 //If 1, don't print the plural
                 if (time == 1)
                 {
-                    await Context.Channel.SendMessageAsync($"The `{p.printerName} Unit` prints `{(p.perSecond * boost).ToString("#,##0.00")} Uranium` every second, `{((p.perSecond * 60) * boost).ToString("#,##0.00")}` every minute, or `{(((p.perSecond * 60) * 60) * boost).ToString("#,##0")}` every hour with a boost of `x{boost.ToString("#,##0")}`.");
+                    EmbedBuilder eb = new EmbedBuilder();
+                    EmbedFooterBuilder fb = new EmbedFooterBuilder();
+
+                    fb.WithText($"Called by {Context.Message.Author.Username}");
+                    fb.WithIconUrl(Context.Message.Author.GetAvatarUrl());
+
+                    eb.WithTitle($"{p.printerName}");
+                    eb.AddField("Per Second", $"{((p.perSecond * boost) * time).ToString("#,##0")}");
+                    eb.AddField("Per Minute", $"{(((p.perSecond * 60) * boost) * time).ToString("#,##0")}");
+                    eb.AddField("Per Hour", $"{(((p.perSecond * 60) * 60) * boost).ToString("#,##0")}");
+                    eb.AddField("With Boost", $"x{boost}");
+                    eb.WithColor(Color.Blue);
+                    eb.WithFooter(fb);
+
+                    await ReplyAsync("", false, eb.Build());
+
                     await Utilities.StatusMessage("printer", Context);
                 }
                 else
                 {
-                    await Context.Channel.SendMessageAsync($"The `{p.printerName} Unit` prints `{((p.perSecond * boost) * time).ToString("#,##0.00")} Uranium` every {time} seconds, `{(((p.perSecond * 60) * boost) * time).ToString("#,##0.00")}` every {time} minutes, or `{((((p.perSecond * 60) * 60) * boost) * time).ToString("#,##0.00")}` every {time} hours with a boost of `x{boost.ToString("#,##0")}`.");
-                    await Utilities.StatusMessage("printer", Context);
-                }
-            }
-            //If the printer is one of the O' Matics
-            else if(p.printerName == "Loot" || p.printerName == "Gem")
-            {
-                //If 1, don't print the plural
-                if (time == 1)
-                {
-                    await Context.Channel.SendMessageAsync($"The `{p.printerName} O' Matic` prints `{(p.perSecond * boost).ToString("#,##0")}` every second, `{((p.perSecond * 60) * boost).ToString("#,##0")}` every minute, or `{(((p.perSecond * 60) * 60) * boost).ToString("#,##0")}` every hour with a boost of `x{boost.ToString("#,##0")}`.");
-                    await Utilities.StatusMessage("printer", Context);
-                }
-                else
-                {
-                    await Context.Channel.SendMessageAsync($"The `{p.printerName} O' Matic` prints `{((p.perSecond * boost) * time).ToString("#,##0")}` every {time} seconds, `{(((p.perSecond * 60) * boost) * time).ToString("#,##0")}` every {time} minutes, or `{((((p.perSecond * 60) * 60) * boost) * time).ToString("#,##0")}` every {time} hours with a boost of `x{boost.ToString("#,##0")}`.");
+                    EmbedBuilder eb = new EmbedBuilder();
+                    EmbedFooterBuilder fb = new EmbedFooterBuilder();
+
+                    fb.WithText($"Called by {Context.Message.Author.Username}");
+                    fb.WithIconUrl(Context.Message.Author.GetAvatarUrl());
+
+                    eb.WithTitle($"{p.printerName}");
+                    eb.AddField($"Per {time} Seconds", $"{((p.perSecond * boost) * time).ToString("#,##0")}");
+                    eb.AddField($"Per {time} Minutes", $"{(((p.perSecond * 60) * boost) * time).ToString("#,##0")}");
+                    eb.AddField($"Per {time} Hours", $"{((((p.perSecond * 60) * 60) * boost) * time).ToString("#,##0")}");
+                    eb.AddField($"With Boost", $"x{boost}");
+                    eb.WithColor(Color.Blue);
+                    eb.WithFooter(fb);
+
+                    await ReplyAsync("", false, eb.Build());
+
                     await Utilities.StatusMessage("printer", Context);
                 }
             }
@@ -58,12 +74,42 @@ public class Printer : ModuleBase<SocketCommandContext>
                 //If 1, don't print the plural
                 if(time == 1)
                 {
-                    await Context.Channel.SendMessageAsync($"The `{p.printerName} Printer` prints `${((p.perSecond * boost) * time).ToString("#,##0")}` every second, `${(((p.perSecond * 60) * boost) * time).ToString("#,##0")}` every minute, or `${(((p.perSecond * 60) * 60) * boost).ToString("#,##0")}` every hour with a boost of `x{boost.ToString("#,##0")}`.");
+                    EmbedBuilder eb = new EmbedBuilder();
+                    EmbedFooterBuilder fb = new EmbedFooterBuilder();
+
+                    fb.WithText($"Called by {Context.Message.Author.Username}");
+                    fb.WithIconUrl(Context.Message.Author.GetAvatarUrl());
+
+                    eb.WithTitle($"{p.printerName}");
+                    eb.AddField("Per Second", $"${((p.perSecond * boost) * time).ToString("#,##0")}");
+                    eb.AddField("Per Minute", $"${(((p.perSecond * 60) * boost) * time).ToString("#,##0")}");
+                    eb.AddField("Per Hour", $"${(((p.perSecond * 60) * 60) * boost).ToString("#,##0")}");
+                    eb.AddField("With Boost", $"x{boost}");
+                    eb.WithColor(Color.Blue);
+                    eb.WithFooter(fb);
+
+                    await ReplyAsync("", false, eb.Build());
+
                     await Utilities.StatusMessage("printer", Context);
                 }
                 else
                 {
-                    await Context.Channel.SendMessageAsync($"The `{p.printerName} Printer` prints `${((p.perSecond * boost) * time).ToString("#,##0")}` every {time} seconds, `${(((p.perSecond * 60) * boost) * time).ToString("#,##0")}` every {time} minutes, or `${((((p.perSecond * 60) * 60) * boost) * time).ToString("#,##0")}` every {time} hours with a boost of `x{boost.ToString("#,##0")}`.");
+                    EmbedBuilder eb = new EmbedBuilder();
+                    EmbedFooterBuilder fb = new EmbedFooterBuilder();
+
+                    fb.WithText($"Called by {Context.Message.Author.Username}");
+                    fb.WithIconUrl(Context.Message.Author.GetAvatarUrl());
+
+                    eb.WithTitle($"{p.printerName}");
+                    eb.AddField($"Per {time} Seconds", $"${((p.perSecond * boost) * time).ToString("#,##0")}");
+                    eb.AddField($"Per {time} Minutes", $"${(((p.perSecond * 60) * boost) * time).ToString("#,##0")}");
+                    eb.AddField($"Per {time} Hours", $"${((((p.perSecond * 60) * 60) * boost)* time).ToString("#,##0")}");
+                    eb.AddField($"With Boost", $"x{boost}");
+                    eb.WithColor(Color.Blue);
+                    eb.WithFooter(fb);
+
+                    await ReplyAsync("", false, eb.Build());
+
                     await Utilities.StatusMessage("printer", Context);
                 }
             }
