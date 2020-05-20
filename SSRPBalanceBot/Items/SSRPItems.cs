@@ -168,6 +168,7 @@ namespace SSRPBalanceBot
         {
             public string printerName { get; set; }
             public double perSecond { get; set; }
+            public string color { get; set; }
             public string[] aliases { get; set; }
         }
 

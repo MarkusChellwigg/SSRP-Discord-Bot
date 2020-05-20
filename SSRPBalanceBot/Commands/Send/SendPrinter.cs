@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using SSRPBalanceBot;
 using SSRPBalanceBot.Permissions;
 using Discord;
+using System.Drawing;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
@@ -17,6 +18,7 @@ public class Printer : ModuleBase<SocketCommandContext>
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendPrinter) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         SSRPItems.Printer p = await SSRPItems.GetPrinter(item);
+        Discord.Color c = new Discord.Color(ColorTranslator.FromHtml($"#{p.color}").R, ColorTranslator.FromHtml($"#{p.color}").G, ColorTranslator.FromHtml($"#{p.color}").B);
 
         if (p == null) { await Context.Channel.SendMessageAsync("Printer not found. Please enclose the printer name in quotes: `\"name\"`"); await Utilities.StatusMessage("printer", Context); }
         else
@@ -31,6 +33,7 @@ public class Printer : ModuleBase<SocketCommandContext>
                 {
                     EmbedBuilder eb = new EmbedBuilder();
                     EmbedFooterBuilder fb = new EmbedFooterBuilder();
+                    
 
                     fb.WithText($"Called by {Context.Message.Author.Username}");
                     fb.WithIconUrl(Context.Message.Author.GetAvatarUrl());
@@ -40,7 +43,7 @@ public class Printer : ModuleBase<SocketCommandContext>
                     eb.AddField("Per Minute", $"{(((p.perSecond * 60) * boost) * time).ToString("#,##0")}");
                     eb.AddField("Per Hour", $"{(((p.perSecond * 60) * 60) * boost).ToString("#,##0")}");
                     eb.AddField("With Boost", $"x{boost}");
-                    eb.WithColor(Color.Blue);
+                    eb.WithColor(c);
                     eb.WithFooter(fb);
 
                     await ReplyAsync("", false, eb.Build());
@@ -60,7 +63,7 @@ public class Printer : ModuleBase<SocketCommandContext>
                     eb.AddField($"Per {time} Minutes", $"{(((p.perSecond * 60) * boost) * time).ToString("#,##0")}");
                     eb.AddField($"Per {time} Hours", $"{((((p.perSecond * 60) * 60) * boost) * time).ToString("#,##0")}");
                     eb.AddField($"With Boost", $"x{boost}");
-                    eb.WithColor(Color.Blue);
+                    eb.WithColor(c);
                     eb.WithFooter(fb);
 
                     await ReplyAsync("", false, eb.Build());
@@ -85,7 +88,7 @@ public class Printer : ModuleBase<SocketCommandContext>
                     eb.AddField("Per Minute", $"${(((p.perSecond * 60) * boost) * time).ToString("#,##0")}");
                     eb.AddField("Per Hour", $"${(((p.perSecond * 60) * 60) * boost).ToString("#,##0")}");
                     eb.AddField("With Boost", $"x{boost}");
-                    eb.WithColor(Color.Blue);
+                    eb.WithColor(c);
                     eb.WithFooter(fb);
 
                     await ReplyAsync("", false, eb.Build());
@@ -105,7 +108,7 @@ public class Printer : ModuleBase<SocketCommandContext>
                     eb.AddField($"Per {time} Minutes", $"${(((p.perSecond * 60) * boost) * time).ToString("#,##0")}");
                     eb.AddField($"Per {time} Hours", $"${((((p.perSecond * 60) * 60) * boost)* time).ToString("#,##0")}");
                     eb.AddField($"With Boost", $"x{boost}");
-                    eb.WithColor(Color.Blue);
+                    eb.WithColor(c);
                     eb.WithFooter(fb);
 
                     await ReplyAsync("", false, eb.Build());
