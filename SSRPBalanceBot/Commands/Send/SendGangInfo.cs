@@ -11,7 +11,7 @@ using System.Web;
 // If it isn't, it will not be discovered by AddModulesAsync!
 public class Ganginfo : ModuleBase<SocketCommandContext>
 {
-    [Command("ganginfo", RunMode = RunMode.Async)]
+    [Command("ganginfo")]
     [Summary("Returns information about the specified gang")]
     public async Task SendGangInfo([Remainder]string gang)
     {
@@ -19,7 +19,7 @@ public class Ganginfo : ModuleBase<SocketCommandContext>
 
         Utilities.GangInfo gInfo = await Utilities.GetGangInfo(HttpUtility.UrlEncode(gang));
 
-        Console.WriteLine(gInfo.gangIcon);
+        Console.WriteLine(gInfo.gangOwner);
 
         EmbedBuilder eb = new EmbedBuilder();
         EmbedFooterBuilder fb = new EmbedFooterBuilder();

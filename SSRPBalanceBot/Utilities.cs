@@ -58,7 +58,17 @@ namespace SSRPBalanceBot
 
                 string gIcon = gangIcon.Match(mc[0].ToString()).ToString();
                 string gName = mc[1].ToString();
-                string gOwner = gangOwner.Match(mc[2].ToString()).ToString();
+
+                string gOwner;
+                if (mc[2].ToString().Contains("nofollow")) 
+                {
+                    gOwner = gangOwner.Match(mc[2].ToString()).ToString();
+                }
+                else
+                {
+                    gOwner = mc[2].ToString();
+                }
+
                 string memberCount = mc[3].ToString();
                 string gangCash = mc[4].ToString();
                 string gangLoot = mc[5].ToString();
