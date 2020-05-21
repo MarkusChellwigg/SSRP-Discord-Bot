@@ -87,11 +87,11 @@ namespace SSRPBalanceBot
                 return;
 
             var chnl = message.Channel as SocketGuildChannel;
-            var Guild = chnl.Guild.Name;
+            var Guild = chnl.Guild.Id;
 
-            if(Guild != "Jay House v4" || Guild != "Construction Inc" || Guild != "Test")
+            if(Guild != 711759970995011636 || Guild != 694999364665475113 || Guild != 701178110485463152)
             {
-                await message.Channel.SendMessageAsync("Now charging rental. Please contact Bunny on Steam! https://steamcommunity.com/id/Bunnyslippers69/");
+                await message.Channel.SendMessageAsync("Now charging rental. Please contact Bunny on: \nSteam: https://steamcommunity.com/id/Bunnyslippers69/ \nDiscord: Bunny#9220");
                 return;
             }
 
