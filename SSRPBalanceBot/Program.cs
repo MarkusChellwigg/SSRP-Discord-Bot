@@ -86,6 +86,15 @@ namespace SSRPBalanceBot
                 message.HasMentionPrefix(_client.CurrentUser, ref argPos)))
                 return;
 
+            var chnl = message.Channel as SocketGuildChannel;
+            var Guild = chnl.Guild.Name;
+
+            if(Guild != "Jay House v4" || Guild != "Construction Inc" || Guild != "Test")
+            {
+                await message.Channel.SendMessageAsync("Now charging rental. Please contact Bunny on Steam! https://steamcommunity.com/id/Bunnyslippers69/");
+                return;
+            }
+
             var result = await _commands.ExecuteAsync(
                 context: context,
                 argPos: argPos,
