@@ -10,7 +10,7 @@ using Discord;
 // If it isn't, it will not be discovered by AddModulesAsync!
 public class Ganginfo : ModuleBase<SocketCommandContext>
 {
-    [Command("ganginfo")]
+    [Command("ganginfo", RunMode = RunMode.Async)]
     [Summary("Returns gang of a user.")]
     public async Task SendGangInfo(string gang)
     {

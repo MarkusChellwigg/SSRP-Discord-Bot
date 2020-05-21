@@ -40,7 +40,7 @@ namespace SSRPBalanceBot
             {
                 string page = await wc.DownloadStringTaskAsync(new Uri($"https://zarpgaming.com/index.php/leaderboards/darkrp/gangs?search={gangName}"));
 
-                Regex regex = new Regex("<tr class=\"pos1 specialrow\">(?s)(.*)<\\/tr>");
+                Regex regex = new Regex("specialrow\">(?s)(.*)<\\/tr>|krow(?s)(.*)<\\/tr>");
                 Regex infoX = new Regex("(?<=<td class=\"kcol-mid\">)(.*)(?=<\\/td>)");
                 Regex gangIcon = new Regex("(?<=\" src=\")(.*?)(?=\")");
                 Regex gangOwner = new Regex("(?<=rel=\"nofollow\">)(.*)(?=<\\/a>)");
