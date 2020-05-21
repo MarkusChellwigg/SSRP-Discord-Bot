@@ -11,12 +11,14 @@ using Discord;
 public class Ganginfo : ModuleBase<SocketCommandContext>
 {
     [Command("ganginfo", RunMode = RunMode.Async)]
-    [Summary("Returns gang of a user.")]
+    [Summary("Returns information about the specified gang")]
     public async Task SendGangInfo(string gang)
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         Utilities.GangInfo gInfo = await Utilities.GetGangInfo(gang);
+
+        Console.WriteLine(gInfo.gangIcon);
 
         EmbedBuilder eb = new EmbedBuilder();
         EmbedFooterBuilder fb = new EmbedFooterBuilder();
@@ -30,7 +32,7 @@ public class Ganginfo : ModuleBase<SocketCommandContext>
         eb.AddField("Member Count", $"{gInfo.memberCount}");
         eb.AddField("Cash", $"{gInfo.gangCash}");
         eb.AddField("Loot", $"{gInfo.gangLoot}");
-        eb.WithThumbnailUrl(gInfo.gangIcon);
+        if (gInfo.gangIcon.Contains("imgur")) { eb.WithThumbnailUrl(gInfo.gangIcon); }
         eb.WithColor(Color.Blue);
         eb.WithFooter(fb);
 
