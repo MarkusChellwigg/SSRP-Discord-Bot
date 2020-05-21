@@ -89,7 +89,7 @@ namespace SSRPBalanceBot
             var chnl = message.Channel as SocketGuildChannel;
             var Guild = chnl.Guild.Id;
 
-            if(Guild != 711759970995011636 || Guild != 694999364665475113 || Guild != 701178110485463152)
+            if(Guild == 447439967157878784)
             {
                 await message.Channel.SendMessageAsync("Now charging rental. Please contact Bunny on: \nSteam: https://steamcommunity.com/id/Bunnyslippers69/ \nDiscord: Bunny#9220");
                 return;
