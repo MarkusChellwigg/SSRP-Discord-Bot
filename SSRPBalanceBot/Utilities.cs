@@ -34,6 +34,41 @@ namespace SSRPBalanceBot
             }
         }
 
+        public static async Task<GangInfo> GetGangInfo(string gangName)
+        {
+            using (WebClient wc = new WebClient())
+            {
+                string page = await wc.DownloadStringTaskAsync(new Uri($"https://zarpgaming.com/index.php/leaderboards/darkrp/gangs?search={gangName}"));
+
+                Regex regex = new Regex("<tr class=\"pos1 specialrow\">(?s)(.*)<\\/tr>");
+                Regex infoX = new Regex("(?<=<td class=\"kcol-mid\">)(.*)(?=<\\/td>)");
+                Regex gangIcon = new Regex("(?<=\" src=\")(.*?)(?=\")");
+                Regex gangOwner = new Regex("(?<=rel=\"nofollow\">)(.*)(?=<\\/a>)");
+
+                string gangRow = regex.Match(page).ToString();
+
+                //mc[0] = gang icon
+                //mc[1] = gang name
+                //mc[2] = gang owner
+                //mc[3] = member count
+                //mc[4] = gang cash
+                //mc[5] = gang loot
+
+                MatchCollection mc = infoX.Matches(gangRow);
+
+                string gIcon = gangIcon.Match(mc[0].ToString()).ToString();
+                string gName = mc[1].ToString();
+                string gOwner = gangOwner.Match(mc[2].ToString()).ToString();
+                string memberCount = mc[3].ToString();
+                string gangCash = mc[4].ToString();
+                string gangLoot = mc[5].ToString();
+
+                GangInfo gInfo = new GangInfo { gangIcon = gIcon, gangName = gName, gangCash = gangCash, gangLoot = gangLoot, memberCount = memberCount, gangOwner = gOwner};
+
+                return gInfo;
+            }
+        }
+
 
         public static string GetTotal(dynamic json)
         {
@@ -95,6 +130,16 @@ namespace SSRPBalanceBot
         public class Insult
         {
             public string insult { get; set; }
+        }
+
+        public class GangInfo
+        {
+            public string gangIcon { get; set; }
+            public string gangName { get; set; }
+            public string gangOwner { get; set; }
+            public string memberCount { get; set; }
+            public string gangCash { get; set; }
+            public string gangLoot { get; set; }
         }
 
     }
