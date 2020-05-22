@@ -18,6 +18,7 @@ public class Leaderboards : ModuleBase<SocketCommandContext>
     public async Task SendLeaderboards(string board, string player = null)
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        var msg = await ReplyAsync("Obtaining data");
 
         try
         {
@@ -53,12 +54,14 @@ public class Leaderboards : ModuleBase<SocketCommandContext>
             }
 
             await ReplyAsync("", false, eb.Build());
+            await msg.DeleteAsync();
 
             await Utilities.StatusMessage("leaderboards", Context);
         }
         catch (Exception)
         {
             await ReplyAsync("This player doesn't meet the requirements.");
+            await msg.DeleteAsync();
             await Utilities.StatusMessage("leaderboards", Context);
             return;
         }
