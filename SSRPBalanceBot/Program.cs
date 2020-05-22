@@ -86,15 +86,6 @@ namespace SSRPBalanceBot
                 message.HasMentionPrefix(_client.CurrentUser, ref argPos)))
                 return;
 
-            var chnl = message.Channel as SocketGuildChannel;
-            var Guild = chnl.Guild.Id;
-
-            if(Guild == 447439967157878784)
-            {
-                await message.Channel.SendMessageAsync("Now charging rental. Please contact Bunny on: \nSteam: https://steamcommunity.com/id/Bunnyslippers69/ \nDiscord: Bunny#9220");
-                return;
-            }
-
             var result = await _commands.ExecuteAsync(
                 context: context,
                 argPos: argPos,
