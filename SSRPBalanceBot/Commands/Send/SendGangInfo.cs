@@ -6,6 +6,7 @@ using SSRPBalanceBot.Permissions;
 using SSRPBalanceBot.LinkedSignatures;
 using Discord;
 using System.Web;
+using SSRPBalanceBot.Leaderboards;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
@@ -17,7 +18,7 @@ public class Ganginfo : ModuleBase<SocketCommandContext>
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
-        Utilities.GangInfo gInfo = await Utilities.GetGangInfo(HttpUtility.UrlEncode(gang));
+        LeaderboardUtils.GangInfo gInfo = await LeaderboardUtils.GetGangInfo(HttpUtility.UrlEncode(gang));
 
         Console.WriteLine(gInfo.gangOwner);
 
