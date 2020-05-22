@@ -1,10 +1,8 @@
 using Discord.Commands;
-using System;
 using System.Threading.Tasks;
 using SSRPBalanceBot;
 using SSRPBalanceBot.Permissions;
 using System.Collections.Generic;
-using Discord;
 using System.Linq;
 using System.Text;
 
@@ -31,7 +29,7 @@ public class AdminHelp : ModuleBase<SocketCommandContext>
             if (command.Module.Group == "admin")
             {
                 //Name of command - Example, !help
-                individualCMDs.Append("!" + command.Name);
+                individualCMDs.Append(Program.prefix + command.Name);
 
                 //Appends all parameters - Example, [item]
                 foreach (ParameterInfo param in command.Parameters)

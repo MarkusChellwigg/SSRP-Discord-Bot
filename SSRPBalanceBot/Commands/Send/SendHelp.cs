@@ -30,7 +30,7 @@ public class Help : ModuleBase<SocketCommandContext>
             if (command.Module.Group != "admin")
             {
                 //Name of command - Example, !help
-                individualCMDs.Append("!" + command.Name);
+                individualCMDs.Append(Program.prefix + command.Name);
 
                 //Appends all parameters - Example, [item]
                 foreach (ParameterInfo param in command.Parameters)

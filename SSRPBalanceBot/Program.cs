@@ -16,6 +16,11 @@ namespace SSRPBalanceBot
 
         private DiscordSocketClient _client;
         public static CommandService _commands;
+        public static List<DateTimeOffset> stackCooldownTimer = new List<DateTimeOffset>();
+        public static List<SocketGuildUser> stackCooldownTarget = new List<SocketGuildUser>();
+
+        public static int messageCooldown = 2;
+        public static string prefix = "!";
 
         public async Task MainAsync()
         {
@@ -58,18 +63,21 @@ namespace SSRPBalanceBot
             Console.WriteLine($"Time: {DateTime.Now} | User: {message.Author} | Channel: {message.Channel}| Message: {message.Content.Replace("\n", "\\n")} | Server: {context.Guild.Name}");
             Console.ForegroundColor = ConsoleColor.Gray;
 
-            if (!(message.HasCharPrefix('!', ref argPos) ||
+            if (!(message.HasStringPrefix(prefix, ref argPos) ||
                 message.HasMentionPrefix(_client.CurrentUser, ref argPos)))
                 return;
 
-            var result = await _commands.ExecuteAsync(
-                context: context,
-                argPos: argPos,
-                services: null);
+            if (!await CheckCooldown(message))
+            {
+                var result = await _commands.ExecuteAsync(
+                    context: context,
+                    argPos: argPos,
+                    services: null);
 
-            Console.WriteLine(result.ErrorReason);
-            //If the command run doesn't exist, the error message won't be thrown.
-            if (!result.IsSuccess && result.ErrorReason != "Unknown command.") { await context.Channel.SendMessageAsync("Check the syntax of your command and try again. Try the !help docs"); await Utilities.StatusMessage("error", context); }
+                Console.WriteLine(result.ErrorReason);
+                //If the command run doesn't exist, the error message won't be thrown.
+                if (!result.IsSuccess && result.ErrorReason != "Unknown command.") { await context.Channel.SendMessageAsync("Check the syntax of your command and try again. Try the !help docs"); await Utilities.StatusMessage("error", context); }
+            }
         }
 
         private Task Log(LogMessage msg)
@@ -81,6 +89,38 @@ namespace SSRPBalanceBot
         private async Task SetGame()
         {
             await _client.SetGameAsync("!help");
+        }
+
+        private async Task<bool> CheckCooldown(SocketUserMessage message)
+        {
+            bool cooldown;
+            //Check if your user list contains who just used that command.
+            if (Program.stackCooldownTarget.Contains(message.Author as SocketGuildUser))
+            {
+                //If they have used this command before, take the time the user last did something, add 5 seconds, and see if it's greater than this very moment.
+                if (Program.stackCooldownTimer[Program.stackCooldownTarget.IndexOf(message.Author as SocketGuildUser)].AddSeconds(messageCooldown) >= DateTimeOffset.Now)
+                {
+                    //If enough time hasn't passed, reply letting them know how much longer they need to wait, and end the code.
+                    int secondsLeft = (int)(Program.stackCooldownTimer[Program.stackCooldownTarget.IndexOf(message.Author as SocketGuildUser)].AddSeconds(messageCooldown) - DateTimeOffset.Now).TotalSeconds;
+
+                    if (secondsLeft > messageCooldown - 1) { await message.Author.SendMessageAsync($"You have to wait at least {secondsLeft} seconds before you can use that command again!"); }
+                    cooldown = true;
+                }
+                else
+                {
+                    //If enough time has passed, set the time for the user to right now.
+                    Program.stackCooldownTimer[Program.stackCooldownTarget.IndexOf(message.Author as SocketGuildUser)] = DateTimeOffset.Now;
+                    cooldown = false;
+                }
+                return cooldown;
+            }
+            else
+            {
+                //If they've never used this command before, add their username and when they just used this command.
+                Program.stackCooldownTarget.Add(message.Author as SocketGuildUser);
+                Program.stackCooldownTimer.Add(DateTimeOffset.Now);
+                return false;
+            }
         }
     }
 }
