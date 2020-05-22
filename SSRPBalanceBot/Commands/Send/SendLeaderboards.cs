@@ -60,7 +60,7 @@ public class Leaderboards : ModuleBase<SocketCommandContext>
         }
         catch (Exception)
         {
-            await ReplyAsync("This player doesn't meet the requirements.");
+            await ReplyAsync("Either this board doesn't exist or this player doesn't meet the requirements.");
             await msg.DeleteAsync();
             await Utilities.StatusMessage("leaderboards", Context);
             return;
