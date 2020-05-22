@@ -15,10 +15,7 @@
 {"bind":"weapon_scanmaster5000_golden","aliases":["gscan","goldenscanmaster","golden scan master","golden scan master 5000","goldenscanmaster5000","goldscanmaster","gold scan master","gold scan master 5000","goldscanmaster5000"]}
 {"bind":"weapon_defib","aliases":["defib","defibrilator","weapon_defib"]}
 {"bind":"m9k_nerve_gas","aliases":["nervegas","nerve gas","nerve_gas","m9k_nerve_gas"]}
-{"bind":"m9k_suicide_bomb","aliases":["oxy","oxyfoxy","oxy foxy","c4","C4"]}
-{"bind":"mcdonalds","aliases":["red"]}
-{"bind":"micky","aliases":["nigger suit","nigger","nigga"]}
-{"bind":"red dress","aliases":["rape"]}
+{"bind":"m9k_suicide_bomb","aliases":["c4","C4","timed c4","timedc4"]}
 {"bind":"advanced nano suit","aliases":["nano","nano suit"]}
 {"bind":"advanced combat suit","aliases":["acs","advanced combat suit"]}
 {"bind":"gencorp juggernaut suit","aliases":["jugg","jugg suit","jug suit","juggernaut suit","gencorp juggernaut suit"]}
@@ -34,4 +31,3 @@
 {"bind":"golden edf","aliases":["gedf","gold edf","golden edf"]}
 {"bind":"golden nano suit","aliases":["gnano","gold nano","gold nano suit","golden nano suit"]}
 {"bind":"golden advanced combat suit","aliases":["gacs","gold acs","gold advanced combat suit","golden acs","golden advanced combat suit"]}
-{"bind":"Suken","aliases":["pedo","nonce","dirty nonce","suken"]}

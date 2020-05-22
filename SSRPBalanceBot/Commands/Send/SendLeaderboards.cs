@@ -58,8 +58,9 @@ public class Leaderboards : ModuleBase<SocketCommandContext>
 
             await Utilities.StatusMessage("leaderboards", Context);
         }
-        catch (Exception)
+        catch (Exception e)
         {
+            Console.WriteLine(e.Message);
             await ReplyAsync("Either this board doesn't exist or this player doesn't meet the requirements.");
             await msg.DeleteAsync();
             await Utilities.StatusMessage("leaderboards", Context);
