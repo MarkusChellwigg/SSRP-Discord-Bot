@@ -14,7 +14,7 @@ namespace SSRPBalanceBot
         public static void Main(string[] args)
             => new Program().MainAsync().GetAwaiter().GetResult();
 
-        private DiscordSocketClient _client;
+        public static DiscordSocketClient _client;
         public static CommandService _commands;
         public static List<DateTimeOffset> stackCooldownTimer = new List<DateTimeOffset>();
         public static List<SocketGuildUser> stackCooldownTarget = new List<SocketGuildUser>();

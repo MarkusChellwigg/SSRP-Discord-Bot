@@ -11,7 +11,7 @@ public class AddPrinter : ModuleBase<SocketCommandContext>
 {
     [Command("addprinter", RunMode = RunMode.Async)]
     [Summary("Adds a new printer with the specified data")]
-    public async Task AddPrinterAsync(string printerName, double perSecond, string aliases)
+    public async Task AddPrinterAsync(string printerName,string colour, double perSecond, string aliases)
     {
         if (printerName == "" | aliases == "") { return; }
 
@@ -19,7 +19,7 @@ public class AddPrinter : ModuleBase<SocketCommandContext>
         else
         {
             string[] aliasList = aliases.Split(',');
-            SSRPItems.Printer newPrinter = new SSRPItems.Printer { printerName = printerName, perSecond = perSecond, aliases = aliasList };
+            SSRPItems.Printer newPrinter = new SSRPItems.Printer { printerName = printerName, perSecond = perSecond, aliases = aliasList, color = colour };
             SSRPItems.WriteToJsonFile<SSRPItems.Printer>("Items/printers.json", newPrinter, true);
             SSRPItems.printerList.Add(newPrinter);
 

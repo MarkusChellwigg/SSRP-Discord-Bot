@@ -6,6 +6,7 @@
 {"printerName":"Ruby","perSecond":20.0,"color":"eb0000","aliases":["ruby","ruby printer"]}
 {"printerName":"Gold","perSecond":40.0,"color":"fdfd00","aliases":["gold","gold printer"]}
 {"printerName":"Nuclear","perSecond":90.0,"color":"cfffd6","aliases":["nuclear","nuclear printer","nuke","nuke printer"]}
+{"printerName":"VIP","perSecond":160.0,"color":"eb0000","aliases":["vip", "vips"]}
 {"printerName":"Diamond","perSecond":200.0,"color":"66ffe1","aliases":["diamond","diamond printer"]}
 {"printerName":"Black Diamond","perSecond":333.33,"color":"000000","aliases":["black diamond","black diamond printer","bdp"]}
 {"printerName":"Gencorp","perSecond":500.0,"color":"eb6c15","aliases":["gencorp","gencorp printer","gencorp orange core printer","gencorp orange core"]}

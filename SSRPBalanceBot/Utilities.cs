@@ -13,7 +13,6 @@ namespace SSRPBalanceBot
 {
     class Utilities
     {
-        public static List<Insult> insultsList = SSRPItems.FillList<Insult>("Items/insults.json");
 
         public static dynamic GetStatistics()
         {
@@ -78,13 +77,6 @@ namespace SSRPBalanceBot
             return Task.CompletedTask;
         }
 
-        public static string RandomMessage()
-        {
-
-            Random rnd = new Random();
-            return insultsList[rnd.Next(0, insultsList.Count)].insult;
-        }
-
         private static Random randomStr = new Random(DateTime.Now.Millisecond);
         //Generates a random string from the characters in the variable chars
         public static string RandomString(int length)
@@ -92,11 +84,6 @@ namespace SSRPBalanceBot
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[randomStr.Next(s.Length)]).ToArray());
-        }
-
-        public class Insult
-        {
-            public string insult { get; set; }
         }
     }
 }
