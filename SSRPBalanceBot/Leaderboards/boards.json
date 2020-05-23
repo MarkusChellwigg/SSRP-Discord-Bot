@@ -1,11 +1,11 @@
-{"name": "DarkRP Money Printed", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/money-printed", "aliases": ["money", "printed", "money printed", "moneyprinted"]}
-{"name": "DarkRP Suit Rips", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/suit-rips", "aliases": ["suits", "suit", "suit rips", "suitrips", "suit kills", "suitkills"]}
-{"name": "DarkRP Mayor Survival", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/mayor-survival", "aliases": ["mayor", "mayor survival", "mayor time", "mayor survival time"]}
-{"name": "DarkRP Nuclear Launches", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/nukes", "aliases": ["nukes", "nuclear strikes", "nuke launches", "nuclear launches", "nuke"]}
-{"name": "DarkRP Bank Vault Raids", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/vault-raids", "aliases": ["vault raids", "bank raids", "bank"]}
-{"name": "DarkRP Bartender Tips", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/bartender-tips", "aliases": ["bartender", "tips", "bartender tips"]}
-{"name": "DarkRP Air Drops", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/air-drops", "aliases": ["air drops", "airdrops"]}
-{"name": "DarkRP Casino Vault Raids", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/casino-vault", "aliases": ["casino", "casino vault", "casino raids", "casino raid"]}
-{"name": "DarkRP Drug Runs", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/drug-runs", "aliases": ["drug runs", "drugruns", "drug", "runs"]}
-{"name": "DarkRP Arena Events", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/arena-events", "aliases": ["events", "arena events"]}
-{"name": "Police Armory Raids", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/pdraids", "aliases": ["pd raids", "pd", "police raids", "police department raids", "armory", "armory raids", "police armory raids", "police armory"]}
+{"name": "DarkRP Money Printed", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/money-printed", "category":"printer=", "aliases": ["money", "printed", "money printed", "moneyprinted"]}
+{"name": "DarkRP Suit Rips", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/suit-rips", "category":"suit=", "aliases": ["suits", "suit", "suit rips", "suitrips", "suit kills", "suitkills"]}
+{"name": "DarkRP Mayor Survival", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/mayor-survival", "category":"", "aliases": ["mayor", "mayor survival", "mayor time", "mayor survival time"]}
+{"name": "DarkRP Nuclear Launches", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/nukes", "category":"", "aliases": ["nukes", "nuclear strikes", "nuke launches", "nuclear launches", "nuke"]}
+{"name": "DarkRP Bank Vault Raids", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/vault-raids", "category":"", "aliases": ["vault raids", "bank raids", "bank"]}
+{"name": "DarkRP Bartender Tips", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/bartender-tips", "category":"", "aliases": ["bartender", "tips", "bartender tips"]}
+{"name": "DarkRP Air Drops", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/air-drops", "category":"", "aliases": ["air drops", "airdrops"]}
+{"name": "DarkRP Casino Vault Raids", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/casino-vault", "category":"", "aliases": ["casino", "casino vault", "casino raids", "casino raid"]}
+{"name": "DarkRP Drug Runs", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/drug-runs", "category":"", "aliases": ["drug runs", "drugruns", "drug", "runs"]}
+{"name": "DarkRP Arena Events", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/arena-events", "category":"", "aliases": ["events", "arena events"]}
+{"name": "Police Armory Raids", "url": "https://zarpgaming.com/index.php/leaderboards/darkrp/pdraids", "category":"", "aliases": ["pd raids", "pd", "police raids", "police department raids", "armory", "armory raids", "police armory raids", "police armory"]}

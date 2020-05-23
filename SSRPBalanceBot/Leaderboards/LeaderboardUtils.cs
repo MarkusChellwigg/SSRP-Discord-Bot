@@ -13,6 +13,7 @@ namespace SSRPBalanceBot.Leaderboards
     class LeaderboardUtils
     {
         public static List<Boards> boards = SSRPItems.FillList<Boards>("Leaderboards/boards.json");
+        public static List<Categories> categories = SSRPItems.FillList<Categories>("Leaderboards/categories.json");
 
         public async static Task<string> GetPage(string url)
         {
@@ -68,7 +69,7 @@ namespace SSRPBalanceBot.Leaderboards
 
         }
 
-        public static async Task<string> GetBoard(string board, string player)
+        public static async Task<string> GetBoard(string board, string player, string category)
         {
             foreach(Boards b in boards)
             {
@@ -76,7 +77,20 @@ namespace SSRPBalanceBot.Leaderboards
                 {
                     if(alias == board)
                     {
-                        return await GetPage(b.url + $"?search={player}");
+                        if (category == null) { return await GetPage(b.url + $"?search={player}"); }
+                        else 
+                        { 
+                            foreach(Categories c in categories)
+                            {
+                                foreach(string alias2 in c.aliases)
+                                {
+                                    if(alias2 == category)
+                                    {
+                                        return await GetPage(b.url + $"?search={player}&{b.category}{c.extension}");
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -154,6 +168,14 @@ namespace SSRPBalanceBot.Leaderboards
         {
             public string name { get; set; }
             public string url { get; set; }
+            public string category { get; set; }
+            public string[] aliases { get; set; }
+        }
+
+        public class Categories
+        {
+            public string category { get; set; }
+            public string extension { get; set; }
             public string[] aliases { get; set; }
         }
 

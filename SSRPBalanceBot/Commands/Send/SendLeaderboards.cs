@@ -15,14 +15,14 @@ public class Leaderboards : ModuleBase<SocketCommandContext>
     [Command("leaderboards")]
     [Alias("boards", "lb")]
     [Summary("Returns leaderboard info.")]
-    public async Task SendLeaderboards(string board, string player = null)
+    public async Task SendLeaderboards(string board, string category = null, string player = null)
     {
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         var msg = await ReplyAsync("Obtaining data");
 
         try
         {
-            List<LeaderboardUtils.BoardInfo> bList = LeaderboardUtils.GetList(await LeaderboardUtils.GetBoard(board, player), player);
+            List<LeaderboardUtils.BoardInfo> bList = LeaderboardUtils.GetList(await LeaderboardUtils.GetBoard(board, player, category), player);
 
             string bName = board;
 
