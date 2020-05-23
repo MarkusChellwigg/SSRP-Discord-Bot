@@ -13,9 +13,9 @@ public class AddRole : ModuleBase<SocketCommandContext>
 {
     [Command("addrole", RunMode = RunMode.Async)]
     [Summary("Adds user to role")]
-    public async Task SendRoll(uint id)
+    public async Task SendRoll(string id)
     {
-        var role = Context.Guild.Roles.FirstOrDefault(x => x.Id == id);
+        var role = Context.Guild.Roles.FirstOrDefault(x => x.Id.ToString() == id);
         var member = Context.User as SocketGuildUser;
 
         await member.AddRoleAsync(role);
