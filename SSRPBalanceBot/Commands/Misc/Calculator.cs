@@ -14,6 +14,8 @@ public class Calculator : ModuleBase<SocketCommandContext>
     [Summary("Returns the value of the calculation specified")]
     public async Task SendCalc([Remainder]string math)
     {
+        math = math.Replace("x", "*");
+
         EmbedBuilder eb = new EmbedBuilder();
         EmbedFooterBuilder fb = new EmbedFooterBuilder();
 
