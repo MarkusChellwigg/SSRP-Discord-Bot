@@ -59,9 +59,7 @@ namespace SSRPBalanceBot
             if (message.Author.IsBot) { return; }
             int argPos = 0;
 
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine($"Time: {DateTime.Now} | User: {message.Author} | Channel: {message.Channel}| Message: {message.Content.Replace("\n", "\\n")} | Server: {context.Guild.Name}");
-            Console.ForegroundColor = ConsoleColor.Gray;
+            await LoggingUtils.Log(message, DateTime.Now);
 
             if (!(message.HasStringPrefix(prefix, ref argPos) ||
                 message.HasMentionPrefix(_client.CurrentUser, ref argPos)))

@@ -6,6 +6,7 @@
 {"category": "suit","extension": "holo+pilot+suit","aliases":["holo","holo suit","holo pilot","holo pilot suit"]}
 {"category": "suit","extension": "mummy+suit","aliases":["mummy","mummy suit"]}
 {"category": "suit","extension": "portal+suit","aliases":["portal","portal suit"]}
+{"category": "all", "extension": "all", "aliases":["all"]}
 {"category": "suit","extension": "demon+suit","aliases":["demon","demon suit","knight demon","knight demon suit"]}
 {"category": "suit","extension": "jet+suit","aliases":["jet","jet suit"]}
 {"category": "suit","extension": "shield+suit","aliases":["shield","shield suit"]}
