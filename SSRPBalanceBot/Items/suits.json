@@ -14,3 +14,5 @@
 {"suitName":"Golden EDF","hp": 400,"armor": 400, "speed": 240.00,"ability":"No ability","aliases":["gedf","gold edf","golden edf"]}
 {"suitName":"Golden Nano Suit","hp": 400,"armor": 3000, "speed": 336.00,"ability":"Become invisible","aliases":["gnano","gold nano","gold nano suit","golden nano suit"]}
 {"suitName":"Golden Advanced Combat Suit","hp": 600,"armor": 3000, "speed": 336.00,"ability":"Creates a shield that blocks bullets and vaporises players","aliases":["gacs","gold acs","gold advanced combat suit","golden acs","golden advanced combat suit"]}
+{"suitName":"Shield Suit","hp": 300,"armor": 750,"speed": 180,"ability":"Regens nearby allies armor","aliases":["shield", "shield suit"]}
+{"suitName":"Regen Suit","hp": 300,"armor": 450,"speed": 264,"ability":"Regens nearby allies health","aliases":["regen", "regen suit"]}

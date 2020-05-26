@@ -21,7 +21,7 @@ public class ReloadItems : ModuleBase<SocketCommandContext>
         SSRPItems.bindList = SSRPItems.FillList<SSRPItems.Bind>("Items/binds.json");
         SSRPItems.printerList = SSRPItems.FillList<SSRPItems.Printer>("Items/printers.json");
         SSRPItems.itemList = SSRPItems.FillList<SSRPItems.Item>("Items/items.json");
-        SSRPItems.itemList = SSRPItems.FillList<SSRPItems.Item>("Items/suits.json");
+        SSRPItems.suitList = SSRPItems.FillList<SSRPItems.Suit>("Items/suits.json");
         SSRPItems.caseList = SSRPItems.FillList<SSRPItems.Case>("Items/cases.json");
 
         //Leaderboard lists

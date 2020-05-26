@@ -11,11 +11,12 @@ namespace SSRPBalanceBot
     {
         public static async Task Log(SocketUserMessage message, DateTime date)
         {
+
             var chnl = message.Channel as SocketGuildChannel;
 
             string sourceGuild = chnl.Guild.Name;
 
-            string log = $"{date} | Channel: {message.Channel.Name} | Username/ID: {message.Author.Username}/{message.Author.Id} | Message: \"{message.Content}\"";
+            string log = $"{date} | Channel: {message.Channel.Name} | Username/ID: {message.Author.Username}/{message.Author.Id} | Message: \"{message.Content.Replace("\n", "\\n")}\"";
 
             if (!Directory.Exists("Logging")) { Directory.CreateDirectory("Logging"); }
             if (!File.Exists($"Logging/{sourceGuild}.log")) { File.Create($"Logging/{sourceGuild}.log").Close(); }
