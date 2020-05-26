@@ -20,7 +20,7 @@ public class GuildList : ModuleBase<SocketCommandContext>
 
         foreach(var guild in Program._client.Guilds)
         {
-            sb.Append($"{guild.Name}\n");
+            sb.Append($"{guild.Name} | {guild.Id}\n");
         }
 
 
@@ -33,6 +33,45 @@ public class GuildList : ModuleBase<SocketCommandContext>
 
         eb.WithTitle($"Guild List");
         eb.AddField($"{Program._client.Guilds.Count}", sb.ToString());
+        eb.WithColor(Color.Blue);
+        eb.WithFooter(fb);
+
+
+
+        await ReplyAsync("", false, eb.Build());
+        await Utilities.StatusMessage("roll", Context);
+    }
+
+    [Command("guildlist", RunMode = RunMode.Async)]
+    [Summary("Returns members of a guild")]
+    public async Task SendGuildList(string guildID)
+    {
+        StringBuilder sb = new StringBuilder();
+        string gName = "";
+
+
+        foreach (var guild in Program._client.Guilds)
+        {
+            if (guild.Id.ToString() == guildID)
+            {
+                foreach (var member in guild.Users)
+                {
+                    sb.Append(member.Username + "\n");
+                }
+                gName = guild.Name;
+            }
+        }
+
+
+        EmbedBuilder eb = new EmbedBuilder();
+        EmbedFooterBuilder fb = new EmbedFooterBuilder();
+
+
+        fb.WithText($"Called by {Context.Message.Author.Username}");
+        fb.WithIconUrl(Context.Message.Author.GetAvatarUrl());
+
+        eb.WithTitle($"Guild List");
+        eb.AddField($"{gName}", sb.ToString());
         eb.WithColor(Color.Blue);
         eb.WithFooter(fb);
 
