@@ -15,6 +15,8 @@ public class AutoAssign : ModuleBase<SocketCommandContext>
     [Summary("Assigns users to their gang roles")]
     public async Task AssignRoles()
     {
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.ReloadItems) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+
         foreach (var member in Context.Guild.Users)
         {
             if (!member.IsBot)

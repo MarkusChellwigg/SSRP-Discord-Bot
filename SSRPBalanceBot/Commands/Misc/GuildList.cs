@@ -6,6 +6,7 @@ using SSRPBalanceBot.Permissions;
 using System.Data;
 using Discord;
 using System.Text;
+using System.Linq;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
@@ -16,6 +17,8 @@ public class GuildList : ModuleBase<SocketCommandContext>
     [Summary("Returns list of guilds the bot is currently in")]
     public async Task SendGuildList()
     {
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.ReloadItems) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+
         StringBuilder sb = new StringBuilder();
 
         foreach(var guild in Program._client.Guilds)
@@ -71,6 +74,50 @@ public class GuildList : ModuleBase<SocketCommandContext>
         fb.WithIconUrl(Context.Message.Author.GetAvatarUrl());
 
         eb.WithTitle($"Guild List");
+        eb.AddField($"{gName}", sb.ToString());
+        eb.WithColor(Color.Blue);
+        eb.WithFooter(fb);
+
+
+
+        await ReplyAsync("", false, eb.Build());
+        await Utilities.StatusMessage("roll", Context);
+    }
+
+    [Command("guildlist", RunMode = RunMode.Async)]
+    [Summary("Returns members of a guild")]
+    public async Task SendGuildList(string guildID, bool genInvite)
+    {
+        StringBuilder sb = new StringBuilder();
+        string gName = "";
+
+        foreach (var guild in Program._client.Guilds)
+        {
+            try
+            {
+                if (guild.Id.ToString() == guildID)
+                {
+                    var invites = await guild.GetInvitesAsync();
+                    gName = guild.Name;
+                    sb.Append(invites.Select(x => x.Url).FirstOrDefault());
+                }
+            }
+            catch (Exception)
+            {
+                await ReplyAsync("No links found");
+                return;
+            }
+        }
+
+
+        EmbedBuilder eb = new EmbedBuilder();
+        EmbedFooterBuilder fb = new EmbedFooterBuilder();
+
+
+        fb.WithText($"Called by {Context.Message.Author.Username}");
+        fb.WithIconUrl(Context.Message.Author.GetAvatarUrl());
+
+        eb.WithTitle($"Invite");
         eb.AddField($"{gName}", sb.ToString());
         eb.WithColor(Color.Blue);
         eb.WithFooter(fb);
