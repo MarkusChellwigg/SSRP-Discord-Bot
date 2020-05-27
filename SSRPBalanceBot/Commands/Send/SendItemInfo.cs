@@ -16,7 +16,7 @@ public class ItemInfo : ModuleBase<SocketCommandContext>
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendItemInfo) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         SSRPItems.Item i = await SSRPItems.GetItem(item);
 
-        if (i == null) { await Context.Channel.SendMessageAsync("Item not found. Please enclose the item name in quotes: `\"name\"`"); await Utilities.StatusMessage("item", Context); }
+        if (i == null) { await Context.Channel.SendMessageAsync("Item not found. Try using the item's exact name, eg: m9k_psg1"); await Utilities.StatusMessage("item", Context); }
         else
         {
             EmbedBuilder eb = new EmbedBuilder();
