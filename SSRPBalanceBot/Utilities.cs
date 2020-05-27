@@ -13,6 +13,7 @@ namespace SSRPBalanceBot
 {
     class Utilities
     {
+        public static List<ForumTemplate> templateList = SSRPItems.FillList<ForumTemplate>("Templates/templates.json");
 
         public static dynamic GetStatistics()
         {
@@ -84,6 +85,32 @@ namespace SSRPBalanceBot
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[randomStr.Next(s.Length)]).ToArray());
+        }
+
+        public static Task<ForumTemplate> GetTemplate(string input)
+        {
+            return Task.Run(() =>
+            {
+                foreach (ForumTemplate template in templateList)
+                {
+                    foreach (string alias in template.aliases)
+                    {
+                        if (input.ToLower() == alias.ToLower())
+                        {
+                            return template;
+                        }
+                    }
+                }
+                return null;
+            });
+        }
+
+
+        public class ForumTemplate
+        {
+            public string name { get; set; }
+            public string bbcode { get; set; }
+            public string[] aliases { get; set; }
         }
     }
 }
