@@ -119,13 +119,8 @@ namespace SSRPBalanceBot
             {
                 foreach (Item item in itemList)
                 {
-                    foreach (string alias in item.aliases)
-                    {
-                        if (input.ToLower() == alias.ToLower())
-                        {
-                            return item;
-                        }
-                    }
+                    Console.WriteLine(item.itemName.ToLower());
+                    if (item.itemName.ToLower() == input.ToLower()) { return item; }
                 }
                 return null;
             });
@@ -153,9 +148,8 @@ namespace SSRPBalanceBot
         public class Item
         {
             public string itemName { get; set; }
-            public string category { get; set; }
-            public string info { get; set; }
-            public string[] aliases { get; set; }
+            public string itemDesc { get; set; }
+            public double weight { get; set; }
         }
 
         public class Bind

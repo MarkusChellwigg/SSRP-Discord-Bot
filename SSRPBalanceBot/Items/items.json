@@ -1,42 +1,309 @@
-{"itemName":"m9k_psg1","category":"Weapon","info":"Sniper Rifle - Probably the most common weapon choice as it pairs well with the scope boost.","aliases":["psg","psg1","psg-1","m9k_psg1"]}
-{"itemName":"weapon_thunderhammer","category":"Weapon","info":"A powerful melee hammer. Can destroy doors and fading doors.","aliases":["thunderhammer","thunder hammer","weapon_thunderhammer"]}
-{"itemName":"m9k_m202","category":"Weapon","info":"M202 Rocket Launcher - Shoots 4 powerful rockets.","aliases":["m202","m9k_m202"]}
-{"itemName":"m9k_milkormgl","category":"Weapon","info":"Milkor Mk1 Grenade Launcher","aliases":["milkor","m9k_milkormgl","milkormgl"]}
-{"itemName":"weapon_hoff_thundergun","category":"Weapon","info":"An extreme thunder-powered weapon that deals immense damage.","aliases":["tgun","thundergun","weapon_hoff_thundergun"]}
-{"itemName":"weapon_gluongun_golden","category":"Weapon","info":"Quantum Destabilizer weapon, highly experimental. Double the damage of the base item.","aliases":["ggluon","goldengluon","goldgluon","weapon_gluongun_golden","golden gluon","golden gluon gun"]}
-{"itemName":"weapon_gluongun","category":"Weapon","info":"Quantum Destabilizer weapon, highly experimental.","aliases":["gluon","weapon_gluongun","gluongun","gluon gun"]}
-{"itemName":"weapon_minigun2","category":"Weapon","info":"","aliases":["mini2","minigun2","weapon_minigun2","minigun 2.0"]}
-{"itemName":"weapon_hand_cannon","category":"Weapon","info":"A javelin style cannon which deals immense damage to props.","aliases":["hc","handcannon","weapon_hand_cannon","hand cannon"]}
-{"itemName":"m9k_svu","category":"Weapon","info":"An SVU","aliases":["svu"]}
-{"itemName":"weapon_portableemp","category":"Weapon","info":"A handheld EMP device. Can open doors/fading doors and vaporizes players","aliases":["portemp","port emp","portable emp","gencorp emp"]}
-{"itemName":"weapon_gaussrifle","category":"Weapon","info":"High-density firing weapon capable of destroying props with depleted uranium slugs.","aliases":["gauss","gaussrifle","gauss rifle"]}
-{"itemName":"weapon_gamma_rifle","category":"Weapon","info":"Powerful laser rifle","aliases":["gamma","gammarifle","gamma rifle"]}
-{"itemName":"weapon_scanmaster5000","category":"Weapon","info":"The latest in scan and radar technology from GenCorp. Locates drugs/pots/printers/nukes/hits.","aliases":["scanmaster","scan master","scan master 5000","scanmaster5000"]}
-{"itemName":"weapon_scanmaster5000_golden","category":"Weapon","info":"The latest in scan and radar technology from GenCorp. Locates drugs/pots/printers/nukes/hits. Double the range of the base item.","aliases":["gscan","goldenscanmaster","golden scan master","golden scan master 5000","goldenscanmaster5000","goldscanmaster","gold scan master","gold scan master 5000","goldscanmaster5000"]}
-{"itemName":"weapon_defib","category":"Utility","info":"Revive fallen teammates","aliases":["defib","defibrilator","weapon_defib"]}
-{"itemName":"m9k_nerve_gas","category":"Weapon","info":"Infects victims with a deadly toxin.","aliases":["nervegas","nerve gas","nerve_gas","m9k_nerve_gas"]}
-{"itemName":"m9k_suicide_bomb","category":"Weapon","info":"Timed C4 Explosives.","aliases":["oxy","oxyfoxy","oxy foxy","c4","C4"]}
-{"itemName":"mcdonalds","category":"Meme","info":"LOL McDonalds","aliases":["red"]}
-{"itemName":"micky","category":"Meme","info":"Micky black init","aliases":["nigger suit","nigger","nigga"]}
-{"itemName":"red dress","category":"Meme","info":"Haha rape joke!","aliases":["rape"]}
-{"itemName":"advanced nano suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["nano","nano suit"]}
-{"itemName":"advanced combat suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["acs","advanced combat suit"]}
-{"itemName":"gencorp juggernaut suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["jugg","jugg suit","jug suit","juggernaut suit","gencorp juggernaut suit"]}
-{"itemName":"hyper suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["hyper","hyper suit"]}
-{"itemName":"evo suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["evo","evo suit"]}
-{"itemName":"mummy suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["mummy","mummy suit"]}
-{"itemName":"visor suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["visor","visor suit"]}
-{"itemName":"portal suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["portal","portal suit"]}
-{"itemName":"knight demon suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["demon","demon suit","knight demon","knight demon suit"]}
-{"itemName":"holo pilot suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["holo","holo suit","holo pilot","holo pilot suit"]}
-{"itemName":"jet suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["jet","jet suit"]}
-{"itemName":"golden juggernaut suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["gjugg","gold jugg","golden jugg","golden juggernaut suit"]}
-{"itemName":"golden edf","category":"Suit","info":"Suit. Do !suit for info","aliases":["gedf","gold edf","golden edf"]}
-{"itemName":"golden nano suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["gnano","gold nano","gold nano suit","golden nano suit"]}
-{"itemName":"golden advanced combat suit","category":"Suit","info":"Suit. Do !suit for info","aliases":["gacs","gold acs","gold advanced combat suit","golden acs","golden advanced combat suit"]}
-{"itemName":"Suken","category":"Meme","info":"Absolute filthy nonce. Got nudes from a 15 year old, denies it.","aliases":["pedo","nonce","dirty nonce","suken"]}
-{"itemName":"weapon_k398","category":"Weapon","info":"Military grade missile launch system. Uses crafted rounds of various types.","aliases":["k398","k398 predator","predator","pred"]}
-{"itemName":"weapon_radiationshield","category":"Utility","info":"Protects nearby entities from radiation.","aliases":["rad shield","radiation shield","radshield","radiationshield"]}
-{"itemName":"weapon_mastersword","category":"Weapon","info":"Right clicking with this sword allows you to leap into the air. Pressing R will spin you around and damage nearby players","aliases":["master sword","mastersword"]}
-{"itemName":"m9k_orangecore_grenade","category":"Weapon","info":"Highly explosive throwable grenade device from GenCorp.","aliases":["orangecore nade","orange core nade","orange core grenade","orangecore grenade","orange nade","orange grenade"]}
-{"itemName":"weapon_spartanlaser","category":"Weapon","info":"Highly powerful directed energy weapon from GenCorp.","aliases":["spartan laser","spartan","spartanlaser"]}
+{"itemName": "m9k_pkm","itemDesc": "PKM Machine Gun.","weight": 1}
+{"itemName": "Aspirin","itemDesc": "Other drug effects removed! Your health regenerates!","weight": 2}
+{"itemName": "Pistol Ammo","itemDesc": "Some ammo for a pistol.","weight": 0.1}
+{"itemName": "Cooler","itemDesc": "Collectible item. Just for show.","weight": 1}
+{"itemName": "Thundergun Blueprint","itemDesc": "An extreme thunder-powered weapon that deals immense damage.","weight": 0}
+{"itemName": "weapon_real_cs_flash","itemDesc": "I'm blind!!","weight": 0.4}
+{"itemName": "GenCorp Orange Core Printer","itemDesc": "The latest in printing technology from GenCorp","weight": 1}
+{"itemName": "weapon_gauss_rifle","itemDesc": "High-density firing weapon capable of destroying props with depleted uranium slugs.","weight": 1}
+{"itemName": "Shitty alcohol","itemDesc": "You're pretty fucked up.","weight": 0.1}
+{"itemName": "Steel Helmet","itemDesc": "This could be used for crafting.","weight": 2}
+{"itemName": "Screws","itemDesc": "This could be used for crafting.","weight": 0.01}
+{"itemName": "Visor Suit","itemDesc": "Experimental laser weaponized visor suit","weight": 1}
+{"itemName": "weapon_real_cs_smoke","itemDesc": "Let's smoke this place.","weight": 0.4}
+{"itemName": "Advanced Combat Suit Blueprint","itemDesc": "Extreme damage resistance and force field abiltiies.","weight": 0}
+{"itemName": "Pistol Boost Upgrade","itemDesc": "Pistols do double damage and critical damage (x3) on headshots.","weight": 0}
+{"itemName": "Loot O' Matic Blueprint","itemDesc": "Loot production machinery.","weight": 0}
+{"itemName": "Tuxedo Suit Blueprint","itemDesc": "A very stylish suit","weight": 0}
+{"itemName": "Bonus Ores Upgrade","itemDesc": "Small chance of receiving bonus ores whilst mining.","weight": 0}
+{"itemName": "weapon_jetgun","itemDesc": "GenCorp aeronautic technology gives you the power of a Jet engine in the palm of your hand.","weight": 2}
+{"itemName": "Carrot","itemDesc": "Eat it for 20 HP","weight": 0.1}
+{"itemName": "Golden Nano Suit","itemDesc": "Limited edition GenCorp Nano suit. Increased health and cloaking time.","weight": 1}
+{"itemName": "Molotov Cocktail Blueprint","itemDesc": "Start some fires!","weight": 0}
+{"itemName": "Knight Demon Suit","itemDesc": "Become a Knight Demon and unleash true hell on your opponents.","weight": 1}
+{"itemName": "weapon_hand_cannon_golden","itemDesc": "Limited edition GenCorp Hand Cannon. Double prop damage.","weight": 1.7}
+{"itemName": "Blueprint Case","itemDesc": "Open the case to claim a blueprint!","weight": 0.01}
+{"itemName": "m9k_orbital_strike","itemDesc": "Orbital Strike Marker.","weight": 0.1}
+{"itemName": "Amphetamine","itemDesc": "Your movement speed is increased!","weight": 0.5}
+{"itemName": "weapon_gluongun_golden","itemDesc": "Limited edition GenCorp Gluon Gun. Double damage.","weight": 1.5}
+{"itemName": "weapon_real_cs_grenade","itemDesc": "BOOM!","weight": 0.4}
+{"itemName": "Weapons Case","itemDesc": "Open the case to claim a special weapon!","weight": 0.01}
+{"itemName": "m9k_orangecore_grenade","itemDesc": "Highly explosive throwable grenade device from GenCorp.","weight": 0.6}
+{"itemName": "Golden EDF Suit","itemDesc": "Golden EDF Suit. Double health and armor.","weight": 1}
+{"itemName": "Hell Printer","itemDesc": "A hell of a lot of money!","weight": 1}
+{"itemName": "BaseShield 5000 Blueprint","itemDesc": "Increases prop resistance and heals nearby gang props, health and armor.","weight": 0}
+{"itemName": "Party Hat","itemDesc": "A purely cosmetic item","weight": 0}
+{"itemName": "Designer Suit Blueprint","itemDesc": "You'll look super rich whilst wearing this suit!","weight": 0}
+{"itemName": "m9k_coltpython","itemDesc": "A Colt Python.","weight": 0.4}
+{"itemName": "Supercharged Uranium","itemDesc": "Extremely radioactive. Use to craft character upgrades.","weight": 0.04}
+{"itemName": "Golden Juggernaut Suit","itemDesc": "Limited edition GenCorp Juggernaut suit. Double health and armor.","weight": 2.5}
+{"itemName": "m9k_minigun","itemDesc": "M134 Minigun.","weight": 1.6}
+{"itemName": "pickaxe","itemDesc": "Pickaxe. Mine rocks.","weight": 0.65}
+{"itemName": "Skull Case","itemDesc": "Open the Skull Case to obtain 6 INCREDIBLE NEW ITEMS!","weight": 0.01}
+{"itemName": "Thunderhammer Blueprint","itemDesc": "A powerful melee hammer. Can destroy doors and fading doors.","weight": 0}
+{"itemName": "weapon_detonator","itemDesc": "Remotely controlled thermal explosive device.","weight": 0.95}
+{"itemName": "Golden Plated Printer Blueprint","itemDesc": "Made of pure gold.","weight": 0}
+{"itemName": "Diamond Printer","itemDesc": "It's time to make some money...","weight": 1.4}
+{"itemName": "weapon_turret","itemDesc": "This automated turret targets all enemies and cops and can also be manually controlled.","weight": 1.5}
+{"itemName": "Fire Box","itemDesc": "The fire box contains 8 of the very best suits, special weapons, printers and items from 2017!","weight": 0.01}
+{"itemName": "Orange Core Grenade Blueprint","itemDesc": "Highly explosive throwable grenade device from GenCorp.","weight": 0}
+{"itemName": "mm_deanimator","itemDesc": "A powerful shock rifle that stuns players and damages props.","weight": 2}
+{"itemName": "m9k_knife","itemDesc": "I'LL CUT YOU UP!","weight": 0.3}
+{"itemName": "Combat Drone Projectile","itemDesc": "Use with Combat Drone. Add explosive projectiles to your drone","weight": 0.1}
+{"itemName": "Baseball Cap","itemDesc": "A purely cosmetic item","weight": 0}
+{"itemName": "weapon_electrocannon","itemDesc": "Electro powered weapon with shock and rhino missle fire modes.","weight": 2}
+{"itemName": "m9k_mp9","itemDesc": "An MP9.","weight": 0.4}
+{"itemName": "Steel","itemDesc": "Crafted steel.","weight": 0.1}
+{"itemName": "Link Hat","itemDesc": "A purely cosmetic item","weight": 0}
+{"itemName": "vuvuzela_small","itemDesc": "Make some noise for our Heroes on the frontline against COVID-19!","weight": 1}
+{"itemName": "Turret Rocket","itemDesc": "Use with Controllable Turret. Add explosive rockets to your turret. Can be fired in manual control.","weight": 0.1}
+{"itemName": "Mushroom Spore","itemDesc": "Plant this to grow some mushrooms","weight": 0.1}
+{"itemName": "Summer Printer","itemDesc": "Time to print a beach load of money","weight": 1}
+{"itemName": "Legendary Case","itemDesc": "The most legendary suits, special weapons, printers and items.","weight": 0.01}
+{"itemName": "m9k_m202","itemDesc": "M202 Rocket Launcher.","weight": 1.5}
+{"itemName": "Airstrike Blueprint","itemDesc": "A precision air strike.","weight": 0}
+{"itemName": "Regen Suit","itemDesc": "Provide support for your gang and allies.","weight": 0.5}
+{"itemName": "m9k_nitro","itemDesc": "Highly explosive throwable jar.","weight": 0.4}
+{"itemName": "m9k_usp","itemDesc": "A USP","weight": 0.3}
+{"itemName": "riot_shield","itemDesc": "Impact resistant heavy armor shield.","weight": 1}
+{"itemName": "Ice Case","itemDesc": "Open the Ice Case to receive one of 6 brand new items","weight": 0.01}
+{"itemName": "weapon_advancedtripmine","itemDesc": "GenCorp advanced laser mine. Allows gang members through and vapourizes enemy combatants.","weight": 0.4}
+{"itemName": "printer_booster","itemDesc": "Can be used to double the output of any money printer.","weight": 0.5}
+{"itemName": "XMAS Box","itemDesc": "Open the XMAS Box to unlock six powerful new items!","weight": 0.01}
+{"itemName": "Handheld Ion Cannon Blueprint","itemDesc": "A handheld high energy ion cannon weapon.","weight": 0}
+{"itemName": "Uranium","itemDesc": "Highly radioactive.","weight": 0.04}
+{"itemName": "Lamborghini Murcielago Blueprint","itemDesc": "The Lamborghini Murcielago can be purchased if you have this blueprint.","weight": 0}
+{"itemName": "weapon_hellsretriever","itemDesc": "Powerful axe which chain damages nearby players and then returns to you.","weight": 0.6}
+{"itemName": "weapon_combatdrone","itemDesc": "A deployable, remotely controlled device. Ideal for scouting and targeted attacks.","weight": 1.1}
+{"itemName": "weapon_scanjammer","itemDesc": "Blocks neaby entities from being scanned by the SCAN Master. (One-time use)","weight": 0.6}
+{"itemName": "m9k_l85","itemDesc": "An L85.","weight": 0.7}
+{"itemName": "LSD","itemDesc": "Enjoy the trip!","weight": 0.5}
+{"itemName": "Diamond Lockpick Blueprint","itemDesc": "Open doors with speed.","weight": 0}
+{"itemName": "Fedora","itemDesc": "A purely cosmetic item","weight": 0}
+{"itemName": "Designer Suit","itemDesc": "You'll look super rich whilst wearing this suit!","weight": 1}
+{"itemName": "Defibrilator Blueprint","itemDesc": "Allows you to revive fallen teammates and gets them back into combat quickly!","weight": 0}
+{"itemName": "Rotten Carrot","itemDesc": "This doesn't look so good...","weight": 0.1}
+{"itemName": "K398 Radioactive Round","itemDesc": "Use with the K398 Predator. Radioactive rounds deal massive player damage and infected players cannot be revived.","weight": 0.4}
+{"itemName": "Crack","itemDesc": "Smoke this and things will go faster","weight": 0.1}
+{"itemName": "Golden Blueprint Case","itemDesc": "Open this case to win a Golden Blueprint guaranteed.","weight": 0.01}
+{"itemName": "weapon_barricadekit","itemDesc": "Place on a door to Barricade. (Nothing can open it until the Barricade is destroyed).","weight": 0.3}
+{"itemName": "pickaxeiridium","itemDesc": "Iridum grade pickaxe. (x2 ores with each pick)","weight": 1.3}
+{"itemName": "Suit","itemDesc": "Time to get suited up!","weight": 1}
+{"itemName": "weapon_medishield_golden","itemDesc": "Limited edition Medi Shield. Double the healing power for gang members.","weight": 1}
+{"itemName": "EDF Suit Blueprint","itemDesc": "Heavy Armor Suit for Police.","weight": 0}
+{"itemName": "Rifle Ammo","itemDesc": "Some ammo for a rifle.","weight": 0.2}
+{"itemName": "K398 Electronic Round","itemDesc": "Use with the K398 Predator.  Electronic rounds deal most damage to nearby entities and cause printers to malfunction.","weight": 0.4}
+{"itemName": "weapon_valkyrierockets","itemDesc": "Advanced controllable rockets.","weight": 1.3}
+{"itemName": "Armor Regen Upgrade","itemDesc": "Your armor regenerates slowly after taking damage, making it more resistant to bullet damage.","weight": 0}
+{"itemName": "Armoured Plate","itemDesc": "Armoured steel plating.","weight": 0.05}
+{"itemName": "PD Case","itemDesc": "Open the PD Case to unbox 6 different tactical items. Can be used by all jobs excluding Golden EDF","weight": 0.01}
+{"itemName": "Skull Printer","itemDesc": "Spooky amounts of money!","weight": 1}
+{"itemName": "Golden Plated Printer","itemDesc": "Made of pure gold.","weight": 1.8}
+{"itemName": "weapon_ionbeam","itemDesc": "Satellite based particle beam weapon system.","weight": 0.3}
+{"itemName": "weapon_meteorshower","itemDesc": "Start a meteor apocalypse.","weight": 0.5}
+{"itemName": "weapon_radiationshield","itemDesc": "Protects nearby entities from radiation.","weight": 0.9}
+{"itemName": "Santa Printer","itemDesc": "Santa baby give me all your money tonight!","weight": 1}
+{"itemName": "m9k_proxy_mine","itemDesc": "Explodes when someone enters its proximity.","weight": 0.4}
+{"itemName": "weapon_q4_napalmlauncher","itemDesc": "Fires napalm projectiles which have a long life and burn anything nearby.","weight": 1.4}
+{"itemName": "Weed Bag","itemDesc": "A dub sac of bud. Let's get stoned.","weight": 0.03}
+{"itemName": "Rotten Mushroom","itemDesc": "This mushroom looks bad...","weight": 0.1}
+{"itemName": "m9k_matador","itemDesc": "Matador Rocket Launcher","weight": 1.3}
+{"itemName": "Mega Rare Gift","itemDesc": "Open now for a hugely valuable item...","weight": 0.1}
+{"itemName": "weapon_nukejammer","itemDesc": "Allows you to jam a nuclear launch when in range. (One-time use)","weight": 0.1}
+{"itemName": "m9k_laserdagger","itemDesc": "High powered throwable laser dagger.","weight": 0.3}
+{"itemName": "m9k_m3","itemDesc": "An M3","weight": 0.8}
+{"itemName": "Festive Printer","itemDesc": "Ho ho holy moly, that's alot of money!","weight": 1}
+{"itemName": "pickaxevip","itemDesc": "Pickaxe with much better success. (and it weighs less!)","weight": 0.65}
+{"itemName": "Red Cup","itemDesc": "Dud prize from the Summer Wheel","weight": 0.3}
+{"itemName": "weapon_hoff_thundergun","itemDesc": "An extreme thunder-powered weapon that deals immense damage.","weight": 1.5}
+{"itemName": "Broken Computer Part","itemDesc": "Oh dear the item o'matic is malfunctioning again...","weight": 0.1}
+{"itemName": "m9k_ump45","itemDesc": "An UMP45.","weight": 0.5}
+{"itemName": "Case Core","itemDesc": "This could be used for crafting.","weight": 1}
+{"itemName": "weapon_medishield","itemDesc": "Makes nearby printers and entities impervious to damage. And heals nearby gang members at a very fast rate.","weight": 1}
+{"itemName": "m9k_mp5","itemDesc": "An MP5","weight": 0.6}
+{"itemName": "pickaxediamond","itemDesc": "Perfect mining success","weight": 1}
+{"itemName": "weapon_inferno","itemDesc": "Concentrated red ion beam laser technology. Capable of vapourizing humans and destroying props.","weight": 1.4}
+{"itemName": "m9k_psg1","itemDesc": "A PSG-1.","weight": 0.8}
+{"itemName": "GenCorp Case","itemDesc": "Open the case to receive one of the 6 new GenCorp items.","weight": 0.01}
+{"itemName": "Gold","itemDesc": "Gold stones.","weight": 0.1}
+{"itemName": "Golden Advanced Combat Suit","itemDesc": "Limited edition ACS. Extreme damage resistance and force field abiltiies.","weight": 1}
+{"itemName": "Fairy Wings","itemDesc": "A purely cosmetic item","weight": 0}
+{"itemName": "Hell Case","itemDesc": "Open the Hell Case to unbox 6 all new powerful and deadly items!","weight": 0.01}
+{"itemName": "KFC Bucket","itemDesc": "A purely cosmetic item","weight": 0}
+{"itemName": "Advanced Combat Suit","itemDesc": "Extreme damage resistance and force field abiltiies.","weight": 1}
+{"itemName": "Printer Boost Upgrade","itemDesc": "All of your printers will be double boosted by default greatly increasing your money production capabilities.","weight": 0}
+{"itemName": "airstrike","itemDesc": "A precision air strike.","weight": 0.3}
+{"itemName": "Cash Case","itemDesc": "Open to win up to $100,000,000!","weight": 0.01}
+{"itemName": "Casino Vault Codes","itemDesc": "Use the vault codes to attempt a Casino vault raid","weight": 0.1}
+{"itemName": "Golden Egg","itemDesc": "The rarest egg, contains one of 5 new items. Happy Easter!","weight": 0.1}
+{"itemName": "Iridium Case","itemDesc": "Open the box to receive one of the 6 new Iridium Case items from GenCorp!","weight": 0.01}
+{"itemName": "Thief Outfit","itemDesc": "Time to rob some banks!","weight": 1}
+{"itemName": "m9k_doorcharge","itemDesc": "An explosive door charge.","weight": 0.4}
+{"itemName": "Stone","itemDesc": "Mined stones.","weight": 0.1}
+{"itemName": "Gamma Rifle Blueprint","itemDesc": "Powerful laser rifle","weight": 0}
+{"itemName": "weapon_gluongun","itemDesc": "Quantum Destabilizer weapon, highly experimental.","weight": 1.5}
+{"itemName": "m9k_vector","itemDesc": "A KRISS Vector.","weight": 0.5}
+{"itemName": "Diamond Pickaxe Blueprint","itemDesc": "Perfect mining success.","weight": 0}
+{"itemName": "Gauss Rifle Blueprint","itemDesc": "High-density firing weapon capable of destroying props with depleted uranium slugs.","weight": 0}
+{"itemName": "Jump Pack","itemDesc": "A purely cosmetic item","weight": 0}
+{"itemName": "weapon_mastersword","itemDesc": "It's dangerous to go alone! Take this.","weight": 0.6}
+{"itemName": "diamondlockpick","itemDesc": "Open doors with speed.","weight": 0.5}
+{"itemName": "Golden Designer Suit","itemDesc": "Limited edition. Golden Designer Suit with patterned tie.","weight": 1}
+{"itemName": "Terroriser Outfit Blueprint","itemDesc": "Let's give em' mayhem.","weight": 0}
+{"itemName": "Black Diamond Printer","itemDesc": "One of the rarest printers","weight": 1.4}
+{"itemName": "Drink Cap","itemDesc": "A purely cosmetic item","weight": 0}
+{"itemName": "Magik Printer Blueprint","itemDesc": "Prints money like magik...","weight": 0}
+{"itemName": "Orange Core Printer Blueprint","itemDesc": "The latest in printing technology from GenCorp","weight": 0}
+{"itemName": "m9k_m24","itemDesc": "An M24.","weight": 0.8}
+{"itemName": "ls_sniper","itemDesc": "A sniper","weight": 1}
+{"itemName": "Reinforced Steel","itemDesc": "Hardened steel.","weight": 0.05}
+{"itemName": "m9k_famas","itemDesc": "A Famas.","weight": 0.7}
+{"itemName": "weapon_portableemp","itemDesc": "A handheld EMP device.","weight": 0.2}
+{"itemName": "Melon Seed","itemDesc": "With the right amount of care, it turns into tasty, juicy goodness.","weight": 0.1}
+{"itemName": "S.C.A.N Master 5000 Blueprint","itemDesc": "The latest in scan and radar technology from GenCorp.","weight": 0}
+{"itemName": "weapon_asmd","itemDesc": "Artifical Shocker Magnetic Destroyer - Fires high energy blots and orb projectiles.","weight": 1}
+{"itemName": "GenCorp Spartan Laser Blueprint","itemDesc": "Highly powerful directed energy weapon from GenCorp.","weight": 0}
+{"itemName": "Thief Outfit Blueprint","itemDesc": "Hide your face and rob those banks!","weight": 0}
+{"itemName": "weapon_qed","itemDesc": "Creates a black hole that pulls in and vapourizes suits.","weight": 0.6}
+{"itemName": "Nano Suit","itemDesc": "Cloaking, armor regen, hacking and damage resistance all built in.","weight": 1}
+{"itemName": "Bank Anywhere Upgrade","itemDesc": "You will be able to access your bank deposit box from anywhere on the map.","weight": 0}
+{"itemName": "weapon_q4_darkmatter","itemDesc": "Fires dark matter energy balls which dissolve anything in their path.","weight": 1.4}
+{"itemName": "Coal","itemDesc": "A lump of coal.","weight": 0.1}
+{"itemName": "Glass Shards","itemDesc": "This could be used for crafting.","weight": 0.1}
+{"itemName": "Vodka","itemDesc": "You're very fucked up.","weight": 0.5}
+{"itemName": "Witch Hat","itemDesc": "A purely cosmetic item","weight": 0}
+{"itemName": "Morphine","itemDesc": "Your health is extended!","weight": 0.5}
+{"itemName": "weapon_scanmaster5000_golden","itemDesc": "Limited edition S.C.A.N Master 5000. Increased radar distance.","weight": 0.3}
+{"itemName": "Casino Won Chips","itemDesc": "Cash out these chips for cash or prizes in the Casino Exchange.","weight": 0}
+{"itemName": "Casino Spend Chips","itemDesc": "Spend these chips in the Casino to convert them into won chips.","weight": 0}
+{"itemName": "SMG Boost Upgrade","itemDesc": "SMGs now do double damage with this upgrade.","weight": 0}
+{"itemName": "weapon_laserpistol2","itemDesc": "Shoots powerful laser discharges.","weight": 0.65}
+{"itemName": "Weed Seed","itemDesc": "Grow some marijuana","weight": 0.1}
+{"itemName": "Melon","itemDesc": "Eat it for 10 HP","weight": 0.15}
+{"itemName": "GenCorp Juggernaut Suit","itemDesc": "The latest in full-body protection from GenCorp: Increased health, agility and resistance.","weight": 2.5}
+{"itemName": "Jet Suit","itemDesc": "Equipped with a Proprietary GEN Corp high density fuel rocket jetpack. Mount air attacks and easily scout areas or enemies. High tolerance against Gluon.","weight": 1}
+{"itemName": "weapon_tacticalinsertion","itemDesc": "Respawn at the insertion point.","weight": 0.55}
+{"itemName": "Santa's Box","itemDesc": "Open Santa's Box to find 6 all new items.","weight": 0.01}
+{"itemName": "m9k_milkormgl","itemDesc": "Milkor Mk1 Grenade Launcher.","weight": 1}
+{"itemName": "Iridium Printer","itemDesc": "Iridium grade printer.","weight": 1.75}
+{"itemName": "Scope Boost Upgrade","itemDesc": "Scoped weapons now do double the damage, meaning sniper rifles become a greater choice for your arsenal.","weight": 0}
+{"itemName": "Combat Drone Ammo","itemDesc": "Use with Combat Drone. Add additional ammo to your drone to make it more effective.","weight": 0.01}
+{"itemName": "Unlimited Fuel Upgrade","itemDesc": "Your vehicles no longer consume fuel, making driving a considerably more viable option.","weight": 0}
+{"itemName": "Ammo Boost Upgrade","itemDesc": "You get a huge ammo boost on most weapons and double ammo on special weapons.","weight": 0}
+{"itemName": "Pot","itemDesc": "Grow a flower inside of it.","weight": 1}
+{"itemName": "Holo Pilot Suit","itemDesc": "Capable of deploying a mimic of your last move to trick and deceive enemies.","weight": 1}
+{"itemName": "m9k_emp_grenade","itemDesc": "Electro Magnetic Pulse Grenade - Capable of overriding doors and keypads","weight": 0.3}
+{"itemName": "Health Regen Upgrade","itemDesc": "Your health regenerates slowly after taking damage, making you less vulnerable.","weight": 0}
+{"itemName": "pickaxe1","itemDesc": "Pickaxe with better success.","weight": 0.75}
+{"itemName": "m9k_smgp90","itemDesc": "A P90.","weight": 0.6}
+{"itemName": "weapon_baseshield_golden","itemDesc": "Limited edition Base Shield. Double the maximum prop resistance to props within radius.","weight": 1.15}
+{"itemName": "Loot Boost Upgrade","itemDesc": "You will receive triple (x3) for all loot you collect for your gang.","weight": 0}
+{"itemName": "Gravitation Orb","itemDesc": "Use with the Orb Launcher. Gravity boosts players and floats props and vehicles.","weight": 0}
+{"itemName": "Portable EMP Blueprint","itemDesc": "A handheld EMP device.","weight": 0}
+{"itemName": "Lucky Charm","itemDesc": "1 Entry into the Lucky Charm Giveaway. Prize draw: Friday 22nd May 5PM BST","weight": 0}
+{"itemName": "weapon_printerhacker","itemDesc": "RFID Hacking technology allows you to become the owner of any printer.","weight": 0.4}
+{"itemName": "m9k_auga3","itemDesc": "An AUG.","weight": 0.7}
+{"itemName": "Easter Case","itemDesc": "Crack open the Easter Case for 6 all new items.","weight": 0.01}
+{"itemName": "Rare Egg","itemDesc": "Crack open this egg to win a rare item... Happy Easter!","weight": 0.1}
+{"itemName": "Easter Printer","itemDesc": "Prints an eggcellent amount of money!","weight": 1}
+{"itemName": "hammer","itemDesc": "Craft stuff with this.","weight": 0.7}
+{"itemName": "sw_weapon_orblauncher","itemDesc": "Experimental Orb launcher. Uses craftable orb types.","weight": 0.9}
+{"itemName": "Shield Orb","itemDesc": "Use with the Orb Launcher. Blocks all gunfire and physical objects passing through.","weight": 0}
+{"itemName": "Cat Ears","itemDesc": "A purely cosmetic item","weight": 0}
+{"itemName": "Gem O' Matic Blueprint","itemDesc": "Gem production machinery.","weight": 0}
+{"itemName": "Damage Orb","itemDesc": "Use with the Orb Launcher. Damages players in the orb.","weight": 0}
+{"itemName": "Healing Orb","itemDesc": "Use with the Orb Launcher. Heals players in the orb.","weight": 0}
+{"itemName": "Summer Box","itemDesc": "Open the Summer box to unlock 6 new items. It's a lifesaver!","weight": 0.01}
+{"itemName": "vuvuzela_big","itemDesc": "Make even more noise for our Heroes on the frontline against COVID-19!","weight": 1}
+{"itemName": "White Tuxedo","itemDesc": "Shaken not stirred","weight": 1}
+{"itemName": "weapon_minigun2","itemDesc": "This time it's personal.","weight": 1.7}
+{"itemName": "Nuclear Equipment","itemDesc": "This city is going up in flames!","weight": 2}
+{"itemName": "Melon Kick","itemDesc": "HAVE A NICE TRIP!!!","weight": 0.5}
+{"itemName": "Golden Carrot","itemDesc": "Shiny and... edible?","weight": 0.1}
+{"itemName": "Ice Printer","itemDesc": "Ice cold money","weight": 1}
+{"itemName": "m9k_striker12","itemDesc": "Striker 12 Auto-Shotgun.","weight": 1}
+{"itemName": "Gems","itemDesc": "Sparkly!","weight": 0}
+{"itemName": "Minigun 2.0 Blueprint","itemDesc": "This time it's personal...","weight": 0}
+{"itemName": "cracker","itemDesc": "A standard KeyPad cracker.","weight": 0.3}
+{"itemName": "weapon_hand_cannon","itemDesc": "A javelin style cannon which deals immense damage to props.","weight": 1.7}
+{"itemName": "m9k_m249lmg","itemDesc": "An M249.","weight": 0.9}
+{"itemName": "weapon_thunderhammer","itemDesc": "A powerful melee hammer. Can destroy doors and fading doors.","weight": 1.2}
+{"itemName": "m9k_f2000","itemDesc": "F2000 Rifle.","weight": 0.9}
+{"itemName": "Steam Case","itemDesc": "Open the case to win a Steam Game guaranteed!","weight": 0.01}
+{"itemName": "Tactical Insertion Point Blueprint","itemDesc": "Respawn at the insertion point.","weight": 0}
+{"itemName": "Steel Plate","itemDesc": "Processed steel.","weight": 0.02}
+{"itemName": "weapon_gammashooter","itemDesc": "Powerful laser rifle","weight": 0.9}
+{"itemName": "m9k_glock","itemDesc": "A glock","weight": 0.5}
+{"itemName": "Loot O' Matic","itemDesc": "Loot production machinery.","weight": 1.5}
+{"itemName": "Festive Box","itemDesc": "Open the box to receive one of the 6 new Festive items.","weight": 0.01}
+{"itemName": "m9k_nerve_gas","itemDesc": "Infects victims with a deadly toxin.","weight": 0.2}
+{"itemName": "Special Car Blueprint","itemDesc": "The Special Car can be purchased if you have this blueprint.","weight": 0}
+{"itemName": "mm_flamethrower","itemDesc": "Burn it all to the ground!","weight": 1.2}
+{"itemName": "printer_boostertriple","itemDesc": "Can be used to triple the output of any money printer.","weight": 0.5}
+{"itemName": "Red Dress","itemDesc": "Evening red dress","weight": 1}
+{"itemName": "m9k_fal","itemDesc": "An FN FAL.","weight": 0.7}
+{"itemName": "Cosmetics Case","itemDesc": "Unbox some of the ALL NEW cosmetic items!","weight": 0.01}
+{"itemName": "lockpick","itemDesc": "A standard lockpick.","weight": 0.25}
+{"itemName": "m9k_aw50","itemDesc": "An AIAW50.","weight": 0.9}
+{"itemName": "weapon_k398","itemDesc": "Military grade advanced missle launch system. Uses crafted rounds of varying types.","weight": 2}
+{"itemName": "K398 Tank Round","itemDesc": "Use with the K398 Predator. Tank rounds deal insane damage to nearby props.","weight": 0.4}
+{"itemName": "weapon_summoner","itemDesc": "Summon enemy NPCs with extreme health.","weight": 0.7}
+{"itemName": "m9k_rpg7","itemDesc": "RPG-7 Launcher.","weight": 1.2}
+{"itemName": "m9k_m202_golden","itemDesc": "Limited edition GenCorp M202. Double damage and ammo.","weight": 1.5}
+{"itemName": "m9k_suicide_bomb","itemDesc": "Timed C4 Explosives.","weight": 0.5}
+{"itemName": "molotov_cocktail","itemDesc": "Start some fires!","weight": 0.2}
+{"itemName": "m9k_m303","itemDesc": "An advanced rocket launcher with heat seeking and laser guidance modes.","weight": 1.55}
+{"itemName": "diamondcracker","itemDesc": "Crack keypads with speed.","weight": 0.6}
+{"itemName": "m9k_m4a1","itemDesc": "An M4A1","weight": 0.7}
+{"itemName": "EDF Police Heavy Armor Suit","itemDesc": "Heavy Armor Suit for Police.","weight": 1}
+{"itemName": "Hit Protection Upgrade","itemDesc": "You will be protected from hits of less than $1,000,000 leaving you safe to achieve your goals.","weight": 0}
+{"itemName": "Shotgun Ammo","itemDesc": "Some ammo for a shotgun.","weight": 0.2}
+{"itemName": "weapon_ioncannon","itemDesc": "A handheld high energy ion cannon weapon.","weight": 1.4}
+{"itemName": "Terroriser Outfit","itemDesc": "Let's give em' mayhem","weight": 1}
+{"itemName": "Rotten Egg","itemDesc": "This egg is rotten through...","weight": 0.1}
+{"itemName": "m9k_ak47","itemDesc": "An AK47","weight": 0.7}
+{"itemName": "Hyper Suit","itemDesc": "GenCorp presents the Hyper Suit. Teleportation and damage resistance abilities.","weight": 1}
+{"itemName": "EVO Suit","itemDesc": "GenCorp presents the EVO Suit. Full environmental awareness.","weight": 1}
+{"itemName": "m9k_sig_p229r","itemDesc": "A P229R","weight": 0.5}
+{"itemName": "m9k_deagle","itemDesc": "A deagle","weight": 0.5}
+{"itemName": "Rotten Melon","itemDesc": "This melon looks off...","weight": 0.15}
+{"itemName": "XMAS Printer","itemDesc": "Money all wrapped up nicely!","weight": 1}
+{"itemName": "Mummy Suit","itemDesc": "Raise from the dead and send em' to hell!","weight": 1}
+{"itemName": "weapon_scanmaster5000","itemDesc": "The latest in scan and radar technology from GenCorp.","weight": 0.3}
+{"itemName": "Magik Laser Pistol Blueprint","itemDesc": "Shoots powerful laser discharges.","weight": 0}
+{"itemName": "weapon_baseshield5000","itemDesc": "Increases prop resistance and heals nearby gang props, health and armor.","weight": 1.15}
+{"itemName": "Printer Booster Quad Blueprint","itemDesc": "Quadruple money printing output.","weight": 0}
+{"itemName": "Combat Drone Explosive","itemDesc": "Use with Combat Drone. Arm your combat drone with a deadly explosive.","weight": 0.4}
+{"itemName": "Magik Printer","itemDesc": "Prints money like magik...","weight": 1}
+{"itemName": "m9k_svu","itemDesc": "A Dragunov sniper.","weight": 0.8}
+{"itemName": "m9k_ares_shrike","itemDesc": "Ares Shrike Machine Gun.","weight": 1}
+{"itemName": "Magik Box","itemDesc": "Open the box to receive one of the 6 new Magik items.","weight": 0.01}
+{"itemName": "Nuclear Launch Blueprint","itemDesc": "No one will survive this.","weight": 0}
+{"itemName": "m9k_damascus","itemDesc": "A lethal warrior sword.","weight": 0.6}
+{"itemName": "weapon_defib","itemDesc": "Revive fallen teammates","weight": 0.5}
+{"itemName": "mm_battleaxe","itemDesc": "A melee battle axe that can destroy props.","weight": 1.2}
+{"itemName": "Printer Booster Blueprint","itemDesc": "Can be used to double the output of any money printer.","weight": 0}
+{"itemName": "Portal Suit","itemDesc": "Quantum Suit equipped with a Portable tunneling device.","weight": 1}
+{"itemName": "weapon_slam","itemDesc": "A SLAM.","weight": 0.4}
+{"itemName": "printer_boosterquad","itemDesc": "Quadruple money printing output.","weight": 0.5}
+{"itemName": "Nano Suit Blueprint","itemDesc": "Cloaking, armor regen, hacking and damage resistance all built in.","weight": 0}
+{"itemName": "Hand Cannon Blueprint","itemDesc": "A javelin style cannon which deals immense damage to props.","weight": 0}
+{"itemName": "Shield Suit","itemDesc": "Boost your health, armor and damage resistance","weight": 0.5}
+{"itemName": "Free Card Pack","itemDesc": "Open this card pack to receive a great prize!","weight": 0.01}
+{"itemName": "m9k_mossberg590","itemDesc": "A Mossberg 590.","weight": 0.7}
+{"itemName": "weapon_spartanlaser","itemDesc": "Highly powerful directed energy weapon from GenCorp.","weight": 1.7}
+{"itemName": "Ruby","itemDesc": "Ruby stones.","weight": 0.1}
+{"itemName": "Premium Card Pack","itemDesc": "Open this card pack to receive a RARE prize!","weight": 0.01}
+{"itemName": "m9k_uzi","itemDesc": "An UZI","weight": 0.6}
+{"itemName": "mm_acidflask","itemDesc": "A flask containing highly toxic acid.","weight": 0.5}
+{"itemName": "Door Charge Blueprint","itemDesc": "An explosive door charge.","weight": 0}
+{"itemName": "m9k_spas12","itemDesc": "A SPAS 12.","weight": 0.8}
+{"itemName": "Mushroom","itemDesc": "Have a great trip!","weight": 0.05}
+{"itemName": "Carrot Seed","itemDesc": "Grow some carrots! Level up growing.","weight": 0.1}
+{"itemName": "m9k_m92beretta","itemDesc": "An M92.","weight": 0.5}
+{"itemName": "weapon_ninjastars","itemDesc": "Lethal shuriken blades","weight": 0.2}
+{"itemName": "Rares Case","itemDesc": "Open the case to claim a rare item","weight": 0.01}
+{"itemName": "weapon_printerhacker2","itemDesc": "2nd Gen Printer Hacker. Allows you to pickup special printers.","weight": 0.75}
+{"itemName": "m9k_colt1911","itemDesc": "A colt 1911","weight": 0.5}
+{"itemName": "Turret Ammo","itemDesc": "Use with Controllable Turret. Add additional ammo to your turret.","weight": 0.01}
+{"itemName": "Gem O' Matic","itemDesc": "Gem production machinery.","weight": 1.5}
