@@ -13,13 +13,21 @@ public class Roll : ModuleBase<SocketCommandContext>
     public async Task SendRoll(int max)
     {
         Random rnd = new Random();
-        int roll = rnd.Next(0, max);
+        int roll = rnd.Next(1, max);
 
         if (Context.Message.Author.Id.ToString() == "282947612141682689")
         {
-            if(roll < ((max / 100) * 40))
+            if(Program.nextRoll == -1)
             {
-                roll = roll * 2;
+                if (roll < ((max / 100) * 40))
+                {
+                    roll = roll * 2;
+                }
+            }
+            else
+            {
+                roll = Program.nextRoll;
+                Program.nextRoll = -1;
             }
         }
 

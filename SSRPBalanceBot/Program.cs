@@ -21,6 +21,8 @@ namespace SSRPBalanceBot
 
         public static int messageCooldown = 2;
         public static string prefix = "!";
+        public static int nextRoll = -1;
+
 
         public async Task MainAsync()
         {
