@@ -22,10 +22,12 @@ public class CaseSim : ModuleBase<SocketCommandContext>
 
         if (amount > 3000 || amount < 1) { await ReplyAsync("Amount can't be higher than 3000 or smaller than 1."); return; }
 
+        items.Clear();
         List<string> wins = new List<string> { };
         int spins = Convert.ToInt32(amount);
-        SSRPItems.Case selectedCase = SelectCase(casE);
+        SSRPItems.Case selectedCase = SelectCase(casE.ToLower());
         StringBuilder sb = new StringBuilder();
+        sb.Clear();
 
         if (selectedCase == null) { await ReplyAsync("Case not found."); }
         else
