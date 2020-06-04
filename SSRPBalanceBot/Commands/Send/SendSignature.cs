@@ -79,23 +79,31 @@ public class Signature : ModuleBase<SocketCommandContext>
             }
         }
 
-        //Gets the signature of the specified syeamID
+        //Gets the signature of the specified steamID
         else
         {
-            var msg = await ReplyAsync("Obtaining signature");
-
-            using (WebClient wc = new WebClient())
+            if (id.StartsWith("STEAM") || id.StartsWith("7656"))
             {
-                sig = await wc.DownloadDataTaskAsync(new Uri(Utilities.GetSignature(id)));
+                var msg = await ReplyAsync("Obtaining signature");
+
+                using (WebClient wc = new WebClient())
+                {
+                    sig = await wc.DownloadDataTaskAsync(new Uri(Utilities.GetSignature(id)));
+                }
+                string path = $"{Utilities.RandomString(8)}.png";
+                await File.WriteAllBytesAsync(path, sig);
+
+                await Context.Channel.SendFileAsync(path, "Here's the signature you were looking for:");
+                File.Delete(path);
+                await msg.DeleteAsync();
+
+                await Utilities.StatusMessage("signature", Context);
             }
-            string path = $"{Utilities.RandomString(8)}.png";
-            await File.WriteAllBytesAsync(path, sig);
-
-            await Context.Channel.SendFileAsync(path, "Here's the signature you were looking for:");
-            File.Delete(path);
-            await msg.DeleteAsync();
-
-            await Utilities.StatusMessage("signature", Context);
+            else
+            {
+                await ReplyAsync("Specified input is not a valid SteamID/SteamID64");
+                await Utilities.StatusMessage("signature", Context);
+            }
         }
         
     }
