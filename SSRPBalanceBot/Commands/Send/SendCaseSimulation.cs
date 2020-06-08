@@ -15,6 +15,7 @@ using Discord;
 public class CaseSim : ModuleBase<SocketCommandContext>
 {
     [Command("simulate", RunMode = RunMode.Async)]
+    [Alias("sim")]
     [Summary("Returns case simulations")]
     public async Task SendCaseSimulation(string casE, int amount = 1)
     {
@@ -22,14 +23,15 @@ public class CaseSim : ModuleBase<SocketCommandContext>
 
         if (amount > 3000 || amount < 1) { await ReplyAsync("Amount can't be higher than 3000 or smaller than 1."); return; }
 
-        items.Clear();
         List<string> wins = new List<string> { };
         int spins = Convert.ToInt32(amount);
         SSRPItems.Case selectedCase = SelectCase(casE.ToLower());
         StringBuilder sb = new StringBuilder();
         sb.Clear();
+        items.Clear();
+        wins.Clear();
 
-        if (selectedCase == null) { await ReplyAsync("Case not found."); }
+        if (selectedCase == null) { await ReplyAsync("Case not found. Try enclosing the case name in \"quotes\""); }
         else
         {
             for (int i = 0; i < spins; i++)

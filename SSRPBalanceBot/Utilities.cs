@@ -34,9 +34,6 @@ namespace SSRPBalanceBot
             }
         }
 
-       
-
-
         public static string GetTotal(dynamic json)
         {
             return json.sum;
@@ -103,6 +100,12 @@ namespace SSRPBalanceBot
                 }
                 return null;
             });
+        }
+
+        public static string GetDID(string text)
+        {
+            text = text ?? string.Empty;
+            return new string(text.Where(p => char.IsDigit(p)).ToArray());
         }
 
 

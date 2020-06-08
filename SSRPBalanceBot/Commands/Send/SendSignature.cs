@@ -52,7 +52,7 @@ public class Signature : ModuleBase<SocketCommandContext>
         //Gets the signature of a mentioned user
         else if (id.StartsWith("<"))
         {
-            string steamID64 = LinkedSignatures.GetSteam(id.Replace("<@!", "").Replace(">", ""));
+            string steamID64 = LinkedSignatures.GetSteam(Utilities.GetDID(id));
             if (steamID64 == null)
             {
                 await Context.Channel.SendMessageAsync($"Their Discord isn't linked to a Steam profile.");
