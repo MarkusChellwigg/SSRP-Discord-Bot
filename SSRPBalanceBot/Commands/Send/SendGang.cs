@@ -13,7 +13,7 @@ public class Gang : ModuleBase<SocketCommandContext>
     [Summary("Returns gang of a user.")]
     public async Task SendGang(string mention = null)
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         if(mention == null)
         {

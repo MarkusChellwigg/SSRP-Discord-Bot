@@ -13,7 +13,7 @@ public class ReloadPermissions : ModuleBase<SocketCommandContext>
     [Summary("Reloads all user permissions")]
     public async Task ReloadPermissionsAsync()
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.ReloadPermissions) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Admin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         await PermissionManager.ReloadPermissions();
         await Context.Channel.SendMessageAsync("Permissions have been reloaded.");
         await Utilities.StatusMessage("reloadpermissions", Context);

@@ -19,7 +19,7 @@ public class CaseSim : ModuleBase<SocketCommandContext>
     [Summary("Returns case simulations")]
     public async Task SendCaseSimulation(string casE, int amount = 1)
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         if (amount > 3000 || amount < 1) { await ReplyAsync("Amount can't be higher than 3000 or smaller than 1."); return; }
 

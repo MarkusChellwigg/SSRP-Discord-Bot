@@ -13,7 +13,7 @@ public class ItemInfo : ModuleBase<SocketCommandContext>
     [Summary("Returns item info")]
     public async Task SendItemInfo([Remainder]string item)
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendItemInfo) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         SSRPItems.Item i = await SSRPItems.GetItem(item);
 
         if (i == null) { await Context.Channel.SendMessageAsync("Item not found. Try using the item's exact name, eg: m9k_psg1"); await Utilities.StatusMessage("item", Context); }

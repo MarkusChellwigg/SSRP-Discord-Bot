@@ -15,7 +15,7 @@ public class AutoAssign : ModuleBase<SocketCommandContext>
     [Summary("Assigns users to their gang roles")]
     public async Task AssignRoles()
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.ReloadItems) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         foreach (var member in Context.Guild.Users)
         {
@@ -34,7 +34,7 @@ public class AutoAssign : ModuleBase<SocketCommandContext>
                 {
                     if (gang != "No Gang yet.")
                     {
-                        await Context.Guild.CreateRoleAsync(gang, null, null, false, null);
+                        await Context.Guild.CreateRoleAsync(gang, null, Discord.Color.Blue, false, null);
                         await member.AddRoleAsync(role);
                         await ReplyAsync($"{member.Username} has been assigned to {gang}");
                     }

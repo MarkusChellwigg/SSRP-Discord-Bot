@@ -15,6 +15,8 @@ public class AddRole : ModuleBase<SocketCommandContext>
     [Summary("Adds user to role")]
     public async Task SendRoll(string id)
     {
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+
         var role = Context.Guild.Roles.FirstOrDefault(x => x.Id.ToString() == id);
         var member = Context.User as SocketGuildUser;
 

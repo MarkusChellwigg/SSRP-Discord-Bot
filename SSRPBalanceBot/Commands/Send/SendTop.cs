@@ -14,7 +14,7 @@ public class Top : ModuleBase<SocketCommandContext>
     [Summary("Returns the highest stat for the specified stat and type")]
     public async Task SendBind(string type, string stat = null)
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         if(type.ToLower() == "printer")
         {

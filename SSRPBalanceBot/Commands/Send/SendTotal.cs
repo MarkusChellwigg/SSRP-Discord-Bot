@@ -12,7 +12,7 @@ public class Total : ModuleBase<SocketCommandContext>
     [Summary("Returns the total balance of all users in the database")]
     public async Task SendTotal()
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendTotal) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         await Context.Channel.SendMessageAsync($"Total size of SSRP Economy as of {DateTime.Now.Date.ToString("dd/MM/yy")}: `${Convert.ToInt64(Utilities.GetTotal(Utilities.GetStatistics())).ToString("#,##0")}`");
         await Utilities.StatusMessage("total", Context);

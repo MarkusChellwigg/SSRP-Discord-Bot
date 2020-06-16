@@ -14,7 +14,7 @@ public class Case : ModuleBase<SocketCommandContext>
     [Summary("Returns info about the specified case.")]
     public async Task SendCase([Remainder]string item)
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendSuit) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         StringBuilder sb = new StringBuilder();
         int count = 0;

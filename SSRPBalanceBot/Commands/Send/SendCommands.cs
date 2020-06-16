@@ -14,7 +14,7 @@ public class SendCommands : ModuleBase<SocketCommandContext>
     {
         Program p = new Program();
 
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendCommands) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         await Context.Channel.SendMessageAsync(
             $"Hello {Context.Message.Author.Mention}.\n" +

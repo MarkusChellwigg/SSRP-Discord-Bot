@@ -13,7 +13,7 @@ public class Templates : ModuleBase<SocketCommandContext>
     [Summary("Returns the specified forum template")]
     public async Task SendTemplates(string input)
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendTotal) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         Utilities.ForumTemplate t = await Utilities.GetTemplate(input);
 

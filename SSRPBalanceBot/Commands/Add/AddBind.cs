@@ -15,7 +15,7 @@ public class AddBind : ModuleBase<SocketCommandContext>
     {
         if (itemname == "" | aliases == "") { return; }
 
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.AddItem) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Admin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         else
         {
             string[] aliasList = aliases.Split(',');

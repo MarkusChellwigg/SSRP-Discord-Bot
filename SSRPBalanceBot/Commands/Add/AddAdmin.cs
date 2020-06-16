@@ -15,7 +15,7 @@ public class AddAdmin : ModuleBase<SocketCommandContext>
     public async Task AddAdminAsync(string mentioned, int permLevel)
     {
         if (!PermissionManager.CheckAdmin(Context.Message.Author.Id).Result) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.AddAdmin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Admin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         string id = mentioned.Replace("<@!", "").Replace(">", "");
         ulong idParsed;

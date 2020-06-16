@@ -15,7 +15,7 @@ public class ReloadItems : ModuleBase<SocketCommandContext>
     [Summary("Reloads all item lists. Useful after adding new items.")]
     public async Task ReloadItemsAsync()
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.ReloadItems) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Admin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         //SSRP Item lists
         SSRPItems.bindList = SSRPItems.FillList<SSRPItems.Bind>("Items/binds.json");

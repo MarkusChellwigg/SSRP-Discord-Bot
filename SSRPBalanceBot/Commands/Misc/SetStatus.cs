@@ -10,9 +10,11 @@ using SSRPBalanceBot.Permissions;
 public class SetGame : ModuleBase<SocketCommandContext>
 {
     [Command("setgame", RunMode = RunMode.Async)]
-    [Summary("Sets the bots status")]
+    [Summary("Sets the bots game")]
     public async Task SetGameAsync(string status)
     {
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Admin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+
         await Program._client.SetGameAsync(status);
         await Utilities.StatusMessage("setstatus", Context);
     }

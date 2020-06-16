@@ -16,7 +16,7 @@ public class Ganginfo : ModuleBase<SocketCommandContext>
     [Summary("Returns information about the specified gang")]
     public async Task SendGangInfo([Remainder]string gang)
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         LeaderboardUtils.GangInfo gInfo = await LeaderboardUtils.GetGangInfo(HttpUtility.UrlEncode(gang));
 

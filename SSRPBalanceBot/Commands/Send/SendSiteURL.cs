@@ -12,7 +12,7 @@ public class SiteURL : ModuleBase<SocketCommandContext>
     [Summary("Link to the site")]
     public async Task SendSiteURL()
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendSiteURL) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         await Context.Channel.SendMessageAsync($"https://nickgor.com/");
         await Utilities.StatusMessage("site", Context);

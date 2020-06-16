@@ -17,7 +17,7 @@ public class Leaderboards : ModuleBase<SocketCommandContext>
     [Summary("Returns leaderboard info.")]
     public async Task SendLeaderboards(string board, string category = null, string player = null)
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendBind) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         var msg = await ReplyAsync("Obtaining data");
 
         try

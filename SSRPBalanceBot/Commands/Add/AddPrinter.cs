@@ -13,18 +13,16 @@ public class AddPrinter : ModuleBase<SocketCommandContext>
     [Summary("Adds a new printer with the specified data")]
     public async Task AddPrinterAsync(string printerName,string colour, double perSecond, string aliases)
     {
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Admin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+
         if (printerName == "" | aliases == "") { return; }
 
-        if (Context.Message.Author.ToString() != "Bunny#9220") { await Context.Channel.SendMessageAsync("No permission"); }
-        else
-        {
-            string[] aliasList = aliases.Split(',');
-            SSRPItems.Printer newPrinter = new SSRPItems.Printer { printerName = printerName, perSecond = perSecond, aliases = aliasList, color = colour };
-            SSRPItems.WriteToJsonFile<SSRPItems.Printer>("Items/printers.json", newPrinter, true);
-            SSRPItems.printerList.Add(newPrinter);
+        string[] aliasList = aliases.Split(',');
+        SSRPItems.Printer newPrinter = new SSRPItems.Printer { printerName = printerName, perSecond = perSecond, aliases = aliasList, color = colour };
+        SSRPItems.WriteToJsonFile<SSRPItems.Printer>("Items/printers.json", newPrinter, true);
+        SSRPItems.printerList.Add(newPrinter);
 
-            await Context.Channel.SendMessageAsync($"New Printer Has Been Added. Name: {printerName} | Per Second: {perSecond.ToString("#,##0")}");
-            await Utilities.StatusMessage("addprinter", Context);
-        }
+        await Context.Channel.SendMessageAsync($"New Printer Has Been Added. Name: {printerName} | Per Second: {perSecond.ToString("#,##0")}");
+        await Utilities.StatusMessage("addprinter", Context);
     }
 }

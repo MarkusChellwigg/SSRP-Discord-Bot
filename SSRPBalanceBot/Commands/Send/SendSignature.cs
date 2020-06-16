@@ -17,7 +17,7 @@ public class Signature : ModuleBase<SocketCommandContext>
     public async Task SendSignature([Remainder]string id = null)
     {
         byte[] sig;
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendSignature) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         //Gets the current users signature
         if(id == null)

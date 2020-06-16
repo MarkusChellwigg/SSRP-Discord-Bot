@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
-using Discord;
-using Discord.Commands;
 
 namespace SSRPBalanceBot.Permissions
 {
@@ -98,29 +94,7 @@ namespace SSRPBalanceBot.Permissions
 
     public class PermissionConfig
     {
-        public static int WitchHunt = -1;
-        public static int SendTotal = -1;
-        public static int SendStatistics = -1;
-        public static int SendSiteURL = -1;
-        public static int SendSignature = -1;
-        public static int SendPrinter = -1;
-        public static int SendHelp = -1;
-        public static int SendDatabaseURL = -1;
-        public static int SendBind = -1;
-        public static int SendAverage = -1;
-        public static int SendAdminHelp = 100;
-        public static int RemoveItems = 100;
-        public static int RemoveAdmin = 100;
-        public static int ReloadItems = 100;
-        public static int ReloadPermissions = 100;
-        public static int ReloadLinks = 100;
-        public static int AddItem = 100;
-        public static int AddInsult = 100;
-        public static int AddAdmin = 100;
-        public static int Link = -1;
-        public static int Unlink = -1;
-        public static int SendSuit = -1;
-        public static int SendItemInfo = -1;
-        public static int SendCommands = -1;
+        public static int User = -1;
+        public static int Admin = 100;
     }
 }

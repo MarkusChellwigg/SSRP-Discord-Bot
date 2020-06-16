@@ -12,7 +12,7 @@ public class RemoveAdmin : ModuleBase<SocketCommandContext>
 {
     [Command("removeadmin", RunMode = RunMode.Async)]
     [Summary("Removes mentioned user from admins")]
-    public async Task AddAdminAsync(string mentioned)
+    public async Task RemoveAdminAsync(string mentioned)
     {
         bool success;
         string id = mentioned.Replace("<@!", "").Replace(">", "");

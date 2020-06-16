@@ -5,6 +5,7 @@ using SSRPBalanceBot;
 using SSRPBalanceBot.Permissions;
 using QueryMaster;
 using System.Collections.Generic;
+using Discord;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
@@ -14,14 +15,29 @@ public class ServerInfo : ModuleBase<SocketCommandContext>
     [Summary("Displays players online for each server")]
     public async Task SendInfo()
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendTotal) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         QueryMaster.Server server1 = ServerQuery.GetServerInstance(EngineType.Source, "54.36.229.194", 27015);
         QueryMaster.ServerInfo s1Info = server1.GetInfo();
-        QueryMaster.Server server2 = ServerQuery.GetServerInstance(EngineType.Source, "51.81.120.22", 27015);
-        QueryMaster.ServerInfo s2Info = server2.GetInfo();
+        QueryMaster.Server server3 = ServerQuery.GetServerInstance(EngineType.Source, "51.81.120.22", 27015);
+        QueryMaster.ServerInfo s3Info = server3.GetInfo();
 
-        await Context.Channel.SendMessageAsync($"```--- Current Online Players ----\nServer 1: {s1Info.Players}/{s1Info.MaxPlayers}\nServer 3: {s2Info.Players}/{s2Info.MaxPlayers}```");
+        EmbedBuilder eb = new EmbedBuilder();
+        EmbedFooterBuilder fb = new EmbedFooterBuilder();
+
+
+        fb.WithText($"Called by {Context.Message.Author.Username}");
+        fb.WithIconUrl(Context.Message.Author.GetAvatarUrl());
+
+        eb.WithTitle($"Server Info");
+        eb.AddField("Server 1", $"{s1Info.Players}/{s1Info.MaxPlayers}");
+        eb.AddField("Server 3", $"{s3Info.Players}/{s3Info.MaxPlayers}");
+
+        eb.WithColor(Color.Blue);
+        eb.WithFooter(fb);
+
+        await ReplyAsync("", false, eb.Build());
+
         await Utilities.StatusMessage("online", Context);
     }
 }

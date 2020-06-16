@@ -15,7 +15,7 @@ public class RemoveBind : ModuleBase<SocketCommandContext>
     [Summary("Removes the specified bind")]
     public async Task RemoveItemAsync(string itemname)
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.RemoveItems) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Admin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         if (itemname == "") { return; }
         int count = 0;
 

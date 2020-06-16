@@ -12,6 +12,8 @@ public class Coinflip : ModuleBase<SocketCommandContext>
     [Summary("Chooses a random number between 0 and the specified value")]
     public async Task SendRoll(string opponent)
     {
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+
         Random rnd = new Random();
 
         string oppID = opponent.Replace("<@!", "").Replace(">", "");

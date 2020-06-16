@@ -13,7 +13,7 @@ public class Connect : ModuleBase<SocketCommandContext>
     [Summary("Sends links to the servers")]
     public async Task SendConnect()
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendAverage) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         await Context.Channel.SendMessageAsync("`Server 1` - steam://connect/darkrp.zarpgaming.com:27015\n`Server 3` - steam://connect/usa.zarpgaming.com:27015");
         await Utilities.StatusMessage("connect", Context);

@@ -18,7 +18,7 @@ public class RemovePrinter : ModuleBase<SocketCommandContext>
         int count = 0;
         if (printerName == "") { return; }
 
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.RemoveItems) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Admin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
         else
         {
             string[] currPrinters = File.ReadAllLines("Items/printers.json");

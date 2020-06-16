@@ -17,7 +17,7 @@ public class AdminHelp : ModuleBase<SocketCommandContext>
     {
         Program p = new Program();
 
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendAdminHelp) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.Admin) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         List<CommandInfo> commands = Program._commands.Commands.ToList();
         StringBuilder helpMessage = new StringBuilder();

@@ -15,7 +15,7 @@ public class Printer : ModuleBase<SocketCommandContext>
     [Summary("Returns printer info.")]
     public async Task SendPrinter(string item, int boost = 1, int time = 1)
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendPrinter) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         SSRPItems.Printer p = await SSRPItems.GetPrinter(item);
         Discord.Color c = new Discord.Color(ColorTranslator.FromHtml($"#{p.color}").R, ColorTranslator.FromHtml($"#{p.color}").G, ColorTranslator.FromHtml($"#{p.color}").B);

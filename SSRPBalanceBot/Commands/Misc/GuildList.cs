@@ -17,7 +17,7 @@ public class GuildList : ModuleBase<SocketCommandContext>
     [Summary("Returns list of guilds the bot is currently in")]
     public async Task SendGuildList()
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.ReloadItems) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         StringBuilder sb = new StringBuilder();
 

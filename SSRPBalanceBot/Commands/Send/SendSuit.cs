@@ -12,7 +12,7 @@ public class Suit : ModuleBase<SocketCommandContext>
     [Summary("Returns info about the specified suit.")]
     public async Task SendBind([Remainder]string item)
     {
-        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.SendSuit) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
+        if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         SSRPItems.Suit s = await SSRPItems.GetSuit(item);
 
