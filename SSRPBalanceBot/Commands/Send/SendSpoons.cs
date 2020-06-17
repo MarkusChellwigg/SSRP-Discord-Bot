@@ -11,7 +11,7 @@ public class Spoons : ModuleBase<SocketCommandContext>
 {
     [Command("spoons", RunMode = RunMode.Async)]
     [Summary("Spoons.")]
-    public async Task SendSpoons([Remainder]string item)
+    public async Task SendSpoons()
     {
         await ReplyAsync("https://cdn.discordapp.com/attachments/721875650738258063/722895001419251802/unknown.png");
         await Utilities.StatusMessage("case", Context);
