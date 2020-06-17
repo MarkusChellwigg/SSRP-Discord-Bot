@@ -13,7 +13,7 @@ public class Spoons : ModuleBase<SocketCommandContext>
     [Summary("Spoons.")]
     public async Task SendSpoons([Remainder]string item)
     {
-        await ReplyAsync("https://cdn.discordapp.com/attachments/686995715314286613/722894347149901854/spoones.png");
+        await ReplyAsync("https://cdn.discordapp.com/attachments/721875650738258063/722895001419251802/unknown.png");
         await Utilities.StatusMessage("case", Context);
     }
 }
