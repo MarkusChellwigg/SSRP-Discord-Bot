@@ -30,8 +30,8 @@ public class ServerInfo : ModuleBase<SocketCommandContext>
         fb.WithIconUrl(Context.Message.Author.GetAvatarUrl());
 
         eb.WithTitle($"Server Info");
-        eb.AddField("Server 1", $"{s1Info.Players}/{s1Info.MaxPlayers}");
-        eb.AddField("Server 3", $"{s3Info.Players}/{s3Info.MaxPlayers}");
+        eb.AddField("Server 1", $"[{s1Info.Players}/{s1Info.MaxPlayers}](http://s1.nickgor.com)", true);
+        eb.AddField("Server 3", $"[{s3Info.Players}/{s3Info.MaxPlayers}](http://s3.nickgor.com)", true);
 
         eb.WithColor(Color.Blue);
         eb.WithFooter(fb);
