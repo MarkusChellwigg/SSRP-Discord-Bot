@@ -10,6 +10,7 @@ using System.Text;
 public class Spoons : ModuleBase<SocketCommandContext>
 {
     [Command("spoons", RunMode = RunMode.Async)]
+    [Alias("sp00ns")]
     [Summary("Spoons.")]
     public async Task SendSpoons()
     {

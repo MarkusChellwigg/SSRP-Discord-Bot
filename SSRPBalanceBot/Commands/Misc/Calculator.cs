@@ -11,6 +11,7 @@ using Discord;
 public class Calculator : ModuleBase<SocketCommandContext>
 {
     [Command("calculate", RunMode = RunMode.Async)]
+    [Alias("calc")]
     [Summary("Returns the value of the calculation specified")]
     public async Task SendCalc([Remainder]string math)
     {

@@ -33,7 +33,6 @@ public class Printer : ModuleBase<SocketCommandContext>
                 {
                     EmbedBuilder eb = new EmbedBuilder();
                     EmbedFooterBuilder fb = new EmbedFooterBuilder();
-                    
 
                     fb.WithText($"Called by {Context.Message.Author.Username}");
                     fb.WithIconUrl(Context.Message.Author.GetAvatarUrl());

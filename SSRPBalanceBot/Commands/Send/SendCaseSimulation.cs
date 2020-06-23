@@ -3,9 +3,7 @@ using System;
 using System.Threading.Tasks;
 using SSRPBalanceBot;
 using SSRPBalanceBot.Permissions;
-using System.IO;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using Discord;
@@ -111,31 +109,5 @@ public class CaseSim : ModuleBase<SocketCommandContext>
         }
 
         return total;
-    }
-
-    public static T ReadFromJsonFile<T>(string line) where T : new()
-    {
-        TextReader reader = null;
-        try
-        {
-            return JsonConvert.DeserializeObject<T>(line);
-        }
-        finally
-        {
-            if (reader != null)
-                reader.Close();
-        }
-    }
-
-    public static List<T> FillList<T>(string path) where T : new()
-    {
-        List<T> list = new List<T> { };
-        string[] lines = File.ReadAllLines(path);
-        foreach (var item in lines)
-        {
-            list.Add(ReadFromJsonFile<T>(item));
-        }
-
-        return list;
     }
 }

@@ -21,8 +21,11 @@ public class Help : ModuleBase<SocketCommandContext>
         if (PermissionManager.GetPerms(Context.Message.Author.Id) < PermissionConfig.User) { await Context.Channel.SendMessageAsync("Not authorised to run this command."); return; }
 
         List<CommandInfo> commands = Program._commands.Commands.ToList();
+        commands = commands.OrderBy(x => x.Name).ToList();
+
         StringBuilder helpMessage = new StringBuilder();
         StringBuilder individualCMDs = new StringBuilder();
+
         helpMessage.Append("```");
 
         foreach (CommandInfo command in commands)
@@ -40,7 +43,7 @@ public class Help : ModuleBase<SocketCommandContext>
                 //Appends the command summary, Example - Sends help information
                 individualCMDs.Append($" - {command.Summary}\n");
 
-                helpMessage.Append(individualCMDs.ToString());
+                helpMessage.Append(individualCMDs.ToString() + "\n");
                 individualCMDs.Clear();
             }
         }
