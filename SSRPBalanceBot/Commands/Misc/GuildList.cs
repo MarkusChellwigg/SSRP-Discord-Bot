@@ -99,7 +99,7 @@ public class GuildList : ModuleBase<SocketCommandContext>
                 if (guild.Id.ToString() == guildID)
                 {
                     //Gets first channel in the server and generates an invite link
-                    INestedChannel chnl = (INestedChannel)guild.Channels.First();
+                    INestedChannel chnl = (INestedChannel)guild.TextChannels.First();
                     var invite = await chnl.CreateInviteAsync();
 
                     gName = guild.Name;
