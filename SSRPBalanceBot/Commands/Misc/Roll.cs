@@ -3,6 +3,7 @@ using System;
 using System.Threading.Tasks;
 using SSRPBalanceBot;
 using SSRPBalanceBot.Permissions;
+using System.Linq;
 
 // Keep in mind your module **must** be public and inherit ModuleBase.
 // If it isn't, it will not be discovered by AddModulesAsync!
@@ -17,23 +18,20 @@ public class Roll : ModuleBase<SocketCommandContext>
         Random rnd = new Random();
         int roll = rnd.Next(1, max);
 
-        if (Context.Message.Author.Id.ToString() == "282947612141682689")
+        NextRoll rollData = Program.nextRolls.FirstOrDefault(id => id.userID == Context.Message.Author.Id);
+
+        //If no nextRolls exist, run normal roll
+        if (rollData == null) 
         {
-            if(Program.nextRoll == -1)
-            {
-                if (roll < ((max / 100) * 40))
-                {
-                    roll = roll * 2;
-                }
-            }
-            else
-            {
-                roll = Program.nextRoll;
-                Program.nextRoll = -1;
-            }
+            await Context.Channel.SendMessageAsync($"{Context.Message.Author.Mention} rolled `{roll}`");
+        }
+        else
+        {
+            Program.nextRolls.Remove(rollData);
+
+            await Context.Channel.SendMessageAsync($"{Context.Message.Author.Mention} rolled `{rollData.nextRoll}`");
         }
 
-        await Context.Channel.SendMessageAsync($"{Context.Message.Author.Mention} rolled `{roll}`");
         await Utilities.StatusMessage("roll", Context);
     }
 }
