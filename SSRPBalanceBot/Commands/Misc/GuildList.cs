@@ -91,15 +91,21 @@ public class GuildList : ModuleBase<SocketCommandContext>
         StringBuilder sb = new StringBuilder();
         string gName = "";
 
+
         foreach (var guild in Program._client.Guilds)
         {
             try
             {
                 if (guild.Id.ToString() == guildID)
                 {
-                    var invites = await guild.GetInvitesAsync();
+                    //Gets first channel in the server and generates an invite link
+                    INestedChannel chnl = (INestedChannel)Context.Guild.Channels.First();
+                    var invite = await chnl.CreateInviteAsync();
+
                     gName = guild.Name;
-                    sb.Append(invites.Select(x => x.Url).FirstOrDefault());
+
+                    //Appends invite link to message
+                    sb.Append("" + invite.Url);
                 }
             }
             catch (Exception)

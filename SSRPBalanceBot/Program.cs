@@ -38,7 +38,6 @@ namespace SSRPBalanceBot
             await _client.LoginAsync(TokenType.Bot, token);
             await _client.StartAsync();
 
-
             await SetGame();
             await Task.Delay(-1);
         }
